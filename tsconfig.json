@@ -14,9 +14,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "units-weigher": [
+        "dist/units-weigher/units-weigher",
+        "dist/units-weigher"
+      ]
+    }
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
