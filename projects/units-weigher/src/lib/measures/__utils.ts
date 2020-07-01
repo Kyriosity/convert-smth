@@ -8,15 +8,15 @@ export function parseUnitFormat(formatParam: string): ULabelFormats {
 
     const trimmedParam = formatParam.trim().toLowerCase();
 
-    if ('none' == trimmedParam || '-' == trimmedParam)
+    if ('unit-none' == trimmedParam || '-' == trimmedParam)
         return ULabelFormats.none
-    if ('default' == trimmedParam)
+    if ('unit-default' == trimmedParam)
         return defaultFormat;
-    if ("cypher" == trimmedParam)
-        return ULabelFormats.cypher
-    if ('short' == trimmedParam)
+    if ("unit-code" == trimmedParam)
+        return ULabelFormats.code
+    if ('unit-short' == trimmedParam)
         return ULabelFormats.short;
-    if ('full' == trimmedParam)
+    if ('unit-full' == trimmedParam)
         return ULabelFormats.full;
 
     return ULabelFormats.customCoded;

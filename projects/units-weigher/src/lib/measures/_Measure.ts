@@ -1,15 +1,23 @@
 import { Unit, UVal, ULabel, ULabelFormats } from '../cornerstones/.barrel';
 import { parseUnitFormat } from './__utils';
 
-export interface Measure<V extends UVal<U>, U extends Unit<number>> {
-    convert(that: V, to: U): void
-    differ(of: V, to: V): number;
+export interface Measure {
+    convert(that, to): void
+    differ(of, to): number
 
-    parseUnit(unitName: string): U;
-    nameUnit(uvalue: U, input?: string, culture?: string): string;
+    parseUnit(unitName: string)
+    nameUnit(uval, input?: string, culture?: string): string
 }
 
-export abstract class AbstractMeasure<V extends UVal<U>, U extends Unit<number>> implements Measure<V, U> {
+export interface UMeasure <V extends UVal<U>, U extends Unit<number>> extends Measure{
+    convert(that: V, to: U): void
+    differ(of: V, to: V): number
+
+    parseUnit(unitName: string): U
+    nameUnit(uval: U, input?: string, culture?: string): string
+}
+
+export abstract class AbstractMeasure<V extends UVal<U>, U extends Unit<number>> implements UMeasure<V, U> {
     protected unitLabels: ULabel<U>[];
 
     protected abstract factor(of: U, to: U): number; 
@@ -44,7 +52,7 @@ export abstract class AbstractMeasure<V extends UVal<U>, U extends Unit<number>>
 
         let entries =  this.unitLabels?.filter(x => x.unit == of);
         if (!entries || 0 == entries.length)
-            return `"${formatInput}"`;
+            return `"${this.rawUnitName(of)}"`;
 
         let labels = entries[0].labels;
         if (!labels || labels.length <= parsedFormat)

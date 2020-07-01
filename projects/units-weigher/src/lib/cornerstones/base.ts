@@ -22,7 +22,7 @@ export enum ULabelFormats {
     none = -2,
     customCoded = -1,
 
-    cypher = 0,
+    code = 0,
     short = 1,
     full = 2,
 }
