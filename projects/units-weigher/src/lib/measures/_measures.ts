@@ -4,12 +4,12 @@ import { Mass } from './Mass';
 import { Length } from './Length';
 import { Velocity } from './Velocity';
 import { Volume } from './Volume';
-import { Measure } from './_Measure';
+import { IMeasure } from './_Measure';
 
 export class measures {
-    private _measures: { name: string, measure: Measure }[] = [];
+    private _measures: { name: string, measure: IMeasure }[] = [];
 
-    for<V extends UVal<U>, U extends Unit<number>>(uval: V): Measure { // KD, ToDo: must be an interface instead of 'any'
+    for<V extends UVal<U>, U extends Unit<number>>(uval: V): IMeasure { // KD, ToDo: must be an interface instead of 'any'
         const className = uval.constructor.name;
 
         if (0 === this._measures.filter(x => x.name === className).length)
@@ -18,7 +18,7 @@ export class measures {
         return this._measures.filter(x => x.name === className)[0].measure;
     }
 
-    private mk(className: string): Measure {
+    private mk(className: string): IMeasure {
         if (mass.name === className)
             return new Mass();
         if (length.name === className)

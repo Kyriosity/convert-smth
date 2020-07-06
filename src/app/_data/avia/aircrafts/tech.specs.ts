@@ -893,7 +893,7 @@ const specs747_400LCF: CargoAirplaneSpecs = {
 
     designation: {
         brand: AirplaneManufacturer.Boeing,
-        name: 'Large Cargo Freigter',
+        name: 'LCF', // Large Cargo Freigter
         family: '747',
         serie: 400,
         modification: 'LCF',

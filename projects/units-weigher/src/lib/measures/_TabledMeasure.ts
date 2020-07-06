@@ -1,7 +1,7 @@
 import { UVal, Unit, RatiosList } from '../cornerstones/.barrel';
-import { AbstractMeasure } from './_Measure';
+import { UMeasure } from './_Measure';
 
-export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> extends AbstractMeasure<V, U> {
+export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> extends UMeasure<V, U> {
     protected readonly unitSystems: RatiosList<U>[];
     protected readonly crossRatios: RatiosList<U>[];
 
@@ -22,9 +22,9 @@ export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> e
     }
 
     private findBase(unit: U): U {
-        const entries = this.unitSystems.filter(x => { let vals = x.map(r => r.unit); vals.includes(unit) });
+        const entries = this.unitSystems?.filter(x => { let vals = x.map(r => r.unit); vals.includes(unit) });
 
-        return entries[0].filter(x => x.isBase)[0].unit;
+        return !entries ? null : entries[0].filter(x => x.isBase)[0].unit;
     }
 
     protected searchSameSysRatio(from: U, to: U): number {
@@ -36,12 +36,12 @@ export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> e
     };
 
     protected findRatio(from: U, to: U, ratios: RatiosList<U>[]) {
-        let entries = ratios.filter(x => {
+        let entries = ratios?.filter(x => {
             let vals = x.map(r => r.unit);
             vals.includes(from) && vals.includes(to)
         });
 
-        if (0 == entries!.length)
+        if (!entries || 0 == entries!.length)
             return NaN;
 
         let ratioFrom = entries[0].filter(x => x.unit = from)[0].ratio;

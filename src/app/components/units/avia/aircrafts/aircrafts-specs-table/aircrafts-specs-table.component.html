@@ -52,7 +52,7 @@
     </ng-container>
 
     <ng-container matColumnDef="cruiseMach">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cruise, Mach</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cruise,<br>Mach</th>
       <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uvalue : 'Mach' : 'unit-none' : '.2-2' }}</td>
     </ng-container>
 
@@ -68,11 +68,11 @@
 
     <ng-container matColumnDef="fuelCapacity">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Fuel</th>
-      <td mat-cell *matCellDef="let row">{{row.fuelCapacity | uvalue}}</td>
+      <td mat-cell *matCellDef="let row">{{row.fuelCapacity | uvalue: '-' : 'unit-code'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="seats">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Seats, max</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Seats,<br>max</th>
       <td mat-cell *matCellDef="let row">{{row.seats}}</td>
     </ng-container>
 
@@ -82,7 +82,7 @@
     </ng-container>
 
     <ng-container matColumnDef="powerplant">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Powerplant</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Power<br>plant</th>
       <td mat-cell *matCellDef="let row">{{row.powerplant}} X</td>
     </ng-container>
 

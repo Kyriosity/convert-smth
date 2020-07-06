@@ -1,32 +1,32 @@
 import { length, LengthUnits } from '../definitions/lengths';
 import { TabledMeasure } from './_TabledMeasure';
+import { DecimalRatios } from '../cornerstones/.barrel';
 
 export class Length extends TabledMeasure<length, LengthUnits> {
-    protected  unitLabels = [
+    protected rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit]}
+
+    protected readonly unitLabels = [
+        { unit: LengthUnits.picometre,  labels: ['', 'pm', 'picometer'] },
+        { unit: LengthUnits.nanometre,  labels: ['', 'nm', 'nanometer'] },
+        { unit: LengthUnits.micrometre,  labels: ['', 'mcm', 'micrometer'] },
+        { unit: LengthUnits.millimetre,  labels: ['', 'mm', 'millimeter'] },
+        { unit: LengthUnits.decimetre,  labels: ['', 'dc', 'decimeter'] },
+        { unit: LengthUnits.centimetre,  labels: ['', 'cm', 'centimeter'] },
+        { unit: LengthUnits.metre,  labels: ['', 'm', 'meter'] },
+        { unit: LengthUnits.hectometre,  labels: ['', 'hm', 'hectometer'] },
         { unit: LengthUnits.kilometre,  labels: ['', 'km', 'kilometer'] },
-        { unit: LengthUnits.metre, labels: ['', 'm', 'meter'] },
+        { unit: LengthUnits.megametre,  labels: ['', 'mgm', 'megameter'] },
+        { unit: LengthUnits.gigametre,  labels: ['', 'gm', 'gigameter'] },
+        { unit: LengthUnits.terametre,  labels: ['', 'tm', 'teraometer'] },
 
-        // { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
-        // { unit: LengthUnits.foot, labels: ['in', 'inch'] },
+        { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
+        { unit: LengthUnits.foot, labels: ['in', 'inch'] },
 
-        // { unit: LengthUnits.nauticalMile, labels: ['nmi', 'nautical mile'] },
-        // { unit: LengthUnits.mile, labels: ['mi', 'mile'] },
+        { unit: LengthUnits.nauticalMile, labels: ['', 'nmi', 'nautical mile'] },
+        { unit: LengthUnits.mile, labels: ['', 'mi', 'mile'] },
     ];
     
-    protected rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit]}
 }
-
-//     protected unitLabels = [
-//         { unit: LengthUnits.kilometre, labels: ['km', 'kilometer'] },
-//         { unit: LengthUnits.metre, labels: ['m', 'meter'] },
-
-//         { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
-//         { unit: LengthUnits.foot, labels: ['in', 'inch'] },
-
-//         { unit: LengthUnits.nauticalMile, labels: ['nmi', 'nautical mile'] },
-//         { unit: LengthUnits.mile, labels: ['mi', 'mile'] },
-//     ]
-// }
 
 // export const metricLengthRatios: ratio[] = [
 //     { val: LengthUnits.picometre, ratio: DecimalRatios.pico },

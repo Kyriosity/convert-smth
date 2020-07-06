@@ -7,9 +7,9 @@ import { AircraftsSpecsTableItem, Digest } from './AircraftsSpecsTableItem';
 import { airplanesFullTechSpecs } from 'src/app/_data/avia/aircrafts/tech.specs';
 
 /**
- * Data source for the AircraftsSpecsTable view. This class should
- * encapsulate all logic for fetching and manipulating the displayed data
- * (including sorting, pagination, and filtering).
+ * Data source for the AircraftsSpecsTable view. 
+ * This class should encapsulate all logic for fetching and manipulating the displayed data
+ * (also sorting, pagination, and filtering).
  */
 export class AircraftsSpecsTableDataSource extends DataSource<AircraftsSpecsTableItem> {
   data: AircraftsSpecsTableItem[] = [];
@@ -24,8 +24,7 @@ export class AircraftsSpecsTableDataSource extends DataSource<AircraftsSpecsTabl
   }
 
   /**
-   * Connect this data source to the table. The table will only update when
-   * the returned stream emits new items.
+   * Connect this data source to the table. The table will only update when the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<AircraftsSpecsTableItem[]> {

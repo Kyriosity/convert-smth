@@ -28,7 +28,7 @@ export class UValuePresentatation {
 
             const initLabel = measure.nameUnit(uval.Unit);
             measure.convert(uval, toUnit);
-            if (!uval)
+            if (!uval || !uval.Val)
                 return `:( ${initLabel} -> ${params.ConvertTo}`;
         }
         return `${formattedValue} ${measure.nameUnit(uval.Unit, params.UnitDisplay)}`;
@@ -68,15 +68,14 @@ export class PresentationParams {
         for (var i = 0; i < args.length && i < maxNumParams; i++) {
             let arg = args[i].trim();
             if (!PresentationParams.isArgOmmited(arg)) {
-                if (0 == i)
+                if (0 === i)
                     this._convertTo = arg;
-                else if (1 == i)
+                else if (1 === i)
                     this._unitDisplay = arg;
-                else if (2 == i)
+                else if (2 === i)
                     this._decimalFormat = arg;
-                else if (3 == i)
+                else if (3 === i)
                     this._culture = arg;
-
             }
         }
         if (args.length > maxNumParams) {
