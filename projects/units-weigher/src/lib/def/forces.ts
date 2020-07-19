@@ -1,4 +1,4 @@
-import { UVal } from '../cornerstones/.barrel';
+import { UVal } from '../cors/!barrel';
 
 export class force extends UVal<ForceUnits> {
     get NonNegative() { return false }
@@ -13,7 +13,6 @@ export enum ForceUnits {
 
     dyne,  // centimetre–gram–second (CGS) system of units, 10-5N
 }
-
 
 export function newton(val: number): force { return new force(ForceUnits.Newton, val); }
 export function kilonewton(val: number): force { return new force(ForceUnits.kiloNewton, val); }

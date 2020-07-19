@@ -1,4 +1,4 @@
-import { UValErr } from './errors';
+import { UValErr } from './.errors';
 
 export abstract class Unit<T extends number> { }
 
@@ -13,7 +13,8 @@ export abstract class UVal<U extends Unit<number>> {
     public get Val() { return this._v };
     public set Val(val: number) {
         if (this.NonNegative && 0 > val)
-            throw new UValErr(`value in this Measure cannot be negative`); // KD, ToDo: replace measure with class name
+            throw new UValErr(`${this.constructor.toString()}: val can't be negative`);
+            
         this._v = val;
     };
 }

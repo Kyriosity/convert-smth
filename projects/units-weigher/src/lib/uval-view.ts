@@ -1,12 +1,12 @@
 import { formatNumber } from '@angular/common';
-import { UVal } from '../cornerstones/.barrel';
-import { measures } from '../measures/.barrel';
+import { UVal } from './cors/!barrel';
+import { gen } from './weigher/gen';
 
-export class UValuePresentatation {
-    private _m: measures;
+export class UValView{
+    private weighers: gen;
 
     constructor(private _locale?: string) {
-        this._m = new measures();
+        this.weighers = new gen();
     }
 
     transform(uval: UVal<number>, params: PresentationParams): string {
@@ -14,10 +14,10 @@ export class UValuePresentatation {
             return '';
 
         const formattedValue = params.DecimalFormatApplies || params.CultureApplies ?
-            UValuePresentatation.formatValueCustom(uval.Val, params, this._locale)
+            UValView.formatValueCustom(uval.Val, params, this._locale)
             : uval.Val.toLocaleString();
 
-        const measure = this._m.for(uval);
+        const measure = this.weighers.for(uval);
         if (!measure)
             return `:( ${formattedValue} ?${uval.constructor.name} ${uval.Unit}?`;
 
@@ -64,8 +64,8 @@ export class PresentationParams {
     parse(...args: string[]): void {
         this.reset();
 
-        const maxNumParams = 4;
-        for (var i = 0; i < args.length && i < maxNumParams; i++) {
+        const paramsLimit = 4;
+        for (var i = 0; i < args.length && i < paramsLimit; i++) {
             let arg = args[i].trim();
             if (!PresentationParams.isArgOmmited(arg)) {
                 if (0 === i)
@@ -78,8 +78,8 @@ export class PresentationParams {
                     this._culture = arg;
             }
         }
-        if (args.length > maxNumParams) {
-            let extraParams = args.slice(maxNumParams);
+        if (args.length > paramsLimit) {
+            let extraParams = args.slice(paramsLimit);
             console.warn(`${extraParams.length} parameter(s) supplied: ${extraParams.join(', ')}`);
         }
     }

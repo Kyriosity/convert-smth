@@ -1,4 +1,4 @@
-import { ULabelFormats } from '../cornerstones/.barrel';
+import { ULabelFormats } from '../cors/!barrel';
 
 export function parseUnitFormat(formatParam: string): ULabelFormats {
     const defaultFormat = ULabelFormats.short;
@@ -22,7 +22,7 @@ export function parseUnitFormat(formatParam: string): ULabelFormats {
     return ULabelFormats.customCoded;
 }
 
-export function selectLabel(labels: string[], index: number): string {
+export function selectUnitLabel(labels: string[], index: number): string {
     const oneLabelForAllFormats = 1
     const codedLabelMissing = 2
 

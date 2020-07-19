@@ -1,8 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { LOCALE_ID, Inject } from '@angular/core';
+import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
 
-import { UVal } from './cornerstones/base';
-import { UValuePresentatation, PresentationParams } from './funcs/uvalue-presentation';
+import { UVal } from './cors/!barrel';
+import { UValView, PresentationParams } from './uval-view';
 
 @Pipe({ name: 'uvalue' })
 
@@ -14,13 +13,13 @@ export class UValuePipe implements PipeTransform {
     return this.Presentation.transform(uvalue, this.Params);
   }
 
-  private get Presentation(): UValuePresentatation {
+  private get Presentation(): UValView {
     if (!this._presentation)
-      this._presentation = new UValuePresentatation(this._locale);
+      this._presentation = new UValView(this._locale);
     return this._presentation;
   }
-  
-  private _presentation: UValuePresentatation = null;
+
+  private _presentation: UValView = null;
 
   private get Params(): PresentationParams {
     if (!this._params)

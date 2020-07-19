@@ -1,4 +1,4 @@
-import { UVal } from '../cornerstones/.barrel';
+import { UVal } from '../cors/!barrel';
 
 export class velocity extends UVal<VelocityUnits> {
     get NonNegative() { return false }

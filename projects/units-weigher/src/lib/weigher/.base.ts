@@ -1,7 +1,7 @@
-import { Unit, UVal, ULabel, ULabelFormats } from '../cornerstones/.barrel';
-import { parseUnitFormat, selectLabel } from './__utils';
+import { parseUnitFormat, selectUnitLabel } from './.utils';
+import { Unit, UVal, ULabel, ULabelFormats } from '../cors/!barrel';
 
-export interface IMeasure {
+export interface IWeigher {
     convert(that, to): void
     differ(of, to): number
 
@@ -9,7 +9,7 @@ export interface IMeasure {
     nameUnit(uval, input?: string, culture?: string): string
 }
 
-interface Measure<V extends UVal<U>, U extends Unit<number>> extends IMeasure {
+interface Weigher<V extends UVal<U>, U extends Unit<number>> extends IWeigher {
     convert(that: V, to: U): void
     differ(of: V, to: V): number
 
@@ -17,7 +17,7 @@ interface Measure<V extends UVal<U>, U extends Unit<number>> extends IMeasure {
     nameUnit(uval: U, input?: string, culture?: string): string
 }
 
-export abstract class UMeasure<V extends UVal<U>, U extends Unit<number>> implements Measure<V, U> {
+export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implements Weigher<V, U> {
     protected readonly unitLabels: ULabel<U>[];
 
     protected abstract factor(of: U, to: U): number;
@@ -49,7 +49,8 @@ export abstract class UMeasure<V extends UVal<U>, U extends Unit<number>> implem
         if (ULabelFormats.customCoded == parsedFormat)
             return formatInput
 
-        const label = selectLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
+        const label = selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
         return label?? `'${this.rawUnitName(of)}'`;
     }
 }
+

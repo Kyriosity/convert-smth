@@ -1,13 +1,14 @@
-import { UVal, Unit, RatiosList } from '../cornerstones/.barrel';
-import { UMeasure } from './_Measure';
+import { UVal, Unit, RatiosList } from '../cors/.uval';
+import { UWeigher } from './.base';
 
-export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> extends UMeasure<V, U> {
+export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends UWeigher<V, U> {
     protected readonly unitSystems: RatiosList<U>[];
     protected readonly crossRatios: RatiosList<U>[];
 
     factor(from: U, to: U): number {
+        const theSame = 1;
         if (from === to)
-            return 1;
+            return theSame;
 
         let ratio = this.searchSameSysRatio(from, to);
 
@@ -24,7 +25,7 @@ export abstract class TabledMeasure<V extends UVal<U>, U extends Unit<number>> e
     private findBase(unit: U): U {
         const entries = this.unitSystems?.filter(x => { let vals = x.map(r => r.unit); vals.includes(unit) });
 
-        return !entries ? null : entries[0].filter(x => x.isBase)[0].unit;
+        return !entries || 0 === entries.length ? null : entries[0].filter(x => x.isBase)[0].unit;
     }
 
     protected searchSameSysRatio(from: U, to: U): number {

@@ -1,15 +1,16 @@
-import { MachineDesignation } from 'src/app/_entities/avia/eintities';
+import { lgth, velocity, mass, volume, UValErr } from 'units-weigher';
 import { AirplaneSpecs, AirplaneManufacturer } from 'src/app/_entities/avia/aircrafts/entities';
-import { UValErr, length, mass, velocity, volume } from 'units-weigher';
+import { MachineDesignation } from 'src/app/_entities/avia/eintities';
+
 
 export interface AircraftsSpecsTableItem {
     id: number;
     brand: string;
     name: string;
     
-    range: length; 
+    range: lgth; 
     cruiseSpeed: velocity;
-    ceiling: length;
+    ceiling: lgth;
     payload: mass;
     fuelCapacity: volume;
 
