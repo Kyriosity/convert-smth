@@ -1,5 +1,5 @@
 import { formatNumber } from '@angular/common';
-import { UVal } from './cors/!barrel';
+import { UVal } from './cors/barrel';
 import { gen } from './weigher/gen';
 
 export class UValView{

@@ -1,4 +1,4 @@
-import { ULabelFormats } from '../cors/!barrel';
+import { ULabelFormats } from '../cors/barrel';
 
 export function parseUnitFormat(formatParam: string): ULabelFormats {
     const defaultFormat = ULabelFormats.short;

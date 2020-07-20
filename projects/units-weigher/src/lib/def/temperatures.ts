@@ -1,4 +1,4 @@
-import { UVal } from '../cors/!barrel';
+import { UVal } from '../cors/barrel';
 
 export class temperature extends UVal<TemperatureUnits> {
     get NonNegative() { return false }

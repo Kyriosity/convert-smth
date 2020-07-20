@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
 
-import { UVal } from './cors/!barrel';
+import { UVal } from './cors/barrel';
 import { UValView, PresentationParams } from './uval-view';
 
 @Pipe({ name: 'uvalue' })

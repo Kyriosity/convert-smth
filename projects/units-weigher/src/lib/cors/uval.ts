@@ -1,4 +1,4 @@
-import { UValErr } from './.errors';
+import { UValErr } from './errors';
 
 export abstract class Unit<T extends number> { }
 

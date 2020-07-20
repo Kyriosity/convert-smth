@@ -1,5 +1,5 @@
-import { UVal, Unit, RatiosList } from '../cors/.uval';
-import { UWeigher } from './.base';
+import { UVal, Unit, RatiosList } from '../cors/uval';
+import { UWeigher } from './iWeigher';
 
 export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends UWeigher<V, U> {
     protected readonly unitSystems: RatiosList<U>[];

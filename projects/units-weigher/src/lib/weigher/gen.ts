@@ -1,5 +1,5 @@
-import { UVal } from '../cors/!barrel';
-import { IWeigher } from './.base';
+import { UVal } from '../cors/barrel';
+import { IWeigher } from './iWeigher';
 import { Lgth } from './Lgth';
 
 export class gen {

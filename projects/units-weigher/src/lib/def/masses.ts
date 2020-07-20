@@ -1,4 +1,4 @@
-import { UVal } from '../cors/!barrel'
+import { UVal } from '../cors/barrel'
 
 export class mass extends UVal<MassUnits> { 
     get NonNegative() { return true } 

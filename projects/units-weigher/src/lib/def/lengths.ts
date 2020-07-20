@@ -1,4 +1,4 @@
-import { UVal } from '../cors/!barrel';
+import { UVal } from '../cors/barrel';
 
 
 export class lgth extends UVal<LengthUnits> { 
