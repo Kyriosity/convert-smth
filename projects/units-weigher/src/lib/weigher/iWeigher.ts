@@ -50,7 +50,7 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
             return formatInput
 
         const label = selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
-        return label?? `"${this.rawUnitName(of)}"`;
+        return label?? `\`${this.rawUnitName(of)}\``;
     }
 }
 

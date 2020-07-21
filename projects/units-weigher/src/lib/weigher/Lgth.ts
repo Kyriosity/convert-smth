@@ -1,5 +1,6 @@
 import { lgth, LengthUnits } from '../def/barrel';
 import { linear } from './linear'
+import { DecimalRatios } from '../cors/barrel';
 
 export class Lgth extends linear<lgth, LengthUnits> {
     protected rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit] }
@@ -25,40 +26,40 @@ export class Lgth extends linear<lgth, LengthUnits> {
         { unit: LengthUnits.mile, labels: ['', 'mi', 'mile'] },
     ];
 
-    protected readonly unitSystems = [] // [ metric, feetBased]
-    protected readonly crossRatios =  [] // [ toMeter ]
+    protected readonly unitSystems = [ metric, feetBased]
+    protected readonly crossRatios = [ toMeter ]
 
 }
 
-// const metric = [
-//     { unit: LengthUnits.picometre, ratio: DecimalRatios.pico },
-//     { unit: LengthUnits.nanometre, ratio: DecimalRatios.nano },
-//     { unit: LengthUnits.micrometre, ratio: DecimalRatios.micro },
-//     { unit: LengthUnits.millimetre, ratio: DecimalRatios.milli },
-//     { unit: LengthUnits.decimetre, ratio: DecimalRatios.deci },
-//     { unit: LengthUnits.centimetre, ratio: DecimalRatios.centi },
-//     { unit: LengthUnits.metre, ratio: DecimalRatios.BASE, isBase: true },
-//     { unit: LengthUnits.decametre, ratio: DecimalRatios.deca },
-//     { unit: LengthUnits.hectometre, ratio: DecimalRatios.hecto },
-//     { unit: LengthUnits.kilometre, ratio: DecimalRatios.kilo },
-//     { unit: LengthUnits.megametre, ratio: DecimalRatios.mega },
-//     { unit: LengthUnits.gigametre, ratio: DecimalRatios.giga },
-//     { unit: LengthUnits.terametre, ratio: DecimalRatios.tera },
-// ];
+const metric = [
+    { unit: LengthUnits.picometre, ratio: DecimalRatios.pico },
+    { unit: LengthUnits.nanometre, ratio: DecimalRatios.nano },
+    { unit: LengthUnits.micrometre, ratio: DecimalRatios.micro },
+    { unit: LengthUnits.millimetre, ratio: DecimalRatios.milli },
+    { unit: LengthUnits.decimetre, ratio: DecimalRatios.deci },
+    { unit: LengthUnits.centimetre, ratio: DecimalRatios.centi },
+    { unit: LengthUnits.metre, ratio: DecimalRatios.BASE, isBase: true },
+    { unit: LengthUnits.decametre, ratio: DecimalRatios.deca },
+    { unit: LengthUnits.hectometre, ratio: DecimalRatios.hecto },
+    { unit: LengthUnits.kilometre, ratio: DecimalRatios.kilo },
+    { unit: LengthUnits.megametre, ratio: DecimalRatios.mega },
+    { unit: LengthUnits.gigametre, ratio: DecimalRatios.giga },
+    { unit: LengthUnits.terametre, ratio: DecimalRatios.tera },
+];
 
-// const feetBased = [
-//     { unit: LengthUnits.thou, ratio: 1 / 12 * 1000 },
-//     { unit: LengthUnits.inch, ratio: 1 / 12 },
-//     { unit: LengthUnits.foot, ratio: 1, isBase: true },
-//     { unit: LengthUnits.yard, ratio: 3 },
-//     { unit: LengthUnits.chain, ratio: 66 },
-//     { unit: LengthUnits.furlong, ratio: 660 },
-//     { unit: LengthUnits.mile, ratio: 5280 },
-//     { unit: LengthUnits.league, ratio: 3 * 15840 },
-// ];
+const feetBased = [
+    { unit: LengthUnits.thou, ratio: 1 / 12 * 1000 },
+    { unit: LengthUnits.inch, ratio: 1 / 12 },
+    { unit: LengthUnits.foot, ratio: 1, isBase: true },
+    { unit: LengthUnits.yard, ratio: 3 },
+    { unit: LengthUnits.chain, ratio: 66 },
+    { unit: LengthUnits.furlong, ratio: 660 },
+    { unit: LengthUnits.mile, ratio: 5280 },
+    { unit: LengthUnits.league, ratio: 3 * 15840 },
+];
 
-// const toMeter = [
-//     { unit: LengthUnits.metre, ratio: 1, isBase: true },
-//     { unit: LengthUnits.foot, ratio: 1/3.28084 },
-//     { unit: LengthUnits.nauticalMile, ratio: 1852 }
-// ]
+const toMeter = [
+    { unit: LengthUnits.metre, ratio: 1, isBase: true },
+    { unit: LengthUnits.foot, ratio: 1/3.28084 },
+    { unit: LengthUnits.nauticalMile, ratio: 1852 }
+]

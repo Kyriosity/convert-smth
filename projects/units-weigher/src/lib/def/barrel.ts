@@ -1,8 +1,6 @@
-export * from './lengths';
-export * from './masses'
-export * from './masses'
-export * from './velocities';
-export * from './volumes';
-export * from './forces';
-
-export * from './temperatures'
+export * from './lgth';
+export * from './mass'
+export * from './mass'
+export * from './velo';
+export * from './vol';
+export * from './frc';

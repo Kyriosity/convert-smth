@@ -17,21 +17,21 @@ export class UValView{
             UValView.formatValueCustom(uval.Val, params, this._locale)
             : uval.Val.toLocaleString();
 
-        const measure = this.weighers.for(uval);
-        if (!measure)
-            return `:( ${formattedValue} ?${uval.constructor.name} ${uval.Unit}?`;
+        const weigher = this.weighers.for(uval);
+        if (!weigher)
+            return `\`${formattedValue} ?${uval.constructor.name} ${uval.Unit}\``;
 
         if (params.ConvertApplies) {
-            const toUnit = measure.parseUnit(params.ConvertTo);
+            const toUnit = weigher.parseUnit(params.ConvertTo);
             if (!toUnit)
-                return `:( -> ${params.ConvertTo}???`;
+                return `\`-> ${params.ConvertTo}?\``;
 
-            const initLabel = measure.nameUnit(uval.Unit);
-            measure.convert(uval, toUnit);
+            const initLabel = weigher.nameUnit(uval.Unit);
+            weigher.convert(uval, toUnit);
             if (!uval || !uval.Val)
-                return `:( ${initLabel} -> ${params.ConvertTo}`;
+                return `\`${initLabel} -> ${params.ConvertTo}\`?`;
         }
-        return `${formattedValue} ${measure.nameUnit(uval.Unit, params.UnitDisplay)}`;
+        return `${formattedValue} ${weigher.nameUnit(uval.Unit, params.UnitDisplay)}`;
     }
 
     private static formatValueCustom(value: number, params: PresentationParams, _currentLocale: string): string {
@@ -64,9 +64,9 @@ export class PresentationParams {
     parse(...args: string[]): void {
         this.reset();
 
-        const paramsLimit = 4;
-        for (var i = 0; i < args.length && i < paramsLimit; i++) {
-            let arg = args[i].trim();
+        const maxParams = 4;
+        for (var i = 0; i < args.length && i < maxParams; i++) {
+            const arg = args[i].trim();
             if (!PresentationParams.isArgOmmited(arg)) {
                 if (0 === i)
                     this._convertTo = arg;
@@ -78,8 +78,8 @@ export class PresentationParams {
                     this._culture = arg;
             }
         }
-        if (args.length > paramsLimit) {
-            let extraParams = args.slice(paramsLimit);
+        if (args.length > maxParams) {
+            const extraParams = args.slice(maxParams);
             console.warn(`${extraParams.length} parameter(s) supplied: ${extraParams.join(', ')}`);
         }
     }
