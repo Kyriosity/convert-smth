@@ -18,7 +18,7 @@ export interface FlyingMachinePerformance {
     serviceCeiling: lgth,
     thrust?: force,
 
-    fuelCapacity: vol,
+    fuelCapacity?: vol,
     // cruiseFuelConsumption?: VolumeTimeFuelConsumption,
 }
 

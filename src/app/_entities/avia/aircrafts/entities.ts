@@ -3,6 +3,7 @@ import { Engine, MachineDesignation, CargoSpecs, CrewPerson,
 import { DomainEntity } from '../../_shared/base.entities';
 
 export enum AirplaneManufacturer {
+  Wrights = "Wright", // brothers Orville and Wilbur Wright 
   Aerospatiale = "Aerospatiale", // Aérospatiale - french co which in cooperation with BAC have fulfilled Concorde program
   Airbus = "Airbus", // "Airbus Societas Europaea ",
   Antonov = "Antonov",

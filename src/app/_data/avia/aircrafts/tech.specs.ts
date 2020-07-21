@@ -4,13 +4,54 @@ import {
     meter, kilometer, nauticalMile, inch, foot, mile,
     kilogram, tonne, pound,
     kilometersHour, knot, milesHour, Mach,
-    liter, cubicMeter, cubicFoot, usGallon, imperialGallon, 
+    liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
     kilonewton, poundforce, kilogramforce,
 } from 'units-weigher';
 
+// ********************** Wright Flyer I ***********************
+const WrightFlyer: AirlinerSpecs = {
+    unid: undefined,
+
+    designation: {
+        brand: AirplaneManufacturer.Wrights,
+        name: 'Flyer',
+        remarks: 'First successful heavier-than-air powered aircraft.',
+    },
+    firstFlight: new Date(1903, 12, 17),
+
+    measurements: {
+        airframe: {
+            length: foot(21 + 1 / 12),
+            height: foot(9),
+        },
+
+        wingSpan: foot(40 + 4 / 12),
+        wingArea: foot(510).asX2,
+    },
+
+    weights: {
+        empty: pound(605),
+        maxTakeoff: pound(745),
+        maxLanding: pound(745),
+        payload: pound(100),
+    },
+
+    performance: {
+        range: meter(300),
+        cruiseSpeed: milesHour(30),
+        maxSpeed: milesHour(30),
+        serviceCeiling: foot(30),
+
+    },
+
+    cockpitCrew: new Array<CrewPerson>(1),
+    powerplant: new Array<Engine>(1),
+    maxSeats: 0, 
+}
+
 // ********************** Sikorsky S-42 ***********************
-const specsSikorskyS42: AirlinerSpecs = {
-    unid: -1,
+const SikorskyS42: AirlinerSpecs = {
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Sikorsky,
@@ -54,7 +95,7 @@ const specsSikorskyS42: AirlinerSpecs = {
 
 // ********************** CONCORDE ***********************
 const specsConcorde: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.BAC,
@@ -107,8 +148,8 @@ const specsConcorde: AirlinerSpecs = {
 };
 
 // ********************** AIRBUS A380 ***********************
-const specsA380: AirlinerSpecs = {
-    unid: -1,
+const a380: AirlinerSpecs = {
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Airbus,
@@ -162,8 +203,8 @@ const specsA380: AirlinerSpecs = {
 };
 
 // ********************** BOEING DREAMLINER 787-10 ***********************
-const specsDreamliner: AirlinerSpecs = {
-    unid: -1,
+const dreamliner: AirlinerSpecs = {
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Boeing,
@@ -218,7 +259,7 @@ const specsDreamliner: AirlinerSpecs = {
 
 // ********************** BOEING 747-400 ***********************
 const specs747_400: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Boeing,
@@ -273,7 +314,7 @@ const specs747_400: AirlinerSpecs = {
 
 // ********************** GULFSTREAM 700 ***********************
 const specsGulfstream700: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Gulfstream,
@@ -329,7 +370,7 @@ const specsGulfstream700: AirlinerSpecs = {
 
 // ********************** BOMBARDIER CRJ-700 ***********************
 const specsCrj700: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Bombardier,
@@ -383,7 +424,7 @@ const specsCrj700: AirlinerSpecs = {
 
 // ********************** ANTONOV MRIYA ***********************
 const specsMriya: CargoAirplaneSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Antonov,
@@ -445,7 +486,7 @@ const specsMriya: CargoAirplaneSpecs = {
 
 // ********************** AIRBUS BELUGA XL ***********************
 const specsBelugaXl: CargoAirplaneSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         name: 'Beluga XL',
@@ -511,7 +552,7 @@ const specsBelugaXl: CargoAirplaneSpecs = {
 
 // ********************** CESSNA 172 ***********************
 const specsCessna172: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Cessna,
@@ -566,7 +607,7 @@ const specsCessna172: AirlinerSpecs = {
 
 // ********************** A321neo ***********************
 const specsA321neo: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Airbus,
@@ -620,7 +661,7 @@ const specsA321neo: AirlinerSpecs = {
 
 // ********************** ATR72 ***********************
 const specsAtr72: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.ATR,
@@ -672,7 +713,7 @@ const specsAtr72: AirlinerSpecs = {
 
 // ********************** Aero Spacelines B-377-SG Super Guppy ***********************
 const specsB377Sg: CargoAirplaneSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.AeroSpacelines,
@@ -731,7 +772,7 @@ const specsB377Sg: CargoAirplaneSpecs = {
 
 // ********************** EMBRAER ERJ-145 ***********************
 const specsErj145Er: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Embraer,
@@ -784,7 +825,7 @@ const specsErj145Er: AirlinerSpecs = {
 
 // ********************** Focker 70 ***********************
 const specsFokker70: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Fokker,
@@ -835,7 +876,7 @@ const specsFokker70: AirlinerSpecs = {
 
 // ********************** Boeing 737-100 ***********************
 const specs737_100: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Boeing,
@@ -889,7 +930,7 @@ const specs737_100: AirlinerSpecs = {
 
 // ********************** Boeing 747-400 LCF ***********************
 const specs747_400LCF: CargoAirplaneSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Boeing,
@@ -946,7 +987,7 @@ const specs747_400LCF: CargoAirplaneSpecs = {
 
 // ********************** Douglas DC-3 ***********************
 const specsDouglasDc3: AirlinerSpecs = {
-    unid: -1,
+    unid: undefined,
 
     designation: {
         brand: AirplaneManufacturer.Douglas,
@@ -995,10 +1036,11 @@ const specsDouglasDc3: AirlinerSpecs = {
 };
 
 export const airplanesFullTechSpecs: AirplaneSpecs[] = [
-    specsSikorskyS42,
+    WrightFlyer,
+    SikorskyS42,
     specsConcorde,
-    specsA380,
-    specsDreamliner,
+    a380,
+    dreamliner,
     specs747_400,
     specsGulfstream700,
     specsCrj700,
