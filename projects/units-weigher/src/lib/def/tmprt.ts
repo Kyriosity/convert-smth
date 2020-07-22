@@ -1,4 +1,4 @@
-import { UVal } from '../cors/barrel';
+import { UVal } from '../cors/z_barrel';
 
 export class tmprt extends UVal<TemperatureUnits> {
     get NonNegative() { return false }
@@ -18,7 +18,7 @@ export var celsius = (val: number) => of(TemperatureUnits.Celsius, val)
 export var fahrenheit = (val: number) => of(TemperatureUnits.Fahrenheit, val)
 export var rankine = (val: number) => of (TemperatureUnits.Rankine, val)
 
-export const Kelvin = kelvin(NaN).Unit
-export const Celsius = celsius(NaN).Unit
-export const Fahrenheit = fahrenheit(NaN).Unit
-export const Rankine = rankine(NaN).Unit
+export const Kelvin = kelvin(NaN).unit
+export const Celsius = celsius(NaN).unit
+export const Fahrenheit = fahrenheit(NaN).unit
+export const Rankine = rankine(NaN).unit

@@ -1,10 +1,10 @@
-import { UVal } from '../cors/barrel';
+import { UVal } from '../cors/z_barrel';
 
 
 export class lgth extends UVal<LengthUnits> { 
     get NonNegative() { return true }
 
-    get asX2(): area { return new area(this.Unit, this.Val); }
+    get asX2(): area { return new area(this.unit, this.val); }
 }
 
 export class area extends lgth {

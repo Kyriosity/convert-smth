@@ -3,19 +3,19 @@ import { UValErr } from './errors';
 export abstract class Unit<T extends number> { }
 
 export abstract class UVal<U extends Unit<number>> {
-    constructor(public Unit: U, val?: number) {
-        this._v = val;
+    constructor(public unit: U, v?: number) {
+        this._val = v;
     }
 
     abstract get NonNegative(): boolean;
 
-    protected _v?: number;
-    public get Val() { return this._v };
-    public set Val(val: number) {
+    protected _val?: number;
+    public get val() { return this._val };
+    public set val(val: number) {
         if (this.NonNegative && 0 > val)
-            throw new UValErr(`${this.constructor.toString()}: val can't be negative`);
+            throw new UValErr(`${this.constructor.toString()}: value can't be negative here`);
             
-        this._v = val;
+        this._val = val;
     };
 }
 

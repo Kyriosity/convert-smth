@@ -477,7 +477,7 @@ const specsMriya: CargoAirplaneSpecs = {
     },
 
     airlinerDerivative: false,
-    cockpitCrew: new Array<CrewPerson>(4),
+    cockpitCrew: new Array<CrewPerson>(6),
     powerplant: new Array<Engine>(6),
 
     listPrice2020: 250 * 1000 * 1000, // USD

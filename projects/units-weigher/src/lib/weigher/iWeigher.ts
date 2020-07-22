@@ -1,4 +1,4 @@
-import { UVal, Unit, ULabel, ULabelFormats } from '../cors/barrel';
+import { UVal, Unit, ULabel, ULabelFormats } from '../cors/z_barrel';
 import { parseUnitFormat, selectUnitLabel } from './utils';
 
 export interface IWeigher {
@@ -24,13 +24,13 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
     protected abstract rawUnitName(unit: U): string;
 
     convert(that: V, to: U): void {
-        that.Val *= this.factor(that.Unit, to);
-        that.Unit = to;
+        that.val *= this.factor(that.unit, to);
+        that.unit = to;
     }
 
     differ(of: V, to: V): number {
-        this.convert(of, to.Unit);
-        return of.Val - to.Val;
+        this.convert(of, to.unit);
+        return of.val - to.val;
     }
 
     parseUnit(label: string): U {
@@ -49,8 +49,7 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
         if (ULabelFormats.customCoded == parsedFormat)
             return formatInput
 
-        const label = selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
-        return label?? `\`${this.rawUnitName(of)}\``;
+        return selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
     }
 }
 

@@ -1,4 +1,4 @@
-import { UVal } from '../cors/barrel'
+import { UVal } from '../cors/z_barrel'
 
 export class mass extends UVal<MassUnits> { 
     get NonNegative() { return true } 
@@ -41,7 +41,7 @@ export var tonne = (val: number) => of(MassUnits.tonne, val)
 export var megatonne = (val: number) => of(MassUnits.megatonne, val)
 export var gigatonne = (val: number) => of(MassUnits.gigatonne, val)
 
-export const Kilogram = kilogram(NaN).Unit;
+export const Kilogram = kilogram(NaN).unit;
 
 // US customary
 export var ounce = (val: number) => of(MassUnits.ounce, val)

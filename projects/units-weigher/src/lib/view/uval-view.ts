@@ -1,6 +1,7 @@
 import { formatNumber } from '@angular/common';
-import { UVal } from './cors/barrel';
-import { gen } from './weigher/gen';
+import { UVal } from '../cors/z_barrel';
+import { gen } from '../weigher/gen';
+import { uFatQuestion, uWarn } from './utils';
 
 export class UValView{
     private weighers: gen;
@@ -14,24 +15,25 @@ export class UValView{
             return '';
 
         const formattedValue = params.DecimalFormatApplies || params.CultureApplies ?
-            UValView.formatValueCustom(uval.Val, params, this._locale)
-            : uval.Val.toLocaleString();
+            UValView.formatValueCustom(uval.val, params, this._locale)
+            : uval.val.toLocaleString();
 
         const weigher = this.weighers.for(uval);
         if (!weigher)
-            return `\`${formattedValue} ?${uval.constructor.name} ${uval.Unit}\``;
+            return `${formattedValue}${uFatQuestion}`;
 
         if (params.ConvertApplies) {
             const toUnit = weigher.parseUnit(params.ConvertTo);
             if (!toUnit)
-                return `\`-> ${params.ConvertTo}?\``;
+                return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`;
 
-            const initLabel = weigher.nameUnit(uval.Unit);
+            const initLabel = weigher.nameUnit(uval.unit);
             weigher.convert(uval, toUnit);
-            if (!uval || !uval.Val)
-                return `\`${initLabel} -> ${params.ConvertTo}\`?`;
+            if (!uval || !uval.val)
+                return `${uWarn} ${initLabel} -> ${params.ConvertTo}`;
         }
-        return `${formattedValue} ${weigher.nameUnit(uval.Unit, params.UnitDisplay)}`;
+
+        return `${formattedValue} ${weigher.nameUnit(uval.unit, params.UnitDisplay)}`;
     }
 
     private static formatValueCustom(value: number, params: PresentationParams, _currentLocale: string): string {

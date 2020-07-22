@@ -1,4 +1,4 @@
-import { lgth, velocity, mass, vol, UValErr } from 'units-weigher';
+import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
 import { AirplaneSpecs, AirplaneManufacturer } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
 
@@ -9,7 +9,7 @@ export interface AircraftsSpecsTableItem {
     name: string;
     
     range: lgth; 
-    cruiseSpeed: velocity;
+    cruiseSpeed: velo;
     ceiling: lgth;
     payload: mass;
     fuelCapacity: vol;

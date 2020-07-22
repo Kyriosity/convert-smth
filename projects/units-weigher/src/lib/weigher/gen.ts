@@ -1,7 +1,7 @@
-import { UVal } from '../cors/barrel';
+import { UVal } from '../cors/z_barrel';
 import { IWeigher } from './iWeigher';
 import { Lgth } from './Lgth';
-import { lgth } from '../def/barrel';
+import { lgth } from '../def/z_barrel';
 
 export class gen {
     private _weighers: { name: string, measure: IWeigher }[] = [];

@@ -33,42 +33,42 @@
 
     <ng-container matColumnDef="firstFlight">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>1. flight</th>
-      <td mat-cell *matCellDef="let row">{{row.firstFlight | date: 'dd.MM.yyyy'}}</td>
+      <td mat-cell *matCellDef="let row">{{row.firstFlight | date: 'dd:MM:yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="range">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Range</th>
-      <td mat-cell *matCellDef="let row">{{row.range | uvalue : "" : "unit-short" : "" }}</td>
+      <td mat-cell *matCellDef="let row">{{row.range | uval : "" : "unit-short" : "" }}</td>
     </ng-container>
 
     <ng-container matColumnDef="rangeKm">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Range, km</th>
-      <td mat-cell *matCellDef="let row">{{ row.range | uvalue : 'km' : 'unit-none' : '.0-2'}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.range | uval : 'km' : 'unit-none' : '.0-2'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="cruiseSpeed">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Cruise</th>
-      <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uvalue : '' : '' : '.0-2' }}</td>
+      <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uval : '' : '' : '.0-2' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="cruiseMach">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Cruise,<br>Mach</th>
-      <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uvalue : 'Mach' : 'unit-none' : '.2-2' }}</td>
+      <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uval : 'Mach' : 'unit-none' : '.2-2' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="ceiling">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Ceiling</th>
-      <td mat-cell *matCellDef="let row">{{row.ceiling | uvalue : "" : "unit-code" : ""}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ceiling | uval : "" : "unit-code" : ""}}</td>
     </ng-container>
 
     <ng-container matColumnDef="payload">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Payload</th>
-      <td mat-cell *matCellDef="let row">{{row.payload | uvalue : '-' : '-' : '.0-3'}}</td>
+      <td mat-cell *matCellDef="let row">{{row.payload | uval : '-' : '-' : '.0-3'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fuelCapacity">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Fuel</th>
-      <td mat-cell *matCellDef="let row">{{row.fuelCapacity | uvalue: '-' : 'unit-code'}}</td>
+      <td mat-cell *matCellDef="let row">{{row.fuelCapacity | uval : '-' : 'unit-code'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="seats">

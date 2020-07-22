@@ -1,16 +1,16 @@
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
 
-import { UVal } from './cors/barrel';
-import { UValView, PresentationParams } from './uval-view';
+import { UVal } from './cors/z_barrel';
+import { UValView, PresentationParams } from './view/uval-view';
 
-@Pipe({ name: 'uvalue' })
+@Pipe({ name: 'uval' })
 
-export class UValuePipe implements PipeTransform {
+export class uValPipe implements PipeTransform {
   constructor(@Inject(LOCALE_ID) private _locale: string) { }
 
-  transform(uvalue: UVal<number>, ...args: string[]): string {
+  transform(value: UVal<number>, ...args: string[]): string {
     this.Params.parse(...args);
-    return this.Presentation.transform(uvalue, this.Params);
+    return this.Presentation.transform(value, this.Params);
   }
 
   private get Presentation(): UValView {

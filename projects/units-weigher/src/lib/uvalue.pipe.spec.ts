@@ -1,4 +1,4 @@
-import { UValuePipe } from './uvalue.pipe';
+import { uValPipe } from './uvalue.pipe';
 
 describe('UvaluePipe', () => {
   it('create an instance', () => {

@@ -1,4 +1,4 @@
-import { UVal } from '../cors/barrel';
+import { UVal } from '../cors/z_barrel';
 
 export class vol extends UVal<VolumeUnits> {
     get NonNegative() { return true; }

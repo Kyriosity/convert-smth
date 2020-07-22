@@ -1,6 +1,6 @@
-import { lgth, LengthUnits } from '../def/barrel';
+import { lgth, LengthUnits } from '../def/z_barrel';
 import { linear } from './linear'
-import { DecimalRatios } from '../cors/barrel';
+import { DecimalRatios } from '../cors/z_barrel';
 
 export class Lgth extends linear<lgth, LengthUnits> {
     protected rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit] }
