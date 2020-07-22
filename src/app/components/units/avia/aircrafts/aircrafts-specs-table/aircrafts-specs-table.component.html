@@ -1,7 +1,8 @@
 <div>
   <label class="my-app-label">Units:</label>
   <mat-form-field>
-    <mat-select [(value)]="SelectedUnitsScheme" disabled="{{dataSource.isLoading}}">
+    <mat-select [(value)]="SelectedUnitsScheme" disabled="true">
+    <!-- disabled="{{dataSource.isLoading}}"> -->
       <mat-option *ngFor="let unitsScheme of unitSchemes" [value]="unitsScheme.value">{{unitsScheme.viewValue}}
       </mat-option>
     </mat-select>
