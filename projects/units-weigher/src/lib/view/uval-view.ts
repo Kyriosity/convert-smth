@@ -27,7 +27,7 @@ export class UValView {
             if (!toUnit)
                 return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`;
 
-            const initLabel = 'ff';
+            const initLabel = weigher.nameUnit(uval.unit)?? weigher.rawUnitName(uval.unit);
             weigher.convert(uval, toUnit);
             if (!uval || !uval.val)
                 return `${uWarn} ${initLabel} -> ${params.ConvertTo}`;
