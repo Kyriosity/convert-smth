@@ -7,6 +7,7 @@ export interface IWeigher {
 
     parseUnit(unitName: string)
     nameUnit(uval, input?: string, culture?: string): string
+    rawUnitName(unit): string
 }
 
 interface Weigher<V extends UVal<U>, U extends Unit<number>> extends IWeigher {
@@ -15,13 +16,14 @@ interface Weigher<V extends UVal<U>, U extends Unit<number>> extends IWeigher {
 
     parseUnit(unitName: string): U
     nameUnit(uval: U, input?: string, culture?: string): string
+    rawUnitName(unit: U): string
 }
 
 export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implements Weigher<V, U> {
     protected readonly unitLabels: ULabel<U>[];
 
     protected abstract factor(of: U, to: U): number;
-    protected abstract rawUnitName(unit: U): string;
+     abstract rawUnitName(unit: U): string;
 
     convert(that: V, to: U): void {
         that.val *= this.factor(that.unit, to);
@@ -49,7 +51,8 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
         if (ULabelFormats.customCoded == parsedFormat)
             return formatInput
 
-        return selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)        
+        const lbls = this.unitLabels?.filter(x => x.unit == of)[0]?.labels;
+        return selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)
     }
 }
 

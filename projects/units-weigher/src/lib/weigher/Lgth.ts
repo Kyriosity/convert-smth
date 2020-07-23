@@ -3,7 +3,7 @@ import { linear } from './linear'
 import { DecimalRatios } from '../cors/z_barrel';
 
 export class Lgth extends linear<lgth, LengthUnits> {
-    protected rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit] }
+    rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit] }
 
     protected readonly unitLabels = [
         { unit: LengthUnits.picometre, labels: ['', 'pm', 'picometer'] },
@@ -19,15 +19,15 @@ export class Lgth extends linear<lgth, LengthUnits> {
         { unit: LengthUnits.gigametre, labels: ['', 'gm', 'gigameter'] },
         { unit: LengthUnits.terametre, labels: ['', 'tm', 'teraometer'] },
 
-        { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
-        { unit: LengthUnits.foot, labels: ['in', 'inch'] },
+        // { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
+        { unit: LengthUnits.inch, labels: ['in', 'inch'] },
 
         { unit: LengthUnits.nauticalMile, labels: ['', 'nmi', 'nautical mile'] },
         { unit: LengthUnits.mile, labels: ['', 'mi', 'mile'] },
     ];
 
-    protected readonly unitSystems = [ metric, feetBased]
-    protected readonly crossRatios = [ toMeter ]
+    protected readonly unitSystems = [metric, feetBased]
+    protected readonly crossRatios = [toMeter]
 
 }
 
@@ -60,6 +60,6 @@ const feetBased = [
 
 const toMeter = [
     { unit: LengthUnits.metre, ratio: 1, isBase: true },
-    { unit: LengthUnits.foot, ratio: 1/3.28084 },
+    { unit: LengthUnits.foot, ratio: 1 / 3.28084 },
     { unit: LengthUnits.nauticalMile, ratio: 1852 }
 ]

@@ -1,9 +1,9 @@
-import { formatNumber } from '@angular/common';
+
 import { UVal } from '../cors/z_barrel';
 import { gen } from '../weigher/gen';
-import { uFatQuestion, uWarn } from './utils';
+import { uFatQuestion, uWarn, PresentationParams, formatValueCustom, uQuestion } from './utils';
 
-export class UValView{
+export class UValView {
     private weighers: gen;
 
     constructor(private _locale?: string) {
@@ -15,7 +15,7 @@ export class UValView{
             return '';
 
         const formattedValue = params.DecimalFormatApplies || params.CultureApplies ?
-            UValView.formatValueCustom(uval.val, params, this._locale)
+            formatValueCustom(uval.val, params, this._locale)
             : uval.val.toLocaleString();
 
         const weigher = this.weighers.for(uval);
@@ -27,71 +27,14 @@ export class UValView{
             if (!toUnit)
                 return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`;
 
-            const initLabel = weigher.nameUnit(uval.unit);
+            const initLabel = 'ff';
             weigher.convert(uval, toUnit);
             if (!uval || !uval.val)
                 return `${uWarn} ${initLabel} -> ${params.ConvertTo}`;
         }
 
-        return `${formattedValue} ${weigher.nameUnit(uval.unit, params.UnitDisplay)}`;
-    }
-
-    private static formatValueCustom(value: number, params: PresentationParams, _currentLocale: string): string {
-        try {
-            if (!params.DecimalFormatApplies)
-                return formatNumber(value, params.Culture);
-
-            return formatNumber(value, params.CultureApplies ? params.Culture : _currentLocale, params.DecimalFormat);
-        }
-        catch (exception) { return exception; }
+        const label = weigher.nameUnit(uval.unit, params.UnitDisplay) ?? `${uQuestion}${weigher.rawUnitName(uval.unit)}${uQuestion}`;
+        return `${formattedValue} ${label}`;
     }
 }
 
-export class PresentationParams {
-    private _convertTo = '';
-    get ConvertTo(): string { return this._convertTo }
-    get ConvertApplies(): boolean { return '' != this.ConvertTo; }
-
-    private _decimalFormat = '';
-    get DecimalFormat(): string { return this._decimalFormat; }
-    get DecimalFormatApplies(): boolean { return '' != this.DecimalFormat; }
-
-    private _culture = '';
-    get Culture(): string { return this._culture; }
-    get CultureApplies(): boolean { return '' != this.Culture; }
-
-    private _unitDisplay = 'unit-short';
-    get UnitDisplay(): string { return this._unitDisplay }
-
-    parse(...args: string[]): void {
-        this.reset();
-
-        const maxParams = 4;
-        for (var i = 0; i < args.length && i < maxParams; i++) {
-            const arg = args[i].trim();
-            if (!PresentationParams.isArgOmmited(arg)) {
-                if (0 === i)
-                    this._convertTo = arg;
-                else if (1 === i)
-                    this._unitDisplay = arg;
-                else if (2 === i)
-                    this._decimalFormat = arg;
-                else if (3 === i)
-                    this._culture = arg;
-            }
-        }
-        if (args.length > maxParams) {
-            const extraParams = args.slice(maxParams);
-            console.warn(`${extraParams.length} parameter(s) supplied: ${extraParams.join(', ')}`);
-        }
-    }
-
-    private reset() {
-        this._convertTo = '';
-        this._decimalFormat = '';
-        this._culture = '';
-        this._unitDisplay = '';
-    }
-
-    private static isArgOmmited(arg: string): boolean { return ('' == arg! || '-' == arg); }
-}
