@@ -2,7 +2,7 @@
   <label class="my-app-label">Units:</label>
   <mat-form-field>
     <mat-select [(value)]="SelectedUnitsScheme" disabled="true">
-    <!-- disabled="{{dataSource.isLoading}}"> -->
+      <!-- disabled="{{dataSource.isLoading}}"> -->
       <mat-option *ngFor="let unitsScheme of unitSchemes" [value]="unitsScheme.value">{{unitsScheme.viewValue}}
       </mat-option>
     </mat-select>
@@ -34,7 +34,7 @@
 
     <ng-container matColumnDef="firstFlight">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>1. flight</th>
-      <td mat-cell *matCellDef="let row">{{row.firstFlight | date: 'dd:MM:yyyy'}}</td>
+      <td mat-cell *matCellDef="let row">{{row.firstFlight | date}}</td>
     </ng-container>
 
     <ng-container matColumnDef="range">

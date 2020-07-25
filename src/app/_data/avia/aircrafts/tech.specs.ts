@@ -17,7 +17,7 @@ const WrightFlyer: AirlinerSpecs = {
         name: 'Flyer',
         remarks: 'First successful heavier-than-air powered aircraft.',
     },
-    firstFlight: new Date(1903, 12, 17),
+    firstFlight: new Date('1903-12-17'),
 
     measurements: {
         airframe: {
@@ -60,7 +60,7 @@ const SikorskyS42: AirlinerSpecs = {
         serie: 42,
         remarks: 'A commercial flying boat designed and built by Sikorsky Aircraft to meet requirements for a long-range flying boat laid out by Pan Am. The innovative design included wing flaps, variable-pitch propellers, and a tail-carrying full-length hull. The prototype quickly established ten world records for payload-to-height. The fleet of S42 was used primarily on the Miami - Rio de Janeiro route. ',
     },
-    firstFlight: new Date(1934, 3, 29), // prototype
+    firstFlight: new Date('1934-3-29'), // prototype
 
     measurements: {
         airframe: {
@@ -103,7 +103,7 @@ const specsConcorde: AirlinerSpecs = {
         modification: '',
         remarks: 'the last passenger supersonic now (2020)',
     },
-    firstFlight: new Date(1969, 3, 2),
+    firstFlight: new Date('1969-3-2'),
 
     measurements: {
         airframe: {
@@ -157,7 +157,7 @@ const a380: AirlinerSpecs = {
         variant: 800,
         remarks: 'largest passenger aircraft ever [year 2020] with two fuselage-long decks',
     },
-    firstFlight: new Date(2018, 11, 6),
+    firstFlight: new Date('2005-04-27'),
 
     measurements: {
         airframe: {
@@ -213,7 +213,7 @@ const dreamliner: AirlinerSpecs = {
         variant: 10,
         remarks: 'stretche variant of wide-body composite-made airliner, fully designed in CAD',
     },
-    firstFlight: new Date(2017, 3, 31),
+    firstFlight: new Date('2017-3-31'),
 
     measurements: {
         airframe: {
@@ -268,7 +268,7 @@ const specs747_400: AirlinerSpecs = {
         variant: 400,
         remarks: 'Wide-body, long–range, commercial jet airliner and cargo aircraft. Variant of first wide-body airplane produced',
     },
-    firstFlight: new Date(1988, 4, 29),
+    firstFlight: new Date('1988-4-29'),
 
     measurements: {
         airframe: {
@@ -323,7 +323,7 @@ const specsGulfstream700: AirlinerSpecs = {
         modification: '',
         remarks: 'twin-engine business jet airplane',
     },
-    firstFlight: new Date(2020, 2, 14),
+    firstFlight: new Date('2020-2-14'),
 
     measurements: {
         airframe: {
@@ -378,7 +378,7 @@ const specsCrj700: AirlinerSpecs = {
         serie: 700,
         remarks: 'regional jet',
     },
-    firstFlight: new Date(1999, 5, 27),
+    firstFlight: new Date('1999-5-27'),
 
     measurements: {
         airframe: {
@@ -433,7 +433,7 @@ const specsMriya: CargoAirplaneSpecs = {
         variant: 225,
         remarks: 'biggest flying aircraft in the world with the single machine in operation',
     },
-    firstFlight: new Date(1988, 12, 21),
+    firstFlight: new Date('1988-12-21'),
 
     measurements: {
         airframe: {
@@ -496,7 +496,7 @@ const specsBelugaXl: CargoAirplaneSpecs = {
         modification: 'L',
         remarks: 'A large transport aircraft based on the Airbus A330 airliner. The aircraft entered service with Airbus Transport on 9 January 2020[ to replace the Airbus Beluga in the movement of oversized aircraft components, for example wings. The Beluga XL made its first flight on 19 July 2018, and received its type certification on 13 November 2019.',
     },
-    firstFlight: new Date(2018, 7, 19),
+    firstFlight: new Date('2018-7-19'),
 
     measurements: {
         airframe: {
@@ -562,7 +562,7 @@ const specsCessna172: AirlinerSpecs = {
         modification: 'R', // since 1996
         remarks: 'Four-seat, single-engine, high wing, fixed-wing aircraft. First flown in 1955, more "172"s have been built than any other aircraft.',
     },
-    firstFlight: new Date(1995, 6, 12),
+    firstFlight: new Date('1955-6-12'),
 
     measurements: {
         airframe: {
@@ -616,7 +616,7 @@ const specsA321neo: AirlinerSpecs = {
         modification: 'neo',
         remarks: 'A development of the A320 family of narrow-body jet-airliners produced by Airbus (neo - for "new engine option)"',
     },
-    firstFlight: new Date(2016, 2, 12),
+    firstFlight: new Date('2016-2-12'),
 
     measurements: {
         airframe: {
@@ -669,7 +669,7 @@ const specsAtr72: AirlinerSpecs = {
         serie: 72,
         remarks: 'twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy',
     },
-    firstFlight: new Date(1988, 10, 27),
+    firstFlight: new Date('1988-10-27'),
 
     measurements: {
         airframe: {
@@ -723,7 +723,7 @@ const specsB377Sg: CargoAirplaneSpecs = {
         modification: 'SG',
         remarks: 'Large, wide-bodied cargo aircraft that is used for hauling outsize cargo components. The only airplane in the world capable of carrying a complete third stage of the Saturn V rocket.',
     },
-    firstFlight: new Date(1965, 8, 31),
+    firstFlight: new Date('1965-8-31'),
 
     measurements: {
         airframe: {
@@ -781,7 +781,7 @@ const specsErj145Er: AirlinerSpecs = {
         modification: 'ER',
         remarks: 'twin-engine regional jet with extended range',
     },
-    firstFlight: new Date(1995, 8, 11),
+    firstFlight: new Date('1995-8-11'),
 
     measurements: {
         airframe: {
@@ -833,7 +833,7 @@ const specsFokker70: AirlinerSpecs = {
         serie: 100,
         remarks: 'narrow-body, twin-engined, medium-range, turbofan regional airliner ',
     },
-    firstFlight: new Date(1993, 4, 4),
+    firstFlight: new Date('1993-4-4'),
 
     measurements: {
         airframe: {
@@ -885,7 +885,7 @@ const specs737_100: AirlinerSpecs = {
         variant: 100,
         remarks: 'a narrow-body aircraft developed to supplement the 727 on short and thin routes, the twinjet retains the 707 fuselage cross-section and nose with two underwing turbofans.',
     },
-    firstFlight: new Date(1967, 4, 9),
+    firstFlight: new Date('1967-4-9'),
 
     measurements: {
         airframe: {
@@ -940,7 +940,7 @@ const specs747_400LCF: CargoAirplaneSpecs = {
         modification: 'LCF',
         remarks: 'an extensively modified Boeing 747-400 that is used exclusively for transporting Boeing 787 Dreamliner aircraft components to Boeing\'s assembly plants from suppliers around the world',
     },
-    firstFlight: new Date(2006, 9, 9),
+    firstFlight: new Date('2006-9-9'),
 
     measurements: {
         airframe: {
@@ -997,7 +997,7 @@ const specsDouglasDc3: AirlinerSpecs = {
         modification: '',
         remarks: 'a propeller-driven airliner which had a lasting effect on the airline industry in the 1930s/1940s; considered the first airliner that could profitably carry only passengers.',
     },
-    firstFlight: new Date(1935, 12, 17),
+    firstFlight: new Date('1935-12-17'),
 
     measurements: {
         airframe: {

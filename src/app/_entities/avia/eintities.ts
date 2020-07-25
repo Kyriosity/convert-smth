@@ -41,7 +41,6 @@ export interface CargoSpecs {
     bay?: Dimensions,
 }
 
-
 export interface MachineDesignation {
     brand: AirplaneManufacturer,
     name?: string,
