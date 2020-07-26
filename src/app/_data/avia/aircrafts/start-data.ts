@@ -5,16 +5,16 @@ import {
     liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
     kilonewton, poundforce, kilogramforce,
 } from 'units-weigher';
-import { AircraftManufacturers as brands } from 'src/app/_entities/avia/aircrafts/manufacturers';
-import { LinerDescription as AirlinerDescr, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
+import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/builders';
+import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
 
 // ********************** Wright Flyer I ***********************
-const ship_ZeppelinNT: AirlinerDescr = {
+const ship_ZeppelinNT: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Zeppelin,
+        brand: builders.Zeppelin,
         name: 'Zeppelin',
         family: 'NT',
         serie: 7,
@@ -58,14 +58,14 @@ const ship_ZeppelinNT: AirlinerDescr = {
     powerplant: new Array<Engine>(3),
     maxSeats: 12,
 
-    listPrice2020: 8500000
+    listPriceMlnUsd2020: 8.5
 }
 
-const plane_WrightFlyer: AirlinerDescr = {
+const plane_WrightFlyer: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Wrights,
+        brand: builders.Wright,
         name: 'Flyer',
         remarks: 'First successful heavier-than-air powered aircraft.',
     },
@@ -102,11 +102,11 @@ const plane_WrightFlyer: AirlinerDescr = {
 }
 
 // ********************** Sikorsky S-42 ***********************
-const plane_SikorskyS42: AirlinerDescr = {
+const plane_SikorskyS42: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Sikorsky,
+        brand: builders.Sikorsky,
         name: 'Flying Clipper',
         family: 'S',
         serie: 42,
@@ -146,11 +146,11 @@ const plane_SikorskyS42: AirlinerDescr = {
 };
 
 // ********************** CONCORDE ***********************
-const plane_Concorde: AirlinerDescr = {
+const plane_Concorde: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.BAC,
+        brand: builders.BAC,
         name: 'Concorde',
         modification: '',
         remarks: 'the last passenger supersonic now (2020)',
@@ -196,15 +196,15 @@ const plane_Concorde: AirlinerDescr = {
     powerplant: new Array<Engine>(4),
     maxSeats: 128, // in high density layout
 
-    listPrice2020: 158 * 1000 * 1000
+    listPriceMlnUsd2020: 158
 };
 
 // ********************** AIRBUS A380 ***********************
-const plane_A380: AirlinerDescr = {
+const plane_A380: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Airbus,
+        brand: builders.Airbus,
         name: 'A380',
         variant: 800,
         remarks: 'largest passenger aircraft ever [year 2020] with two fuselage-long decks',
@@ -251,15 +251,15 @@ const plane_A380: AirlinerDescr = {
     powerplant: new Array<Engine>(4),
     maxSeats: 853,
 
-    listPrice2020: 432600000
+    listPriceMlnUsd2020: 432
 };
 
 // ********************** BOEING DREAMLINER 787-10 ***********************
-const plane_Dreamliner: AirlinerDescr = {
+const plane_Dreamliner: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Boeing,
+        brand: builders.Boeing,
         name: 'Dreamliner',
         serie: 787,
         variant: 10,
@@ -306,15 +306,15 @@ const plane_Dreamliner: AirlinerDescr = {
     powerplant: new Array<Engine>(2),
     maxSeats: 380,
 
-    listPrice2020: 306100000
+    listPriceMlnUsd2020: 306
 };
 
 // ********************** BOEING 747-400 ***********************
-const plane_747_400: AirlinerDescr = {
+const plane_747_400: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Boeing,
+        brand: builders.Boeing,
         name: 'Jumbo Jet',
         serie: 747,
         variant: 400,
@@ -365,11 +365,11 @@ const plane_747_400: AirlinerDescr = {
 };
 
 // ********************** GULFSTREAM 700 ***********************
-const plane_Gulfstream700: AirlinerDescr = {
+const plane_Gulfstream700: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Gulfstream,
+        brand: builders.Gulfstream,
         name: 'Gulfstream',
         serie: 700,
         modification: '',
@@ -417,15 +417,15 @@ const plane_Gulfstream700: AirlinerDescr = {
     powerplant: new Array<Engine>(2),
     maxSeats: 19,
 
-    listPrice2020: 75 * 1000 * 1000
+    listPriceMlnUsd2020: 75
 };
 
 // ********************** BOMBARDIER CRJ-700 ***********************
-const plane_Crj700: AirlinerDescr = {
+const plane_Crj700: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Bombardier,
+        brand: builders.Bombardier,
         family: 'CRJ',
         serie: 700,
         remarks: 'regional jet',
@@ -471,7 +471,7 @@ const plane_Crj700: AirlinerDescr = {
     powerplant: new Array<Engine>(2),
     maxSeats: 78,
 
-    listPrice2020: 24 * 1000 * 1000
+    listPriceMlnUsd2020: 24
 };
 
 // ********************** ANTONOV MRIYA ***********************
@@ -479,7 +479,7 @@ const plane_Mriya: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: brands.Antonov,
+        brand: builders.Antonov,
         name: 'Mriya',
         family: 'An',
         variant: 225,
@@ -532,7 +532,7 @@ const plane_Mriya: Freighter = {
     cockpitCrew: new Array<CrewPerson>(6),
     powerplant: new Array<Engine>(6),
 
-    listPrice2020: 250 * 1000 * 1000, // USD
+    listPriceMlnUsd2020: 250
 };
 
 
@@ -542,7 +542,7 @@ const plane_BelugaXl: Freighter = {
 
     designation: {
         name: 'Beluga XL',
-        brand: brands.Airbus,
+        brand: builders.Airbus,
         family: '330',
         serie: 743,
         modification: 'L',
@@ -599,15 +599,15 @@ const plane_BelugaXl: Freighter = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(2),
 
-    listPrice2020: 183 * 1000 * 1000
+    listPriceMlnUsd2020: 183
 };
 
 // ********************** CESSNA 172 ***********************
-const plane_Cessna172: AirlinerDescr = {
+const plane_Cessna172: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Cessna,
+        brand: builders.Cessna,
         name: 'Skyhawk',
         family: '',
         serie: 172,
@@ -654,15 +654,15 @@ const plane_Cessna172: AirlinerDescr = {
     powerplant: new Array<Engine>(1),
     maxSeats: 3,
 
-    listPrice2020: 170 * 1000
+    listPriceMlnUsd2020: 0.17
 };
 
 // ********************** A321neo ***********************
-const plane_A321neo: AirlinerDescr = {
+const plane_A321neo: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Airbus,
+        brand: builders.Airbus,
         family: 'A',
         serie: 321,
         modification: 'neo',
@@ -708,15 +708,15 @@ const plane_A321neo: AirlinerDescr = {
     powerplant: new Array<Engine>(2),
     maxSeats: 450,
 
-    listPrice2020: 117 * 1000 * 1000
+    listPriceMlnUsd2020: 117
 };
 
 // ********************** ATR72 ***********************
-const plane_Atr72: AirlinerDescr = {
+const plane_Atr72: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.ATR,
+        brand: builders.ATR,
         name: 'ATR',
         serie: 72,
         remarks: 'twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy',
@@ -760,7 +760,7 @@ const plane_Atr72: AirlinerDescr = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(2),
     maxSeats: 78,
-    listPrice2020: 16500000
+    listPriceMlnUsd2020: 16.5
 };
 
 // ********************** Aero Spacelines B-377-SG Super Guppy ***********************
@@ -768,7 +768,7 @@ const plane_B377Sg: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: brands.AeroSpacelines,
+        brand: builders.AeroSpacelines,
         name: 'Super Guppy',
         family: 'B',
         serie: 377,
@@ -823,11 +823,11 @@ const plane_B377Sg: Freighter = {
 };
 
 // ********************** EMBRAER ERJ-145 ***********************
-const plane_Erj145Er: AirlinerDescr = {
+const plane_Erj145Er: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Embraer,
+        brand: builders.Embraer,
         family: 'ERJ',
         serie: 145,
         modification: 'ER',
@@ -872,15 +872,15 @@ const plane_Erj145Er: AirlinerDescr = {
     powerplant: new Array<Engine>(2),
     maxSeats: 50,
 
-    listPrice2020: 21 * 1000 * 1000
+    listPriceMlnUsd2020: 21
 };
 
 // ********************** Focker 70 ***********************
-const plane_Fokker70: AirlinerDescr = {
+const plane_Fokker70: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Fokker,
+        brand: builders.Fokker,
         name: 'Fokker',
         serie: 100,
         remarks: 'narrow-body, twin-engined, medium-range, turbofan regional airliner ',
@@ -923,15 +923,15 @@ const plane_Fokker70: AirlinerDescr = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(2),
     maxSeats: 85,
-    listPrice2020: 20 * 100 * 100
+    listPriceMlnUsd2020: 20
 };
 
 // ********************** Boeing 737-100 ***********************
-const plane_737_100: AirlinerDescr = {
+const plane_737_100: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Boeing,
+        brand: builders.Boeing,
         family: 'B',
         serie: 737,
         variant: 100,
@@ -977,7 +977,7 @@ const plane_737_100: AirlinerDescr = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(2),
     maxSeats: 124,
-    listPrice2020: 27200000
+    listPriceMlnUsd2020: 27.2
 };
 
 // ********************** Boeing 747-400 LCF ***********************
@@ -985,7 +985,7 @@ const plane_747_400LCF: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: brands.Boeing,
+        brand: builders.Boeing,
         name: 'LCF', // Large Cargo Freigter
         family: '747',
         serie: 400,
@@ -1033,16 +1033,16 @@ const plane_747_400LCF: Freighter = {
 
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(4),
-    listPrice2020: 232 * 1000 * 1000
+    listPriceMlnUsd2020: 232
 };
 
 
 // ********************** Douglas DC-3 ***********************
-const plane_DouglasDc3: AirlinerDescr = {
+const plane_DouglasDc3: Liner = {
     unid: undefined,
 
     designation: {
-        brand: brands.Douglas,
+        brand: builders.Douglas,
         name: '',
         family: 'DC',
         serie: 3,
@@ -1084,7 +1084,7 @@ const plane_DouglasDc3: AirlinerDescr = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(2),
     maxSeats: 32,
-    listPrice2020: 1480000
+    listPriceMlnUsd2020: 1.48
 };
 
 export const fullAircraftsList: AircraftDescription[] = [

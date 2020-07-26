@@ -14,7 +14,7 @@ export interface AircraftDescription extends DomainEntity {
     powerplant: Engine[]
   
     firstFlight: Date,
-    listPrice2020?: number // USD
+    listPriceMlnUsd2020?: number
   }
 
 

@@ -1,7 +1,7 @@
 import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
 import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
-import { AircraftManufacturers } from 'src/app/_entities/avia/aircrafts/manufacturers';
+import { nameFor } from 'src/app/_entities/avia/aircrafts/builders';
 
 export interface AircraftDescrTableItem {
     id: number;
@@ -19,7 +19,7 @@ export interface AircraftDescrTableItem {
     powerplant: number;
 
     firstFlight: Date;
-    price2020: number;
+    priceM2020: number;
   }
 
 export module Digest {
@@ -31,7 +31,7 @@ export module Digest {
         const digest: AircraftDescrTableItem = {
             id: item.unid,
 
-            brand: AircraftManufacturers[item.designation.brand],
+            brand: nameFor(item.designation.brand),
             name: designate(item.designation),
 
             range: item.performance.range,
@@ -45,7 +45,7 @@ export module Digest {
             powerplant: item.powerplant.length,
 
             firstFlight: item.firstFlight,
-            price2020: item.listPrice2020,
+            priceM2020: item.listPriceMlnUsd2020,
         };
         return digest;
     }

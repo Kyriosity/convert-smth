@@ -38,7 +38,7 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
   ];
 
   displayedColumns = ['brand', 'name', 'firstFlight', 'range', 'rangeKm', 'cruiseSpeed', 'cruiseMach',
-    'ceiling', 'payload', 'fuelCapacity', 'seats', 'cockpitCrew', 'powerplant', 'price2020'];
+    'ceiling', 'payload', 'fuelCapacity', 'seats', 'cockpitCrew', 'powerplant', 'priceM2020'];
 
   ngOnInit() {
     this.dataSource = new AircraftsDescrTableDataSource();

@@ -1,6 +1,6 @@
 
 import { lgth, area, mass, velo, vol, frc, Dimensions } from 'units-weigher';
-import { AircraftManufacturers } from './aircrafts/manufacturers';
+import { AircraftBuilders } from './aircrafts/builders';
 
 export interface CrewPerson {}
 
@@ -43,7 +43,7 @@ export interface CargoBay {
 }
 
 export interface MachineDesignation {
-    brand: AircraftManufacturers,
+    brand: AircraftBuilders,
     name?: string,
 
     serie?: number,
