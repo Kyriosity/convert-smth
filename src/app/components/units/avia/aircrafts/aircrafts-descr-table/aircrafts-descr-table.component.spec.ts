@@ -4,15 +4,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-import { AircraftsSpecsTableComponent } from './aircrafts-specs-table.component';
+import { AircraftsDescrTableComponent } from './aircrafts-descr-table.component';
 
-describe('AircraftsSpecsTableComponent', () => {
-  let component: AircraftsSpecsTableComponent;
-  let fixture: ComponentFixture<AircraftsSpecsTableComponent>;
+describe('AircraftsDescrTableComponent', () => {
+  let component: AircraftsDescrTableComponent;
+  let fixture: ComponentFixture<AircraftsDescrTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AircraftsSpecsTableComponent ],
+      declarations: [ AircraftsDescrTableComponent ],
       imports: [
         NoopAnimationsModule,
         MatPaginatorModule,
@@ -23,7 +23,7 @@ describe('AircraftsSpecsTableComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AircraftsSpecsTableComponent);
+    fixture = TestBed.createComponent(AircraftsDescrTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

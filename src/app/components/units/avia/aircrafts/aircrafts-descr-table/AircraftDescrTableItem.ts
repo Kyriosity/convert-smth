@@ -1,9 +1,9 @@
 import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
-import { AirplaneSpecs, AirplaneManufacturer } from 'src/app/_entities/avia/aircrafts/entities';
+import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
+import { AircraftManufacturers } from 'src/app/_entities/avia/aircrafts/manufacturers';
 
-
-export interface AircraftsSpecsTableItem {
+export interface AircraftDescrTableItem {
     id: number;
     brand: string;
     name: string;
@@ -24,14 +24,14 @@ export interface AircraftsSpecsTableItem {
 
 export module Digest {
 
-    export function from(item: AirplaneSpecs): AircraftsSpecsTableItem {
+    export function from(item: AircraftDescription): AircraftDescrTableItem {
         if (!item)
-            throw new UValErr('no specs submitted');
+            throw new UValErr('no item submitted');
 
-        const digest: AircraftsSpecsTableItem = {
+        const digest: AircraftDescrTableItem = {
             id: item.unid,
 
-            brand: AirplaneManufacturer[item.designation.brand],
+            brand: AircraftManufacturers[item.designation.brand],
             name: designate(item.designation),
 
             range: item.performance.range,

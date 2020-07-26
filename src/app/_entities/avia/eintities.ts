@@ -1,5 +1,6 @@
-import { AirplaneManufacturer } from './aircrafts/entities';
+
 import { lgth, area, mass, velo, vol, frc, Dimensions } from 'units-weigher';
+import { AircraftManufacturers } from './aircrafts/manufacturers';
 
 export interface CrewPerson {}
 
@@ -35,14 +36,14 @@ export interface FlyingMachineTakeOff {
     thrust?: frc,
 }
 
-export interface CargoSpecs {
+export interface CargoBay {
     capacity: vol,
 
-    bay?: Dimensions,
+    dims?: Dimensions,
 }
 
 export interface MachineDesignation {
-    brand: AirplaneManufacturer,
+    brand: AircraftManufacturers,
     name?: string,
 
     serie?: number,

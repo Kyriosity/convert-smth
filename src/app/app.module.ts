@@ -25,7 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/lingua/welcome/welcome.component';
 import { AircraftsComponent } from './components/units/avia/aircrafts/aircrafts.component';
-import { AircraftsSpecsTableComponent } from './components/units/avia/aircrafts/aircrafts-specs-table/aircrafts-specs-table.component';
+import { AircraftsDescrTableComponent } from './components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component';
 import { uValPipe } from 'projects/units-weigher/src/lib/uvalue.pipe';
 
 
@@ -35,7 +35,7 @@ import { uValPipe } from 'projects/units-weigher/src/lib/uvalue.pipe';
     MainNavComponent,
     WelcomeComponent,
     AircraftsComponent,
-    AircraftsSpecsTableComponent,
+    AircraftsDescrTableComponent,
     HomeComponent,
 
     // ToDo: export pipe thru public-api in lib

@@ -1,5 +1,3 @@
-import { AirplaneManufacturer, AirlinerSpecs, CargoAirplaneSpecs, AirplaneSpecs } from 'src/app/_entities/avia/aircrafts/entities';
-import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
 import {
     meter, kilometer, nauticalMile, inch, foot, mile,
     kilogram, tonne, pound,
@@ -7,13 +5,67 @@ import {
     liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
     kilonewton, poundforce, kilogramforce,
 } from 'units-weigher';
+import { AircraftManufacturers as brands } from 'src/app/_entities/avia/aircrafts/manufacturers';
+import { LinerDescription as AirlinerDescr, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
+import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
 
 // ********************** Wright Flyer I ***********************
-const WrightFlyer: AirlinerSpecs = {
+const ship_ZeppelinNT: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Wrights,
+        brand: brands.Zeppelin,
+        name: 'Zeppelin',
+        family: 'NT',
+        serie: 7,
+        remarks: 'helium-filled airshis being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.[1]',
+    },
+    firstFlight: new Date('1997-11-18'), 
+
+    measurements: {
+        airframe: {
+            length: meter(75),
+            height: meter(17.4),
+            width: meter(19.5)
+        },
+
+        wingSpan: meter(0),
+        wingArea: meter(0).asX2,
+    },
+
+    weights: {
+        empty: kilogram(8050 - 1900),
+        maxTakeoff: kilogram(8050),
+        maxLanding: kilogram(8050),
+        payload: kilogram(1900),
+    },
+
+    performance: {
+        range: kilometer(1000),
+        cruiseSpeed: kilometersHour(115),
+        maxSpeed: kilometersHour(120),
+        serviceCeiling: meter(2600),
+        fuelCapacity: undefined,
+        // ToDo: cruiseFuelConsumption: ,
+    },
+    takeoff: {
+        run: meter(0),
+        minSpeed: kilometersHour(0),
+    },
+
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(3),
+    maxSeats: 12,
+
+    listPrice2020: 8500000
+}
+
+const plane_WrightFlyer: AirlinerDescr = {
+    unid: undefined,
+
+    designation: {
+        brand: brands.Wrights,
         name: 'Flyer',
         remarks: 'First successful heavier-than-air powered aircraft.',
     },
@@ -50,11 +102,11 @@ const WrightFlyer: AirlinerSpecs = {
 }
 
 // ********************** Sikorsky S-42 ***********************
-const SikorskyS42: AirlinerSpecs = {
+const plane_SikorskyS42: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Sikorsky,
+        brand: brands.Sikorsky,
         name: 'Flying Clipper',
         family: 'S',
         serie: 42,
@@ -94,11 +146,11 @@ const SikorskyS42: AirlinerSpecs = {
 };
 
 // ********************** CONCORDE ***********************
-const specsConcorde: AirlinerSpecs = {
+const plane_Concorde: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.BAC,
+        brand: brands.BAC,
         name: 'Concorde',
         modification: '',
         remarks: 'the last passenger supersonic now (2020)',
@@ -148,11 +200,11 @@ const specsConcorde: AirlinerSpecs = {
 };
 
 // ********************** AIRBUS A380 ***********************
-const a380: AirlinerSpecs = {
+const plane_A380: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Airbus,
+        brand: brands.Airbus,
         name: 'A380',
         variant: 800,
         remarks: 'largest passenger aircraft ever [year 2020] with two fuselage-long decks',
@@ -203,11 +255,11 @@ const a380: AirlinerSpecs = {
 };
 
 // ********************** BOEING DREAMLINER 787-10 ***********************
-const dreamliner: AirlinerSpecs = {
+const plane_Dreamliner: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Boeing,
+        brand: brands.Boeing,
         name: 'Dreamliner',
         serie: 787,
         variant: 10,
@@ -258,11 +310,11 @@ const dreamliner: AirlinerSpecs = {
 };
 
 // ********************** BOEING 747-400 ***********************
-const specs747_400: AirlinerSpecs = {
+const plane_747_400: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Boeing,
+        brand: brands.Boeing,
         name: 'Jumbo Jet',
         serie: 747,
         variant: 400,
@@ -313,11 +365,11 @@ const specs747_400: AirlinerSpecs = {
 };
 
 // ********************** GULFSTREAM 700 ***********************
-const specsGulfstream700: AirlinerSpecs = {
+const plane_Gulfstream700: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Gulfstream,
+        brand: brands.Gulfstream,
         name: 'Gulfstream',
         serie: 700,
         modification: '',
@@ -369,11 +421,11 @@ const specsGulfstream700: AirlinerSpecs = {
 };
 
 // ********************** BOMBARDIER CRJ-700 ***********************
-const specsCrj700: AirlinerSpecs = {
+const plane_Crj700: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Bombardier,
+        brand: brands.Bombardier,
         family: 'CRJ',
         serie: 700,
         remarks: 'regional jet',
@@ -423,11 +475,11 @@ const specsCrj700: AirlinerSpecs = {
 };
 
 // ********************** ANTONOV MRIYA ***********************
-const specsMriya: CargoAirplaneSpecs = {
+const plane_Mriya: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Antonov,
+        brand: brands.Antonov,
         name: 'Mriya',
         family: 'An',
         variant: 225,
@@ -464,7 +516,7 @@ const specsMriya: CargoAirplaneSpecs = {
     cargo: {
         capacity: cubicMeter(1200),
 
-        bay: {
+        dims: {
             length: meter(43.32),
             width: meter(6.4),
             height: meter(4.4),
@@ -485,12 +537,12 @@ const specsMriya: CargoAirplaneSpecs = {
 
 
 // ********************** AIRBUS BELUGA XL ***********************
-const specsBelugaXl: CargoAirplaneSpecs = {
+const plane_BelugaXl: Freighter = {
     unid: undefined,
 
     designation: {
         name: 'Beluga XL',
-        brand: AirplaneManufacturer.Airbus,
+        brand: brands.Airbus,
         family: '330',
         serie: 743,
         modification: 'L',
@@ -529,7 +581,7 @@ const specsBelugaXl: CargoAirplaneSpecs = {
     cargo: {
         capacity: cubicMeter(2209),
 
-        bay: {
+        dims: {
             length: meter(45),
             width: meter(8),
             height: meter(8),
@@ -551,11 +603,11 @@ const specsBelugaXl: CargoAirplaneSpecs = {
 };
 
 // ********************** CESSNA 172 ***********************
-const specsCessna172: AirlinerSpecs = {
+const plane_Cessna172: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Cessna,
+        brand: brands.Cessna,
         name: 'Skyhawk',
         family: '',
         serie: 172,
@@ -606,11 +658,11 @@ const specsCessna172: AirlinerSpecs = {
 };
 
 // ********************** A321neo ***********************
-const specsA321neo: AirlinerSpecs = {
+const plane_A321neo: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Airbus,
+        brand: brands.Airbus,
         family: 'A',
         serie: 321,
         modification: 'neo',
@@ -660,11 +712,11 @@ const specsA321neo: AirlinerSpecs = {
 };
 
 // ********************** ATR72 ***********************
-const specsAtr72: AirlinerSpecs = {
+const plane_Atr72: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.ATR,
+        brand: brands.ATR,
         name: 'ATR',
         serie: 72,
         remarks: 'twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy',
@@ -712,11 +764,11 @@ const specsAtr72: AirlinerSpecs = {
 };
 
 // ********************** Aero Spacelines B-377-SG Super Guppy ***********************
-const specsB377Sg: CargoAirplaneSpecs = {
+const plane_B377Sg: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.AeroSpacelines,
+        brand: brands.AeroSpacelines,
         name: 'Super Guppy',
         family: 'B',
         serie: 377,
@@ -754,7 +806,7 @@ const specsB377Sg: CargoAirplaneSpecs = {
     cargo: {
         capacity: cubicFoot(49750),
 
-        bay: {
+        dims: {
             length: foot(111),
             width: foot(25),
             height: foot(25),
@@ -771,11 +823,11 @@ const specsB377Sg: CargoAirplaneSpecs = {
 };
 
 // ********************** EMBRAER ERJ-145 ***********************
-const specsErj145Er: AirlinerSpecs = {
+const plane_Erj145Er: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Embraer,
+        brand: brands.Embraer,
         family: 'ERJ',
         serie: 145,
         modification: 'ER',
@@ -824,11 +876,11 @@ const specsErj145Er: AirlinerSpecs = {
 };
 
 // ********************** Focker 70 ***********************
-const specsFokker70: AirlinerSpecs = {
+const plane_Fokker70: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Fokker,
+        brand: brands.Fokker,
         name: 'Fokker',
         serie: 100,
         remarks: 'narrow-body, twin-engined, medium-range, turbofan regional airliner ',
@@ -875,11 +927,11 @@ const specsFokker70: AirlinerSpecs = {
 };
 
 // ********************** Boeing 737-100 ***********************
-const specs737_100: AirlinerSpecs = {
+const plane_737_100: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Boeing,
+        brand: brands.Boeing,
         family: 'B',
         serie: 737,
         variant: 100,
@@ -929,11 +981,11 @@ const specs737_100: AirlinerSpecs = {
 };
 
 // ********************** Boeing 747-400 LCF ***********************
-const specs747_400LCF: CargoAirplaneSpecs = {
+const plane_747_400LCF: Freighter = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Boeing,
+        brand: brands.Boeing,
         name: 'LCF', // Large Cargo Freigter
         family: '747',
         serie: 400,
@@ -986,11 +1038,11 @@ const specs747_400LCF: CargoAirplaneSpecs = {
 
 
 // ********************** Douglas DC-3 ***********************
-const specsDouglasDc3: AirlinerSpecs = {
+const plane_DouglasDc3: AirlinerDescr = {
     unid: undefined,
 
     designation: {
-        brand: AirplaneManufacturer.Douglas,
+        brand: brands.Douglas,
         name: '',
         family: 'DC',
         serie: 3,
@@ -1035,27 +1087,29 @@ const specsDouglasDc3: AirlinerSpecs = {
     listPrice2020: 1480000
 };
 
-export const airplanesFullTechSpecs: AirplaneSpecs[] = [
-    WrightFlyer,
-    SikorskyS42,
-    specsConcorde,
-    a380,
-    dreamliner,
-    specs747_400,
-    specsGulfstream700,
-    specsCrj700,
-    specsMriya,
-    specsBelugaXl,
-    specsCessna172,
-    specsA321neo,
-    specsAtr72,
-    specsB377Sg,
-    specsErj145Er,
-    specsFokker70,
-    specs737_100,
-    specs747_400LCF,
+export const fullAircraftsList: AircraftDescription[] = [
+    ship_ZeppelinNT,
+    
+    plane_WrightFlyer,
+    plane_SikorskyS42,
+    plane_Concorde,
+    plane_A380,
+    plane_Dreamliner,
+    plane_747_400,
+    plane_Gulfstream700,
+    plane_Crj700,
+    plane_Mriya,
+    plane_BelugaXl,
+    plane_Cessna172,
+    plane_A321neo,
+    plane_Atr72,
+    plane_B377Sg,
+    plane_Erj145Er,
+    plane_Fokker70,
+    plane_737_100,
+    plane_747_400LCF,
 
-    specsDouglasDc3,
+    plane_DouglasDc3,
 
     // Bleriot-SPAD S.33
 ];
