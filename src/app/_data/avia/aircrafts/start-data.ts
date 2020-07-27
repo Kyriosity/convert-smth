@@ -3,7 +3,7 @@ import {
     kilogram, tonne, pound,
     kilometersHour, knot, milesHour, Mach,
     liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
-    kilonewton, poundforce, kilogramforce,
+    kilonewton, poundforce, kilogramforce, Kilogram,
 } from 'units-weigher';
 import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/builders';
 import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
@@ -365,7 +365,7 @@ const plane_747_400: Liner = {
 }
 
 // ********************** GULFSTREAM 700 ***********************
-const plane_Gulfstream700: Liner = {
+const bizJet_Gulfstream700: Liner = {
     unid: undefined,
 
     designation: {
@@ -1243,6 +1243,111 @@ const bizJet_Falcon: Liner = {
     listPriceMlnUsd2020: 53.8 
 }
 
+// ********************** Hawker Siddeley Trident 1/1C ***********************
+const plane_Trident: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.HawkerSiddeley,
+        name: 'Trident',
+        serie: 1,
+        variant: 28,
+        remarks: 'is a now-retired British short- (and later medium-) range airliner. It was the first T-tail rear-engined trijet airliner to be designed. It was also the first airliner to make a blind landing in revenue service in 1965.'
+     },
+    firstFlight: new Date('1962-1-9'),
+
+    measurements: {
+        airframe: {
+            length: foot(114 + 9/12),
+            height: foot(27), 
+        },
+
+        wingSpan: foot(89 + 10/12), 
+        wingArea: foot(1358).asX2,
+    },
+
+    weights: {
+        empty: pound(66700),
+        maxTakeoff: pound(107000),
+
+        payload: pound(26800),
+    },
+
+    performance: {
+        range: nauticalMile(1170),
+        cruiseSpeed: knot(506),
+
+        serviceCeiling: foot(35000),
+        thrust: poundforce(3 * 10400),
+
+        fuelCapacity: imperialGallon(3840),
+        // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
+    },
+
+    takeoff: {
+        run: foot(6000),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(3),
+    powerplant: new Array<Engine>(3),
+
+    maxSeats: 101,
+    listPriceMlnUsd2020: 150
+}
+
+// ********************** Sud Aviation Caravelle ***********************
+const plane_Caravelle: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.SudAviation,
+        name: 'Caravelle',
+        family: 'SE',
+        serie: 210,
+        variant: 1,
+        remarks: 'is a French short/medium-range jet airliner. It holds the distinction of being the world\'s first jet-powered airliner to be developed for the short/medium-range market. The Caravelle established the aft-mounted engine, clean-wing design configuration that is still used widely by smaller jetliners.',
+     },
+    firstFlight: new Date('1955-5-27'),
+
+    measurements: {
+        airframe: {
+            length: meter(32.01),
+            height: meter(8.72), 
+        },
+
+        wingSpan: meter(34.3), 
+        wingArea: meter(146.7).asX2,
+    },
+
+    weights: {
+        empty: kilogram(22200),
+        maxTakeoff: kilogram(46000),
+
+        payload: kilogram(-1),
+    },
+
+    performance: {
+        range: kilometer(1700),
+        maxSpeed: kilometersHour(805),
+        cruiseSpeed: kilometersHour(600),
+
+        serviceCeiling: meter(12000),
+        thrust: kilogramforce(2 * 4763),
+
+//        fuelCapacity: (),
+    },
+
+    takeoff: {
+        run: meter(-1),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(3),
+    powerplant: new Array<Engine>(2),
+
+    maxSeats: 80,
+    listPriceMlnUsd2020: 120 // $5.5M at 1972
+}
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
     
@@ -1252,7 +1357,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_A380,
     plane_Dreamliner,
     plane_747_400,
-    plane_Gulfstream700,
+    bizJet_Gulfstream700,
     plane_Crj700,
     plane_Mriya,
     plane_BelugaXl,
@@ -1268,6 +1373,8 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_DouglasDc3,
     plane_SN601,
     plane_TriStar,
+    plane_Trident,
+    plane_Caravelle,
     
     bizJet_Falcon,
 ];

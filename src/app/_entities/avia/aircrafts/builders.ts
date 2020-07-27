@@ -15,8 +15,10 @@ export enum AircraftBuilders {
     Embraer,
     Fokker,
     Gulfstream,
+    HawkerSiddeley,
     Lockheed,
     Sikorsky,
+    SudAviation,
     Wright,
     Zeppelin,
 }
@@ -36,8 +38,10 @@ const namings: { [id in keyof typeof AircraftBuilders]?: naming; } = {
     Embraer: { short: 'Embraer', full: 'Embraer Sociedade Anônima', details: 'is a Brazilian aerospace conglomerate that produces commercial, military, executive and agricultural aircraft[6] and provides aeronautical services. It was founded in 1969 in São José dos Campos, São Paulo, where its headquarters are located. The company is the third largest producer of civil aircraft, after Boeing and Airbus.' },
     Fokker: { short: 'Fokker' },
     Gulfstream: { short: 'Gulfstream', full: 'Gulfstream Aerospace', details: ' is an American aircraft company and a wholly owned subsidiary of General Dynamics. Gulfstream designs, develops, manufactures, markets, and services business jet aircraft. Gulfstream has produced more than 2,000 aircraft since 1958.' },
+    HawkerSiddeley: { short: 'Hawker Siddeley', full: 'Hawker Siddeley Group Limited', details: 'as a group of British manufacturing companies engaged in aircraft production. Hawker Siddeley combined the legacies of several British aircraft manufacturers, emerging through a series of mergers and acquisitions as one of only two such major British companies in the 1960s. In 1977, Hawker Siddeley became a founding component of the nationalised British Aerospace (BAe).' }, 
     Lockheed: { short: 'Lockheed', full: 'Lockheed Corporation', details: ' was an American aerospace company, founded in 1926 and later merged with Martin Marietta to form Lockheed Martin in 1995. ' },
-    Sikorsky: { short: 'Sikorsky', full: 'Sikorsky Aircraft', details: 'is an American aircraft manufacturer based in Stratford, Connecticut. It was established by Russian–American aviator Igor Sikorsky in 1923 and was among the first companies to manufacture helicopters for civilian and military use.' },
+    Sikorsky: { short: 'Sikorsky', full: 'Sikorsky Aircraft', details: 'is an American aircraft manufacturer based in Stratford, Connecticut. Established by american aviator Igor Sikorsky in 1923 and was among the first companies to manufacture helicopters for civilian and military use.' },
+    SudAviation: { short: 'Sud Aviation', details: 'was a French state-owned aircraft manufacturer, originating from the merger of Sud-Est and Sud-Ouest. The company became a major manufactuter of helicopters, designing and producing several types which went on to be built in large numbers.'},
     Wright: { short: 'Wright', full: 'Brothers Wright', details: 'brothers Orville and Wilbur' },
 
     Zeppelin: { short: 'Zeppelin', full: 'Luftschiffbau Zeppelin GmbH ', details: 'a German aircraft manufacturing company. It is perhaps best known for its leading role in the design and manufacture of rigid airships, commonly referred to as Zeppelins due to the company\'s prominence.' },
