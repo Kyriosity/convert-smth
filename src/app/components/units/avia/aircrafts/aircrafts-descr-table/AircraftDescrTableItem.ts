@@ -1,7 +1,7 @@
 import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
 import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
-import { nameFor } from 'src/app/_entities/avia/aircrafts/builders';
+import { shortName } from 'src/app/_entities/avia/aircrafts/builders';
 
 export interface AircraftDescrTableItem {
     id: number;
@@ -31,7 +31,7 @@ export module Digest {
         const digest: AircraftDescrTableItem = {
             id: item.unid,
 
-            brand: nameFor(item.designation.brand),
+            brand: shortName(item.designation.brand),
             name: designate(item.designation),
 
             range: item.performance.range,

@@ -10,6 +10,7 @@ export enum AircraftBuilders {
     Bombardier,
     BAC,
     Cessna,
+    Dassault,
     Douglas,
     Embraer,
     Fokker,
@@ -30,6 +31,7 @@ const namings: { [id in keyof typeof AircraftBuilders]?: naming; } = {
     Bombardier: { short: 'Bombardier', full: 'Bombardier Inc.', details: ' a Canadian multinational manufacturer of business jets and rail. It was also formerly a manufacturer of public transport, commercial jets and vehicles (Bombardier transportation is planned to be divested but not yet approved). Its Bombardier Aviation division is headquartered in Montreal, and Bombardier Transportation in Berlin, Germany.' },
     BAC: { short: 'BAC', full: 'British Aircraft Corporation' },
     Cessna: { short: 'Cessna', full: 'Cessna  Aircraft Company ', details: 'was an American general aviation aircraft manufacturing corporation headquartered in Wichita, Kansas. Cessna produced small, piston-powered aircraft, as well as business jets. For many years the company was one of the highest-volume producers of general aviation aircraft in the world. The company was founded in 1927. ' },
+    Dassault: { short: 'Dassault', full: 'Dassault Aviation SA', details: 'an international French aircraft manufacturer of military and business jets, and is a subsidiary of Dassault Group. It was founded in 1929 by Marcel Bloch as Société des Avions Marcel Bloch or "MB".'},
     Douglas: { short: 'Douglas', full: 'Douglas', details: 'Douglas Aircraft Company' },
     Embraer: { short: 'Embraer', full: 'Embraer Sociedade Anônima', details: 'is a Brazilian aerospace conglomerate that produces commercial, military, executive and agricultural aircraft[6] and provides aeronautical services. It was founded in 1969 in São José dos Campos, São Paulo, where its headquarters are located. The company is the third largest producer of civil aircraft, after Boeing and Airbus.' },
     Fokker: { short: 'Fokker' },
@@ -41,7 +43,7 @@ const namings: { [id in keyof typeof AircraftBuilders]?: naming; } = {
     Zeppelin: { short: 'Zeppelin', full: 'Luftschiffbau Zeppelin GmbH ', details: 'a German aircraft manufacturing company. It is perhaps best known for its leading role in the design and manufacture of rigid airships, commonly referred to as Zeppelins due to the company\'s prominence.' },
 }
 
-export function nameFor(builder: AircraftBuilders, inForm?): string {
+export function shortName(builder: AircraftBuilders): string {
     const key = AircraftBuilders[builder]
     const naming = namings[key]
 

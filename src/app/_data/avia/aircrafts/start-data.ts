@@ -143,7 +143,7 @@ const plane_SikorskyS42: Liner = {
     cockpitCrew: new Array<CrewPerson>(4),
     powerplant: new Array<Engine>(4),
     maxSeats: 37, // or 14 sleeper berths
-};
+}
 
 // ********************** CONCORDE ***********************
 const plane_Concorde: Liner = {
@@ -197,7 +197,7 @@ const plane_Concorde: Liner = {
     maxSeats: 128, // in high density layout
 
     listPriceMlnUsd2020: 158
-};
+}
 
 // ********************** AIRBUS A380 ***********************
 const plane_A380: Liner = {
@@ -252,7 +252,7 @@ const plane_A380: Liner = {
     maxSeats: 853,
 
     listPriceMlnUsd2020: 432
-};
+}
 
 // ********************** BOEING DREAMLINER 787-10 ***********************
 const plane_Dreamliner: Liner = {
@@ -307,7 +307,7 @@ const plane_Dreamliner: Liner = {
     maxSeats: 380,
 
     listPriceMlnUsd2020: 306
-};
+}
 
 // ********************** BOEING 747-400 ***********************
 const plane_747_400: Liner = {
@@ -362,7 +362,7 @@ const plane_747_400: Liner = {
     powerplant: new Array<Engine>(4),
 
     maxSeats: 660,
-};
+}
 
 // ********************** GULFSTREAM 700 ***********************
 const plane_Gulfstream700: Liner = {
@@ -418,7 +418,7 @@ const plane_Gulfstream700: Liner = {
     maxSeats: 19,
 
     listPriceMlnUsd2020: 75
-};
+}
 
 // ********************** BOMBARDIER CRJ-700 ***********************
 const plane_Crj700: Liner = {
@@ -472,7 +472,7 @@ const plane_Crj700: Liner = {
     maxSeats: 78,
 
     listPriceMlnUsd2020: 24
-};
+}
 
 // ********************** ANTONOV MRIYA ***********************
 const plane_Mriya: Freighter = {
@@ -533,7 +533,7 @@ const plane_Mriya: Freighter = {
     powerplant: new Array<Engine>(6),
 
     listPriceMlnUsd2020: 250
-};
+}
 
 
 // ********************** AIRBUS BELUGA XL ***********************
@@ -600,7 +600,7 @@ const plane_BelugaXl: Freighter = {
     powerplant: new Array<Engine>(2),
 
     listPriceMlnUsd2020: 183
-};
+}
 
 // ********************** CESSNA 172 ***********************
 const plane_Cessna172: Liner = {
@@ -655,7 +655,7 @@ const plane_Cessna172: Liner = {
     maxSeats: 3,
 
     listPriceMlnUsd2020: 0.17
-};
+}
 
 // ********************** A321neo ***********************
 const plane_A321neo: Liner = {
@@ -709,7 +709,7 @@ const plane_A321neo: Liner = {
     maxSeats: 450,
 
     listPriceMlnUsd2020: 117
-};
+}
 
 // ********************** ATR72 ***********************
 const plane_Atr72: Liner = {
@@ -761,7 +761,7 @@ const plane_Atr72: Liner = {
     powerplant: new Array<Engine>(2),
     maxSeats: 78,
     listPriceMlnUsd2020: 16.5
-};
+}
 
 // ********************** Aero Spacelines B-377-SG Super Guppy ***********************
 const plane_B377Sg: Freighter = {
@@ -820,7 +820,7 @@ const plane_B377Sg: Freighter = {
 
     cockpitCrew: new Array<CrewPerson>(4),
     powerplant: new Array<Engine>(4),
-};
+}
 
 // ********************** EMBRAER ERJ-145 ***********************
 const plane_Erj145Er: Liner = {
@@ -873,7 +873,7 @@ const plane_Erj145Er: Liner = {
     maxSeats: 50,
 
     listPriceMlnUsd2020: 21
-};
+}
 
 // ********************** Focker 70 ***********************
 const plane_Fokker70: Liner = {
@@ -924,7 +924,7 @@ const plane_Fokker70: Liner = {
     powerplant: new Array<Engine>(2),
     maxSeats: 85,
     listPriceMlnUsd2020: 20
-};
+}
 
 // ********************** Boeing 737-100 ***********************
 const plane_737_100: Liner = {
@@ -978,7 +978,7 @@ const plane_737_100: Liner = {
     powerplant: new Array<Engine>(2),
     maxSeats: 124,
     listPriceMlnUsd2020: 27.2
-};
+}
 
 // ********************** Boeing 747-400 LCF ***********************
 const plane_747_400LCF: Freighter = {
@@ -1034,7 +1034,7 @@ const plane_747_400LCF: Freighter = {
     cockpitCrew: new Array<CrewPerson>(2),
     powerplant: new Array<Engine>(4),
     listPriceMlnUsd2020: 232
-};
+}
 
 
 // ********************** Douglas DC-3 ***********************
@@ -1085,7 +1085,7 @@ const plane_DouglasDc3: Liner = {
     powerplant: new Array<Engine>(2),
     maxSeats: 32,
     listPriceMlnUsd2020: 1.48
-};
+}
 
 const plane_SN601: Liner = {
     unid: undefined,
@@ -1189,8 +1189,59 @@ const plane_TriStar: Liner = {
 
     maxSeats: 256,
     listPriceMlnUsd2020: 200
-};
+}
 
+// ********************** Dassault Falcon 7X  ***********************
+const bizJet_Falcon: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Dassault,
+        name: 'Falcon',
+        family: '7X',
+        remarks: 'a large-cabin, 5,950 nautical miles (11,020 km) range business jet developed from Falcon 900'
+    },
+    firstFlight: new Date('2005-5-5'),
+
+    measurements: {
+        airframe: {
+            length: meter(23.38),
+            height: meter(7.83), 
+        },
+
+        wingSpan: meter(26.21), 
+        wingArea: meter(70.7).asX2,
+    },
+
+    weights: {
+        empty: kilogram(16601),
+        maxTakeoff: kilogram(31751),
+
+        payload: kilogram(1996),
+    },
+
+    performance: {
+        range: kilometer(11019),
+        maxSpeed: kilometersHour(956),
+        cruiseSpeed: kilometersHour(850),
+
+        serviceCeiling: meter(15545),
+        thrust: kilonewton(28.48),
+
+        fuelCapacity: liter(18000),
+        // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
+    },
+
+    takeoff: {
+        run: meter(1740),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(3),
+
+    maxSeats: 16,
+    listPriceMlnUsd2020: 53.8 
+}
 
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
@@ -1217,5 +1268,6 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_DouglasDc3,
     plane_SN601,
     plane_TriStar,
-    // Bleriot-SPAD S.33
+    
+    bizJet_Falcon,
 ];
