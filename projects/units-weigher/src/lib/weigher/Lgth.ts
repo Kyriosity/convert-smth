@@ -19,7 +19,7 @@ export class Lgth extends linear<lgth, LengthUnits> {
         { unit: LengthUnits.gigametre, labels: ['', 'gm', 'gigameter'] },
         { unit: LengthUnits.terametre, labels: ['', 'tm', 'teraometer'] },
 
-        // { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
+        { unit: LengthUnits.foot, labels: ['ft.', 'foot'] },
         { unit: LengthUnits.inch, labels: ['in', 'inch'] },
 
         { unit: LengthUnits.nauticalMile, labels: ['', 'nmi', 'nautical mile'] },
@@ -28,7 +28,6 @@ export class Lgth extends linear<lgth, LengthUnits> {
 
     protected readonly unitSystems = [metric, feetBased]
     protected readonly crossRatios = [toMeter]
-
 }
 
 const metric = [
@@ -61,5 +60,6 @@ const feetBased = [
 const toMeter = [
     { unit: LengthUnits.metre, ratio: 1, isBase: true },
     { unit: LengthUnits.foot, ratio: 1 / 3.28084 },
-    { unit: LengthUnits.nauticalMile, ratio: 1852 }
+    { unit: LengthUnits.mile, ratio: 1609340 },
+    { unit: LengthUnits.nauticalMile, ratio: 1852000 },
 ]

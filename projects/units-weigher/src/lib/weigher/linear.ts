@@ -1,4 +1,4 @@
-import { UVal, Unit, RatiosList } from '../cors/uval';
+import { Unit, UVal, RatiosList } from '../cors/uval';
 import { UWeigher } from './iWeigher';
 
 export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends UWeigher<V, U> {
@@ -9,45 +9,56 @@ export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends 
         if (of === to)
             return 1;
 
-        let ratio = this.searchSameSysRatio(of, to);
+        let ratio = this.findSameSysRatio(of, to);
 
         if (!ratio) {
-            const fromBaseUnit = this.findBase(of);
-            const toBaseUnit = this.findBase(to);
+            const ofBase = this.findBaseUnit(of);
+            const toBase = this.findBaseUnit(to);
 
-            ratio = !fromBaseUnit || !toBaseUnit ? NaN : this.searchCrossSysRatio(of, to);
+            const baseCrossratio = this.findCrossSysRatio(ofBase, toBase);
+            if (baseCrossratio) {
+                const ofRatio = this.findSameSysRatio(of, ofBase)
+                const toRatio = this.findSameSysRatio(to, toBase)
+
+                ratio = !ofRatio || !toRatio ? undefined :
+                    ofRatio * baseCrossratio / toRatio // KD, ToDo: here a challenge - optimise to avoid 'camel' jumps that will harm precision
+            }
         }
-
         return ratio;
     }
 
-    private findBase(unit: U): U {
+    private findBaseUnit(unit: U): U {
         const entries = this.unitSystems?.filter(x => { const vals = x.map(r => r.unit); return vals.includes(unit) })
 
         const res = !entries || 1 !== entries.length ? null : entries[0].filter(x => x.isBase)[0].unit
         return res
     }
 
-    protected searchSameSysRatio(from: U, to: U): number {
-        return this.findRatio(from, to, this.unitSystems)
+    protected findSameSysRatio(of: U, to: U): number {
+        return this.findRatio(of, to, this.unitSystems)
     };
 
-    protected searchCrossSysRatio(from: U, to: U): number {
+    protected findCrossSysRatio(from: U, to: U): number {
         return this.findRatio(from, to, this.crossRatios)
     };
 
-    protected findRatio(from: U, to: U, ratios: RatiosList<U>[]) {
+    protected findRatio(of: U, to: U, ratios: RatiosList<U>[]) {
+        if (!of || !to)
+            return undefined
+
         const entries = ratios?.filter(x => {
-            const vals = x.map(r => r.unit);
-            vals.includes(from) && vals.includes(to)
+            const units = x.map(r => r.unit)
+            return units.includes(of) && units.includes(to)
         });
 
         if (!entries || 0 == entries!.length)
-            return NaN;
+            return undefined
 
-        const ratioFrom = entries[0].filter(x => x.unit = from)[0].ratio;
-        const ratioTo = entries[0].filter(x => x.unit = to)[0].ratio;
+        const entry = entries[0];
+        const ofFactor = entry.filter(x => x.unit == of)[0].ratio;
+        const toFactor = entry.filter(x => x.unit == to)[0].ratio;
 
-        return ratioFrom / ratioTo;
+        const ratio = ofFactor / toFactor;
+        return ratio;
     };
 }

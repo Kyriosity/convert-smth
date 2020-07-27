@@ -1,7 +1,7 @@
 import { formatNumber } from '@angular/common';
 
 export const uWarn = '\u26A0';
-export const uQuestion = '?'
+export const uQuestion = '\u0022'
 export const uFatQuestion = '\u2753';
 
 export class PresentationParams {
@@ -53,13 +53,14 @@ export class PresentationParams {
     private static isArgOmmited(arg: string): boolean { return ('' == arg! || '-' == arg); }
 }
 
-
-export function formatValueCustom(value: number, params: PresentationParams, _currentLocale: string): string {
+export function formatCustom(value: number, params: PresentationParams, _currentLocale: string): string {
+    if (!value)
+        return null;
     try {
         if (!params.DecimalFormatApplies)
             return formatNumber(value, params.Culture);
 
         return formatNumber(value, params.CultureApplies ? params.Culture : _currentLocale, params.DecimalFormat);
     }
-    catch (exception) { return exception; }
+    catch (exception) { return `${uWarn} ${exception}`; }
 }
