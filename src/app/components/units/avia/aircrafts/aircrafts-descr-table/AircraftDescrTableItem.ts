@@ -40,7 +40,7 @@ export module Digest {
             payload: item.weights.payload,
             fuelCapacity: item.performance.fuelCapacity,
 
-            seats: 'airlinerDerivative' in item? '(freighter)' : (<number>item['maxSeats']).toLocaleString(),
+            seats: 'airlinerDerivative' in item? '\\u0xF0' : (<number>item['maxSeats']).toLocaleString(),
             cockpitCrew: item.cockpitCrew.length,
             powerplant: item.powerplant.length,
 

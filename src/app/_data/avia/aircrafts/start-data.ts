@@ -1087,6 +1087,111 @@ const plane_DouglasDc3: Liner = {
     listPriceMlnUsd2020: 1.48
 };
 
+const plane_SN601: Liner = {
+    unid: undefined,
+
+ designation: {
+        brand: builders.Aerospatiale,
+        name: 'Corvette',
+        serie: 601,
+        modification: 'SN',
+        remarks: 'a business jet of the early 1970s developed. In addition to its use as a VIP aircraft, a number of Corvettes were procured and operated by regional airlines, such as Air Alsace, Air Alpes, Air Champagne, TAT, and Sterling Airways. Airbus Industrie also operated a small fleet of Corvettes for internal transportation of staff between its key sites across Europe.',
+    },
+    firstFlight: new Date('1970-7-16'),
+
+    measurements: {
+        airframe: {
+            length: meter(13.83), 
+            height: meter(4.23),
+        },
+
+        wingSpan: meter(12.87),
+        wingArea: meter(22).asX2,
+    },
+
+    weights: {
+        empty: kilogram(3510),
+        maxTakeoff: kilogram(6600),
+        payload: pound(5400),
+    },
+
+    performance: {
+        range: kilometer(2555),
+        cruiseSpeed:kilometersHour(566),
+        maxSpeed: kilometersHour(760),
+        serviceCeiling: meter(12500),
+
+        fuelCapacity: liter(1660),
+    },
+
+    takeoff: {
+        run: meter(930),
+  
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 18,
+
+    listPriceMlnUsd2020: 25
+}
+
+// ********************** Lockheed L-1011 TriStar ***********************
+const plane_TriStar: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Lockheed,
+        name: 'Tristar',
+        family: 'L',
+        serie: 1011,
+        variant: 1,
+        remarks: 'an American medium-to-long-range, wide-body trijet airliner by Lockheed Corporation. It was the third wide-body airliner to enter commercial operations, after the Boeing 747 and the McDonnell Douglas DC-10. ',
+    },
+    firstFlight: new Date('1970-11-16'),
+
+    measurements: {
+        airframe: {
+            length: foot(177 + 8.5/12),
+            height: foot(55 + 4/12), 
+            width: inch(19 + 7/12), 
+        },
+
+        wingSpan: foot(155 + 4/12), 
+        wingArea: foot(3456).asX2,
+    },
+
+    weights: {
+        empty: pound(241700),
+        maxTakeoff: pound(430000),
+
+        payload: pound(188000),
+    },
+
+    performance: {
+        range: nauticalMile(4250),
+        cruiseSpeed: knot(520),
+
+        serviceCeiling: foot(42000),
+        thrust: poundforce(42000),
+
+        fuelCapacity: usGallon(23814),
+        // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
+    },
+
+    takeoff: {
+        run: meter(2560 ),
+
+    },
+
+    cockpitCrew: new Array<CrewPerson>(3),
+    powerplant: new Array<Engine>(3),
+
+    maxSeats: 256,
+    listPriceMlnUsd2020: 200
+};
+
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
     
@@ -1110,6 +1215,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_747_400LCF,
 
     plane_DouglasDc3,
-
+    plane_SN601,
+    plane_TriStar,
     // Bleriot-SPAD S.33
 ];

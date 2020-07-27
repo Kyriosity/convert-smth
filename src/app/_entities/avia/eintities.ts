@@ -26,7 +26,7 @@ export interface FlyingMachinePerformance {
 export interface FlyingMachineWeights {
     empty: mass,
     maxTakeoff: mass,
-    maxLanding: mass,
+    maxLanding?: mass,
     payload: mass,
 }
 

@@ -17,7 +17,6 @@ export interface AircraftDescription extends DomainEntity {
     listPriceMlnUsd2020?: number
   }
 
-
 export interface LinerDescription extends AircraftDescription {
   maxSeats: number
 }
@@ -25,4 +24,10 @@ export interface LinerDescription extends AircraftDescription {
 export interface CargoAirplaneDescription extends AircraftDescription {
   airlinerDerivative: boolean,
   unpressurized?: boolean
+}
+
+export interface entityNaming {
+  short: string
+  full?: string
+  details?: string
 }
