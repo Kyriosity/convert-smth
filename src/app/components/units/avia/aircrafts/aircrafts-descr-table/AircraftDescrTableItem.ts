@@ -14,7 +14,7 @@ export interface AircraftDescrTableItem {
     payload: mass;
     fuelCapacity: vol;
 
-    seats: string;
+    seats: number;
     cockpitCrew: number;
     powerplant: number;
 
@@ -40,7 +40,7 @@ export module Digest {
             payload: item.weights.payload,
             fuelCapacity: item.performance.fuelCapacity,
 
-            seats: 'airlinerDerivative' in item? '\\u0xF0' : (<number>item['maxSeats']).toLocaleString(),
+            seats: 'airlinerDerivative' in item? NaN : item['maxSeats'], // KD, ToDo: some 'nameof' instead of literals
             cockpitCrew: item.cockpitCrew.length,
             powerplant: item.powerplant.length,
 

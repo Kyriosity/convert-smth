@@ -73,7 +73,7 @@
 
     <ng-container matColumnDef="seats">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Seats,<br>max</th>
-      <td mat-cell *matCellDef="let row">{{row.seats}}</td>
+      <td mat-cell *matCellDef="let row">{{row.seats | number}}</td>
     </ng-container>
 
     <ng-container matColumnDef="cockpitCrew">
