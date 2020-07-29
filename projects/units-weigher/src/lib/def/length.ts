@@ -1,20 +1,20 @@
 import { UVal } from '../cors/z_barrel';
 
 
-export class lgth extends UVal<LengthUnits> { 
+export class length extends UVal<LengthUnits> { 
     NonNegative = () => true
 
     get asX2(): area { return new area(this.unit, this.val); }
 }
 
-export class area extends lgth {
+export class area extends length {
 
 }
 
 export interface Dimensions {
-    length?: lgth,
-    height?: lgth
-    width?: lgth,
+    length?: length,
+    height?: length
+    width?: length,
 }
 
 export enum LengthUnits {
@@ -52,7 +52,7 @@ export enum LengthUnits {
     rod
 }
 
-function of(unit: number, val: number) { return new lgth(unit, val) }
+function of(unit: number, val: number) { return new length(unit, val) }
 
 export var picometre = (val: number) => of(LengthUnits.picometre, val)
 export var nanometre = (val: number) => of(LengthUnits.nanometre, val)

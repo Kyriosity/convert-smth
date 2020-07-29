@@ -1,7 +1,7 @@
-import { VelocityUnits, velo } from '../../def/z_barrel'
+import { VelocityUnits, velocity } from '../../def/z_barrel'
 import { linear } from '../linear'
 
-export class Velo extends linear<velo, VelocityUnits> {
+export class Velocity extends linear<velocity, VelocityUnits> {
     rawUnitName = (unit: VelocityUnits) => { return VelocityUnits[unit] }
 
     protected readonly unitLabels = [

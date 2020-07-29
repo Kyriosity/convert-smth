@@ -1,7 +1,7 @@
-import { VolumeUnits, vol } from '../../def/z_barrel';
+import { VolumeUnits, volume } from '../../def/z_barrel';
 import { linear } from '../linear';
 
-export class Vol extends linear<vol, VolumeUnits> {
+export class Volume extends linear<volume, VolumeUnits> {
     rawUnitName = (unit: VolumeUnits) => { return VolumeUnits[unit]}
 
     protected unitLabels = [

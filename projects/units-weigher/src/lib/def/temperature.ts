@@ -1,6 +1,6 @@
 import { UVal } from '../cors/z_barrel';
 
-export class tmprt extends UVal<TemperatureUnits> {
+export class temperature extends UVal<TemperatureUnits> {
     NonNegative = () => false // KD, ToDo: can be negative in C but not in K
 }
 
@@ -11,7 +11,7 @@ export enum TemperatureUnits {
     Rankine
 }
 
-function of(unit: number, val: number) { return new tmprt(unit, val) }
+function of(unit: number, val: number) { return new temperature(unit, val) }
 
 export var kelvin = (val: number) => of(TemperatureUnits.Kelvin, val)
 export var celsius = (val: number) => of(TemperatureUnits.Celsius, val)

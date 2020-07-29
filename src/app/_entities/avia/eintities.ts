@@ -1,5 +1,5 @@
 
-import { lgth, area, mass, velo, vol, frc, Dimensions } from 'units-weigher';
+import { length, area, mass, velocity, volume,force, Dimensions } from 'units-weigher';
 import { AircraftBuilders } from './aircrafts/manufacturers';
 
 export interface CrewPerson {}
@@ -8,18 +8,18 @@ export interface Engine { }
 
 export interface FlyingMachineMeasurements {
     airframe: Dimensions,
-    wingSpan: lgth,
+    wingSpan: length,
     wingArea: area,
 }
 
 export interface FlyingMachinePerformance {
-    range: lgth,
-    cruiseSpeed: velo,
-    maxSpeed?: velo,
-    serviceCeiling: lgth,
-    thrust?: frc,
+    range: length,
+    cruiseSpeed: velocity,
+    maxSpeed?: velocity,
+    serviceCeiling: length,
+    thrust?: force,
 
-    fuelCapacity?: vol,
+    fuelCapacity?: volume,
     // cruiseFuelConsumption?: VolumeTimeFuelConsumption,
 }
 
@@ -31,13 +31,13 @@ export interface FlyingMachineWeights {
 }
 
 export interface FlyingMachineTakeOff {
-    run: lgth,
-    minSpeed?: velo,
-    thrust?: frc,
+    run: length,
+    minSpeed?: velocity,
+    thrust?: force,
 }
 
 export interface CargoBay {
-    capacity: vol,
+    capacity: volume,
 
     dims?: Dimensions,
 }

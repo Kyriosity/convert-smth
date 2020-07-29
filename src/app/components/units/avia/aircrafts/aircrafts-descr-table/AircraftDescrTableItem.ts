@@ -1,4 +1,4 @@
-import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
+import { length, velocity, mass, volume, UValErr } from 'units-weigher';
 import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
 import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers';
@@ -8,11 +8,11 @@ export interface AircraftDescrTableItem {
     brand: string;
     name: string;
     
-    range: lgth; 
-    cruiseSpeed: velo;
-    ceiling: lgth;
+    range: length; 
+    cruiseSpeed: velocity;
+    ceiling: length;
     payload: mass;
-    fuelCapacity: vol;
+    fuelCapacity: volume;
 
     seats: number;
     cockpitCrew: number;

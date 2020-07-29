@@ -1,11 +1,11 @@
 import { UVal } from '../cors/z_barrel';
-import { frc, mass, lgth, velo, vol } from '../def/z_barrel';
+import { force, mass, length, velocity, volume } from '../def/z_barrel';
 import { IWeigher } from './iWeigher';
-import { Lgth } from './measures/Lgth';
+import { Length } from './measures/Length';
 import { Mass } from './measures/Mass';
-import { Velo } from './measures/Velo';
-import { Vol } from './measures/Vol';
-import { Force } from './measures/Frc';
+import { Velocity } from './measures/Velocity';
+import { Volume } from './measures/Volume';
+import { Force } from './measures/Force';
 
 export class gen {
     private _weighers: { name: string, measure: IWeigher }[] = [];
@@ -22,13 +22,13 @@ export class gen {
     private add(className: string): IWeigher {
         if (mass.name === className)
             return new Mass();
-        if (lgth.name === className)
-            return new Lgth();
-        if (velo.name === className)
-            return new Velo()
-        if (vol.name === className)
-            return new Vol()
-        if (frc.name === className)
+        if (length.name === className)
+            return new Length();
+        if (velocity.name === className)
+            return new Velocity()
+        if (volume.name === className)
+            return new Volume()
+        if (force.name === className)
             return new Force()
 
         // if (temperature.name === className)
