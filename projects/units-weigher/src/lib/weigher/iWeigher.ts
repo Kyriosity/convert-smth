@@ -23,7 +23,7 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
     protected readonly unitLabels: ULabel<U>[];
 
     protected abstract factor(of: U, to: U): number;
-     abstract rawUnitName(unit: U): string;
+    abstract rawUnitName(unit: U): string;
 
     convert(that: V, to: U): void {
         that.val *= this.factor(that.unit, to);

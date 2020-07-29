@@ -1,7 +1,7 @@
 import { UVal } from '../cors/z_barrel';
 
 export class frc extends UVal<ForceUnits> {
-    get NonNegative() { return false }
+    NonNegative = () => false
 }
 
 export enum ForceUnits {

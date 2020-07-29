@@ -7,21 +7,25 @@ export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends 
 
     factor(of: U, to: U): number {
         if (of === to)
-            return 1;
+            return 1
 
         let ratio = this.findSameSysRatio(of, to);
 
         if (!ratio) {
-            const ofBase = this.findBaseUnit(of);
-            const toBase = this.findBaseUnit(to);
+            ratio = this.findCrossSysRatio(of, to)
 
-            const baseCrossratio = this.findCrossSysRatio(ofBase, toBase);
-            if (baseCrossratio) {
-                const ofRatio = this.findSameSysRatio(of, ofBase)
-                const toRatio = this.findSameSysRatio(to, toBase)
+            if (!ratio) {
+                const ofBase = this.findBaseUnit(of);
+                const toBase = this.findBaseUnit(to);
 
-                ratio = !ofRatio || !toRatio ? undefined :
-                    ofRatio * baseCrossratio / toRatio // KD, ToDo: here a challenge - optimise to avoid 'camel' jumps that will harm precision
+                const baseCrossratio = this.findCrossSysRatio(ofBase, toBase);
+                if (baseCrossratio) {
+                    const ofRatio = this.findSameSysRatio(of, ofBase)
+                    const toRatio = this.findSameSysRatio(to, toBase)
+
+                    ratio = !ofRatio || !toRatio ? undefined :
+                        ofRatio * baseCrossratio / toRatio // KD, ToDo: here a challenge - optimise to avoid 'camel' jumps that will harm precision
+                }
             }
         }
         return ratio;

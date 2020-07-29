@@ -1,5 +1,4 @@
 import { VelocityUnits, velo } from '../../def/z_barrel'
-
 import { linear } from '../linear'
 
 export class Velo extends linear<velo, VelocityUnits> {
@@ -14,4 +13,17 @@ export class Velo extends linear<velo, VelocityUnits> {
         { unit: VelocityUnits.footPerSecond, labels: ['ft/s', 'foot per second'] },
         { unit: VelocityUnits.inchPerSecond, labels: ['in/s', 'inch per second'] },
     ]
+
+    protected readonly crossRatios = [relativeMach]
 }
+
+//// * relative while Mach is sound speed, which is dependent on altitude and other conditions *
+const relativeMach = [
+    { unit: VelocityUnits.Mach, ratio: 1, isBase: true },
+
+    { unit: VelocityUnits.metresPerSecond, ratio: 1/343 },
+    { unit: VelocityUnits.kilometrePerHour, ratio: 1/1234.8 },
+
+    { unit: VelocityUnits.knot, ratio: 1/666.739 },
+    { unit: VelocityUnits.milesPerHour, ratio: 1/767.269 },
+]
