@@ -5,7 +5,7 @@ import {
     liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
     kilonewton, poundforce, kilogramforce, Kilogram,
 } from 'units-weigher';
-import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/builders';
+import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers';
 import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
 
@@ -20,7 +20,7 @@ const ship_ZeppelinNT: Liner = {
         serie: 7,
         remarks: 'helium-filled airshis being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.[1]',
     },
-    firstFlight: new Date('1997-11-18'), 
+    firstFlight: new Date('1997-11-18'),
 
     measurements: {
         airframe: {
@@ -98,7 +98,7 @@ const plane_WrightFlyer: Liner = {
 
     cockpitCrew: new Array<CrewPerson>(1),
     powerplant: new Array<Engine>(1),
-    maxSeats: 0, 
+    maxSeats: null,
 }
 
 // ********************** Sikorsky S-42 ***********************
@@ -1090,7 +1090,7 @@ const plane_DouglasDc3: Liner = {
 const plane_SN601: Liner = {
     unid: undefined,
 
- designation: {
+    designation: {
         brand: builders.Aerospatiale,
         name: 'Corvette',
         serie: 601,
@@ -1101,7 +1101,7 @@ const plane_SN601: Liner = {
 
     measurements: {
         airframe: {
-            length: meter(13.83), 
+            length: meter(13.83),
             height: meter(4.23),
         },
 
@@ -1117,7 +1117,7 @@ const plane_SN601: Liner = {
 
     performance: {
         range: kilometer(2555),
-        cruiseSpeed:kilometersHour(566),
+        cruiseSpeed: kilometersHour(566),
         maxSpeed: kilometersHour(760),
         serviceCeiling: meter(12500),
 
@@ -1126,7 +1126,7 @@ const plane_SN601: Liner = {
 
     takeoff: {
         run: meter(930),
-  
+
     },
 
     cockpitCrew: new Array<CrewPerson>(2),
@@ -1152,12 +1152,12 @@ const plane_TriStar: Liner = {
 
     measurements: {
         airframe: {
-            length: foot(177 + 8.5/12),
-            height: foot(55 + 4/12), 
-            width: inch(19 + 7/12), 
+            length: foot(177 + 8.5 / 12),
+            height: foot(55 + 4 / 12),
+            width: inch(19 + 7 / 12),
         },
 
-        wingSpan: foot(155 + 4/12), 
+        wingSpan: foot(155 + 4 / 12),
         wingArea: foot(3456).asX2,
     },
 
@@ -1180,7 +1180,7 @@ const plane_TriStar: Liner = {
     },
 
     takeoff: {
-        run: meter(2560 ),
+        run: meter(2560),
 
     },
 
@@ -1206,10 +1206,10 @@ const bizJet_Falcon: Liner = {
     measurements: {
         airframe: {
             length: meter(23.38),
-            height: meter(7.83), 
+            height: meter(7.83),
         },
 
-        wingSpan: meter(26.21), 
+        wingSpan: meter(26.21),
         wingArea: meter(70.7).asX2,
     },
 
@@ -1240,7 +1240,7 @@ const bizJet_Falcon: Liner = {
     powerplant: new Array<Engine>(3),
 
     maxSeats: 16,
-    listPriceMlnUsd2020: 53.8 
+    listPriceMlnUsd2020: 53.8
 }
 
 // ********************** Hawker Siddeley Trident 1/1C ***********************
@@ -1253,16 +1253,16 @@ const plane_Trident: Liner = {
         serie: 1,
         variant: 28,
         remarks: 'is a now-retired British short- (and later medium-) range airliner. It was the first T-tail rear-engined trijet airliner to be designed. It was also the first airliner to make a blind landing in revenue service in 1965.'
-     },
+    },
     firstFlight: new Date('1962-1-9'),
 
     measurements: {
         airframe: {
-            length: foot(114 + 9/12),
-            height: foot(27), 
+            length: foot(114 + 9 / 12),
+            height: foot(27),
         },
 
-        wingSpan: foot(89 + 10/12), 
+        wingSpan: foot(89 + 10 / 12),
         wingArea: foot(1358).asX2,
     },
 
@@ -1306,16 +1306,16 @@ const plane_Caravelle: Liner = {
         serie: 210,
         variant: 1,
         remarks: 'is a French short/medium-range jet airliner. It holds the distinction of being the world\'s first jet-powered airliner to be developed for the short/medium-range market. The Caravelle established the aft-mounted engine, clean-wing design configuration that is still used widely by smaller jetliners.',
-     },
+    },
     firstFlight: new Date('1955-5-27'),
 
     measurements: {
         airframe: {
             length: meter(32.01),
-            height: meter(8.72), 
+            height: meter(8.72),
         },
 
-        wingSpan: meter(34.3), 
+        wingSpan: meter(34.3),
         wingArea: meter(146.7).asX2,
     },
 
@@ -1334,7 +1334,7 @@ const plane_Caravelle: Liner = {
         serviceCeiling: meter(12000),
         thrust: kilogramforce(2 * 4763),
 
-//        fuelCapacity: (),
+        // fuelCapacity: (),
     },
 
     takeoff: {
@@ -1348,9 +1348,195 @@ const plane_Caravelle: Liner = {
     listPriceMlnUsd2020: 120 // $5.5M at 1972
 }
 
+// ********************** de Havilland DH.34 ***********************
+const plane_DH34: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.deHavilland,
+        name: 'DH.34',
+        remarks: ' a single engined British biplane airliner built by the de Havilland Aircraft Company in the 1920s. 12 were built, with the DH.34 serving with Imperial Airways and its predecessors for several years.',
+    },
+    firstFlight: new Date('1922-3-26'),
+
+    measurements: {
+        airframe: {
+            length: foot(39),
+            height: foot(12),
+        },
+
+        wingSpan: foot(51 + 4 / 12),
+        wingArea: foot(590).asX2,
+    },
+
+    weights: {
+        empty: pound(4574),
+        maxTakeoff: pound(7200),
+
+        payload: kilogram(-1),
+    },
+
+    performance: {
+        range: mile(317),
+        maxSpeed: milesHour(128),
+        cruiseSpeed: milesHour(105),
+
+        serviceCeiling: foot(15000),
+
+
+        // fuelCapacity: (),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(1),
+
+    maxSeats: 10,
+}
+
+// ********************** Beechcraft 1900 ***********************
+const plane_Beechcraft1900: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Beechcraft,
+        name: 'Beechcraft',
+        serie: 1900,
+        remarks: ' 19-passenger, pressurized twin-engine turboprop fixed-wing aircraft. Designed to carry passengers in all weather conditions from airports with relatively short runways.',
+    },
+    firstFlight: new Date('1982-9-3'),
+
+    measurements: {
+        airframe: {
+            length: foot(57 + 8/12), 
+            height: foot(15 + 5/12), 
+        },
+
+        wingSpan: foot(57 + 9/12),
+        wingArea: foot(310).asX2,
+    },
+
+    weights: {
+        empty: pound(10434),
+        maxTakeoff: pound(17120),
+        maxLanding: pound(16765),
+        payload: pound(4375),
+    },
+
+    performance: {
+        range: nauticalMile(382),
+        cruiseSpeed: knot(280),
+        serviceCeiling: foot(25000),
+
+        fuelCapacity: usGallon(1600),
+        // ToDo: cruiseFuelConsumption: { value: 358, unit: 'gallons per hour' },
+    },
+    takeoff: {
+        run: foot(3470),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 19,
+
+    listPriceMlnUsd2020: 7
+}
+
+// ********************** Mitsubishi SpaceJet ***********************
+const plane_SpaceJet: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Mitsubishi,
+        name: 'SpaceJet',
+        family: 'M90',
+        remarks: 'Twin-engine regional jet aircraft manufactured by Mitsubishi Aircraft Corporation in a partnership with Toyota, with design assistance from Subaru. It will be the first airliner designed and produced in Japan since the NAMC YS-11 of the 1960s.'
+     },
+    firstFlight: new Date('2015-11-11'),
+
+    measurements: {
+        airframe: {
+            length: meter(35.8),
+            height: meter(10.4),
+        },
+
+        wingSpan: meter(35.80),
+        wingArea: meter(-1).asX2,
+    },
+
+    weights: {
+        empty: tonne(26), // here OEW
+        maxTakeoff: tonne(42.8),
+        maxLanding: tonne(38),
+        payload: tonne(10),
+    },
+
+    performance: {
+        range: kilometer(3770),
+        cruiseSpeed: kilometersHour(829),
+        serviceCeiling: meter(11900),
+
+        fuelCapacity: liter(12100),
+        // ToDo: cruiseFuelConsumption: 
+        thrust: kilonewton(78.2),
+    },
+    cargo: {
+        capacity: cubicMeter(18.2),
+    },
+    takeoff: {
+        run: meter(1740),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 88,
+
+    listPriceMlnUsd2020: 46.3
+}
+
+// ********************** Convair CV240 ***********************
+const plane_CV240: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Convair,
+        name: '',
+        family: 'CV240',
+        remarks: 'an American airliner that Convair manufactured from 1947 to 1954, initially as a possible replacement for the ubiquitous Douglas DC-3. Featuring a more modern design with cabin pressurization, the 240 series made some inroads as a commercial airliner.',
+     },
+    firstFlight: new Date('1947-3-16'),
+
+    measurements: {
+        airframe: {
+            length: foot(74 + 8/12),
+            height: foot(26 + 11/12),
+        },
+
+        wingSpan: foot(91 + 9/12),
+        wingArea: foot(817).asX2,
+    },
+
+    weights: {
+        empty: pound(29500), 
+        maxTakeoff: pound(42500),
+    },
+
+    performance: {
+        range: nauticalMile(1200),
+        cruiseSpeed: milesHour(280),
+        maxSpeed: milesHour(315),
+        serviceCeiling: foot(16000),
+
+        fuelCapacity: usGallon(1000),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 40,
+}
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
-    
+
     plane_WrightFlyer,
     plane_SikorskyS42,
     plane_Concorde,
@@ -1363,6 +1549,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_BelugaXl,
     plane_Cessna172,
     plane_A321neo,
+    plane_SpaceJet,
     plane_Atr72,
     plane_B377Sg,
     plane_Erj145Er,
@@ -1371,10 +1558,14 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_747_400LCF,
 
     plane_DouglasDc3,
+    plane_CV240,
     plane_SN601,
     plane_TriStar,
     plane_Trident,
     plane_Caravelle,
-    
+    plane_Beechcraft1900,
+
+    plane_DH34,
+
     bizJet_Falcon,
 ];

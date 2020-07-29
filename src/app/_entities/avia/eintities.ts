@@ -1,6 +1,6 @@
 
 import { lgth, area, mass, velo, vol, frc, Dimensions } from 'units-weigher';
-import { AircraftBuilders } from './aircrafts/builders';
+import { AircraftBuilders } from './aircrafts/manufacturers';
 
 export interface CrewPerson {}
 
@@ -27,7 +27,7 @@ export interface FlyingMachineWeights {
     empty: mass,
     maxTakeoff: mass,
     maxLanding?: mass,
-    payload: mass,
+    payload?: mass,
 }
 
 export interface FlyingMachineTakeOff {

@@ -1,7 +1,7 @@
 import { lgth, velo, mass, vol, UValErr } from 'units-weigher';
 import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
-import { shortName } from 'src/app/_entities/avia/aircrafts/builders';
+import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers';
 
 export interface AircraftDescrTableItem {
     id: number;
