@@ -1345,7 +1345,7 @@ const plane_Caravelle: Liner = {
     powerplant: new Array<Engine>(2),
 
     maxSeats: 80,
-    listPriceMlnUsd2020: 120 // $5.5M at 1972
+    listPriceMlnUsd2020: 500 // $5.5M at 1972
 }
 
 // ********************** de Havilland DH.34 ***********************
@@ -1407,11 +1407,11 @@ const plane_Beechcraft1900: Liner = {
 
     measurements: {
         airframe: {
-            length: foot(57 + 8/12), 
-            height: foot(15 + 5/12), 
+            length: foot(57 + 8 / 12),
+            height: foot(15 + 5 / 12),
         },
 
-        wingSpan: foot(57 + 9/12),
+        wingSpan: foot(57 + 9 / 12),
         wingArea: foot(310).asX2,
     },
 
@@ -1450,7 +1450,7 @@ const plane_SpaceJet: Liner = {
         name: 'SpaceJet',
         family: 'M90',
         remarks: 'Twin-engine regional jet aircraft manufactured by Mitsubishi Aircraft Corporation in a partnership with Toyota, with design assistance from Subaru. It will be the first airliner designed and produced in Japan since the NAMC YS-11 of the 1960s.'
-     },
+    },
     firstFlight: new Date('2015-11-11'),
 
     measurements: {
@@ -1502,21 +1502,21 @@ const plane_CV240: Liner = {
         name: '',
         family: 'CV240',
         remarks: 'an American airliner that Convair manufactured from 1947 to 1954, initially as a possible replacement for the ubiquitous Douglas DC-3. Featuring a more modern design with cabin pressurization, the 240 series made some inroads as a commercial airliner.',
-     },
+    },
     firstFlight: new Date('1947-3-16'),
 
     measurements: {
         airframe: {
-            length: foot(74 + 8/12),
-            height: foot(26 + 11/12),
+            length: foot(74 + 8 / 12),
+            height: foot(26 + 11 / 12),
         },
 
-        wingSpan: foot(91 + 9/12),
+        wingSpan: foot(91 + 9 / 12),
         wingArea: foot(817).asX2,
     },
 
     weights: {
-        empty: pound(29500), 
+        empty: pound(29500),
         maxTakeoff: pound(42500),
     },
 
@@ -1534,6 +1534,106 @@ const plane_CV240: Liner = {
     maxSeats: 40,
 }
 
+// ********************** BAC One Eleven ***********************
+const plane_BAC111: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.BAC,
+        name: 'One Eleven',
+        family: '111',
+        serie: 200,
+        remarks: 'British short-range jet airliner widely used from the 1960s to the 1990s (retired only in 2019). The aircraft was also produced under licence in Romania during the 1980s as the Rombac One-Eleven.'
+    },
+    firstFlight: new Date('1963-8-20'),
+
+    measurements: {
+        airframe: {
+            length: foot(93 + 6 / 12),
+            height: foot(24 + 6 / 12),
+        },
+
+        wingSpan: foot(88 + 6 / 12),
+        wingArea: foot(980).asX2,
+    },
+
+    weights: {
+        empty: pound(46312),
+        maxTakeoff: pound(78500),
+        maxLanding: pound(69000),
+        payload: pound(17688),
+    },
+
+    performance: {
+        range: mile(830),
+        cruiseSpeed: milesHour(548),
+
+        serviceCeiling: foot(35000),
+        thrust: poundforce(10410),
+
+        fuelCapacity: liter(14020),
+        // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
+    },
+
+    takeoff: {
+        run: foot(6250),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+
+    maxSeats: 89,
+    listPriceMlnUsd2020: 475 // $5.2M in 1972
+}
+
+// ********************** Pilatus PC-24 SpaceJet ***********************
+const bizJet_PC24: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Pilatus,
+        family: 'PC',
+        serie: 24,
+        remarks: 'Light business jet with rugged airfield capability.'
+    },
+    firstFlight: new Date('2015-5-11'),
+
+    measurements: {
+        airframe: {
+            length: meter(16.85),
+            height: meter(5.4),
+        },
+
+        wingSpan: meter(17),
+        wingArea: meter(30.91).asX2,
+    },
+
+    weights: {
+        empty: kilogram(4965), // here OEW
+        maxTakeoff: kilogram(8300),
+        payload: kilogram(1485),
+    },
+
+    performance: {
+        range: kilometer(3334),
+        cruiseSpeed: kilometersHour(815),
+        serviceCeiling: meter(13716),
+
+        fuelCapacity: liter(3363),
+        // ToDo: cruiseFuelConsumption: 0.58 kg/km (2.1 lb/mi) Mach 0.72/416 kn (770 km/h) cruise, 15,375 lb (6,974 kg) weight, 
+        thrust: kilonewton(15),
+    },
+    takeoff: {
+        run: meter(820),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 8,
+
+    listPriceMlnUsd2020: 10.7
+}
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
 
@@ -1548,6 +1648,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_Mriya,
     plane_BelugaXl,
     plane_Cessna172,
+    bizJet_PC24,
     plane_A321neo,
     plane_SpaceJet,
     plane_Atr72,
@@ -1563,6 +1664,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_TriStar,
     plane_Trident,
     plane_Caravelle,
+    plane_BAC111,
     plane_Beechcraft1900,
 
     plane_DH34,

@@ -61,9 +61,9 @@
       <td mat-cell *matCellDef="let row">{{row.ceiling | uval : "" : "unit-code" : ""}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="payload">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Payload</th>
-      <td mat-cell *matCellDef="let row">{{row.payload | uval : '-' : '-' : '.0-3'}}</td>
+    <ng-container matColumnDef="maxTakeoffWeight">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Max. takeoff<br/>weight</th>
+      <td mat-cell *matCellDef="let row">{{row.maxTakeoffWeight | uval : '-' : '-' : '.0-3'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fuelCapacity">

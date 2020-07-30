@@ -11,7 +11,7 @@ export interface AircraftDescrTableItem {
     range: length; 
     cruiseSpeed: velocity;
     ceiling: length;
-    payload: mass;
+    maxTakeoffWeight: mass;
     fuelCapacity: volume;
 
     seats: number;
@@ -37,7 +37,7 @@ export module Digest {
             range: item.performance.range,
             cruiseSpeed: item.performance.cruiseSpeed,
             ceiling: item.performance.serviceCeiling,
-            payload: item.weights.payload,
+            maxTakeoffWeight: item.weights.maxTakeoff,
             fuelCapacity: item.performance.fuelCapacity,
 
             seats: 'airlinerDerivative' in item? NaN : item['maxSeats'], // KD, ToDo: some 'nameof' instead of literals
