@@ -239,7 +239,7 @@ const plane_A380: Liner = {
         fuelCapacity: liter(315292),
         // ToDo: cruiseFuelConsumption: { value: 13.5, unit: 'tons per hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(175.2),
     },
     takeoff: {
@@ -294,7 +294,7 @@ const plane_Dreamliner: Liner = {
         fuelCapacity: usGallon(33384),
         // ToDo: cruiseFuelConsumption: { value: 1600, unit: 'gal/ hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(6.722),
     },
     takeoff: {
@@ -350,7 +350,7 @@ const plane_747_400: Liner = {
         fuelCapacity: usGallon(57285),
         // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(5655),
     },
     takeoff: {
@@ -405,7 +405,7 @@ const bizJet_Gulfstream700: Liner = {
         fuelCapacity: cubicMeter(29000),
         // ToDo: cruiseFuelConsumption: { value: 358, unit: 'gallons per hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(5.52),
     },
     takeoff: {
@@ -459,7 +459,7 @@ const plane_Crj700: Liner = {
         fuelCapacity: liter(12000),
         // ToDo: cruiseFuelConsumption: { value: 444, unit: 'gallons per hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(547),
     },
     takeoff: {
@@ -475,7 +475,7 @@ const plane_Crj700: Liner = {
 }
 
 // ********************** ANTONOV MRIYA ***********************
-const plane_Mriya: Freighter = {
+const freighter_Mriya: Freighter = {
     unid: undefined,
 
     designation: {
@@ -513,7 +513,7 @@ const plane_Mriya: Freighter = {
         fuelCapacity: liter(400000),
         // ToDo: cruiseFuelConsumption: { value: 15900, unit: 'ton/h' }
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(1200),
 
         dims: {
@@ -537,7 +537,7 @@ const plane_Mriya: Freighter = {
 
 
 // ********************** AIRBUS BELUGA XL ***********************
-const plane_BelugaXl: Freighter = {
+const freighter_BelugaXl: Freighter = {
     unid: undefined,
 
     designation: {
@@ -578,7 +578,7 @@ const plane_BelugaXl: Freighter = {
         // ToDo: cruiseFuelConsumption: { value: -1, unit: 'VALUE UNKNOWN' },
     },
 
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(2209),
 
         dims: {
@@ -642,7 +642,7 @@ const plane_Cessna172: Liner = {
         fuelCapacity: usGallon(53),
         // ToDo: cruiseFuelConsumption: { value: 8.6, unit: 'gal/hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(30),
     },
     takeoff: {
@@ -697,7 +697,7 @@ const plane_A321neo: Liner = {
         fuelCapacity: liter(26730),
         // ToDo: cruiseFuelConsumption: { value: 2740, unit: 'kg/h' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(51),
     },
     takeoff: {
@@ -750,7 +750,7 @@ const plane_Atr72: Liner = {
         fuelCapacity: usGallon(1690),
         // ToDo: cruiseFuelConsumption: { value: 620, unit: 'kg/h' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(75),
     },
     takeoff: {
@@ -803,7 +803,7 @@ const plane_B377Sg: Freighter = {
         fuelCapacity: cubicFoot(1120),
         // ToDo: cruiseFuelConsumption: { value: 663, unit: 'gal/hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(49750),
 
         dims: {
@@ -860,7 +860,7 @@ const plane_Erj145Er: Liner = {
         fuelCapacity: liter(4173 / 0.75),
         // ToDo: cruiseFuelConsumption: { value: 1500, unit: 'litre hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(384),
     },
     takeoff: {
@@ -966,7 +966,7 @@ const plane_737_100: Liner = {
         // ToDo: cruiseFuelConsumption: { value: 3300, unit: 'litre/hour' },
     },
 
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(650),
     },
 
@@ -981,7 +981,7 @@ const plane_737_100: Liner = {
 }
 
 // ********************** Boeing 747-400 LCF ***********************
-const plane_747_400LCF: Freighter = {
+const freighter_747_400LCF: Freighter = {
     unid: undefined,
 
     designation: {
@@ -1020,7 +1020,7 @@ const plane_747_400LCF: Freighter = {
         fuelCapacity: usGallon(57285),
         // ToDo: cruiseFuelConsumption: { value: 3600, unit: 'gal/hour' },
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicFoot(65000),
 
     },
@@ -1479,7 +1479,7 @@ const plane_SpaceJet: Liner = {
         // ToDo: cruiseFuelConsumption: 
         thrust: kilonewton(78.2),
     },
-    cargo: {
+    cargoBay: {
         capacity: cubicMeter(18.2),
     },
     takeoff: {
@@ -1634,21 +1634,217 @@ const bizJet_PC24: Liner = {
     listPriceMlnUsd2020: 10.7
 }
 
+// ********************** Dornier-Fairchild 328 JET ***********************
+const plane_DornierFairchild328Jet: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Dornier,
+        name: 'JET',
+        family: '328',
+        serie: 300,
+        remarks: ' commuter airliner, based upon the turboprop-powered Dornier 328, developed by the German aircraft manufacturer Dornier Luftfahrt GmbH. It would be the last Dornier-designed aircraft to reach production',
+    },
+    firstFlight: new Date('1998-1-20'),
+
+    measurements: {
+        airframe: {
+            length: meter(21.11),
+            height: meter(7.24),
+        },
+
+        wingSpan: meter(20.98),
+        wingArea: meter(40).asX2,
+    },
+
+    weights: {
+        empty: kilogram(9420),
+        maxTakeoff: kilogram(15660),
+        maxLanding: kilogram(14090),
+        payload: kilogram(3410),
+    },
+
+    performance: {
+        range: kilometer(2740),
+        cruiseSpeed: kilometersHour(750),
+        serviceCeiling: meter(11000),
+
+        fuelCapacity: liter(4000),
+        // ToDo: cruiseFuelConsumption: { value: 250, unit: 'l/hour' },
+    },
+
+    takeoff: {
+        run: meter(1367),
+        thrust: kilonewton(2 * 26.9),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 85,
+    listPriceMlnUsd2020: 33 // $10.5 million (1996)
+}
+
+// ********************** Saab 90 ***********************
+    const plane_Saab90: Liner = {
+        unid: undefined,
+
+        designation: {
+            brand: builders.Saab,
+            name: 'Scandia',
+            serie: 90,
+            remarks: 'Twin-engined, short-to-medium haul passenger aircraft, designed as a successor for the Douglas DC-3.',
+        },
+        firstFlight: new Date('1946-11-16'),
+    
+        measurements: {
+            airframe: {
+                length: meter(21.3),
+                height: meter(7.4),
+            },
+    
+            wingSpan: meter(28),
+            wingArea: meter(85.7).asX2,
+        },
+    
+        weights: {
+            empty: kilogram(9960),
+            maxTakeoff: kilogram(15900),
+        },
+    
+        performance: {
+            range: kilometer(2650),
+            cruiseSpeed: kilometersHour(340),
+            serviceCeiling: meter(7500),
+    
+            fuelCapacity: liter(2000),
+        },
+    
+        takeoff: {
+            run: meter(850),
+        },
+    cargoBay: {
+        capacity: cubicMeter(10.7)
+    },
+        cockpitCrew: new Array<CrewPerson>(3),
+        powerplant: new Array<Engine>(2),
+        maxSeats: 32,
+    }
+
+// ********************** GAF Nomad N22B ***********************
+const plane_NomadN22B: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.GAF,
+        name: 'Nomad',
+        family: 'N22B',
+        remarks: 'Utility twin-turboprop, high-wing aircraft with a retractable gear. Design work began in the mid-1960s. Despite some export and commercial operations, sales were not as sufficient and production stopped in 1985.',
+    },
+    firstFlight: new Date('1971-7-23'),
+
+    measurements: {
+        airframe: {
+            length: foot(41 + 3/12), 
+            height: foot(18 + 2/12), 
+        },
+
+        wingSpan: foot(54 + 2/12),
+        wingArea: foot(324).asX2,
+    },
+
+    weights: {
+        empty: pound(4730),
+        maxTakeoff: pound(8500),
+    },
+
+    performance: {
+        range: nauticalMile(730),
+        cruiseSpeed: knot(168),
+        serviceCeiling: foot(25000),
+        // thrust: horsePower(400), POWER
+
+        fuelCapacity: usGallon(269),
+    },
+    cargoBay: {
+        capacity: cubicFoot(58),
+    },
+    takeoff: {
+        run: foot(1050),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 12,
+
+    listPriceMlnUsd2020: 15 // A$991 000 in 1981
+}
+
+
+// ********************** Piaggio P.180 Avanti ***********************
+const bizJet_P180Avanti: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Piaggio,
+        name: 'Avanti',
+        family: 'P.180',
+        remarks: 'Italian executive transport aircraft with twin turboprop engines mounted in pusher configuration.'
+    },
+    firstFlight: new Date('1986-9-23'),
+
+    measurements: {
+        airframe: {
+            length: meter(14.4),
+            height: meter(4),
+        },
+        wingSpan: meter(14),
+        wingArea: meter(16).asX2,
+    },
+
+    weights: {
+        empty: kilogram(3799), 
+        maxTakeoff: kilogram(5488),
+        maxLanding: kilogram(5216),
+    },
+
+    performance: {
+        range: kilometer(2800),
+        cruiseSpeed: kilometersHour(589),
+        serviceCeiling: meter(12000),
+
+        fuelCapacity: liter(1500),
+        // ToDo: cruiseFuelConsumption 0.220 kg/km (0.779 lb/mi)
+        // thrust: kilonewton(), // 630 kW
+    },
+    takeoff: {
+        run: meter(994),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(1), // can be flown by 2
+    powerplant: new Array<Engine>(2),
+    maxSeats: 9,
+
+    listPriceMlnUsd2020: 7.695
+}
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
 
     plane_WrightFlyer,
+
     plane_SikorskyS42,
     plane_Concorde,
     plane_A380,
     plane_Dreamliner,
     plane_747_400,
     bizJet_Gulfstream700,
+    bizJet_Falcon,
     plane_Crj700,
-    plane_Mriya,
-    plane_BelugaXl,
+    freighter_Mriya,
+    freighter_BelugaXl,
     plane_Cessna172,
     bizJet_PC24,
+    bizJet_P180Avanti,
     plane_A321neo,
     plane_SpaceJet,
     plane_Atr72,
@@ -1656,9 +1852,11 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_Erj145Er,
     plane_Fokker70,
     plane_737_100,
-    plane_747_400LCF,
+    freighter_747_400LCF,
 
     plane_DouglasDc3,
+    plane_Saab90,
+    plane_NomadN22B,
     plane_CV240,
     plane_SN601,
     plane_TriStar,
@@ -1669,5 +1867,5 @@ export const fullAircraftsList: AircraftDescription[] = [
 
     plane_DH34,
 
-    bizJet_Falcon,
+    plane_DornierFairchild328Jet,
 ];

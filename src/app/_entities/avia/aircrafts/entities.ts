@@ -8,7 +8,7 @@ export interface AircraftDescription extends DomainEntity {
     weights: FlyingMachineWeights,
     performance: FlyingMachinePerformance,
     takeoff?: FlyingMachineTakeOff,
-    cargo?: CargoBay,
+    cargoBay?: CargoBay,
   
     cockpitCrew: CrewPerson[],
     powerplant: Engine[]
