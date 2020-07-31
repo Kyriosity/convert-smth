@@ -26,11 +26,11 @@ export class Length extends linear<length, LengthUnits> {
         { unit: LengthUnits.mile, labels: ['', 'mi', 'mile'] },
     ];
 
-    protected readonly unitSystems = [metric, feetBased]
+    protected readonly unitSystems = [metricAndExactRelated, feetBased]
     protected readonly crossRatios = [toMeter]
 }
 
-const metric = [
+const metricAndExactRelated = [
     { unit: LengthUnits.picometre, ratio: DecimalRatios.pico },
     { unit: LengthUnits.nanometre, ratio: DecimalRatios.nano },
     { unit: LengthUnits.micrometre, ratio: DecimalRatios.micro },
@@ -44,6 +44,8 @@ const metric = [
     { unit: LengthUnits.megametre, ratio: DecimalRatios.mega },
     { unit: LengthUnits.gigametre, ratio: DecimalRatios.giga },
     { unit: LengthUnits.terametre, ratio: DecimalRatios.tera },
+
+    { unit: LengthUnits.nauticalMile, ratio: 1852 },
 ];
 
 const feetBased = [
@@ -61,5 +63,4 @@ const toMeter = [
     { unit: LengthUnits.metre, ratio: 1, isBase: true },
     { unit: LengthUnits.foot, ratio: 1 / 3.28084 },
     { unit: LengthUnits.mile, ratio: 1609340 },
-    { unit: LengthUnits.nauticalMile, ratio: 1852000 },
 ]
