@@ -1730,6 +1730,104 @@ const plane_DornierFairchild328Jet: Liner = {
         maxSeats: 32,
     }
 
+
+// ********************** Dornier-Fairchild 328 JET ***********************
+const plane_DornierFairchild328Jet: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Dornier,
+        name: 'JET',
+        family: '328',
+        serie: 300,
+        remarks: ' commuter airliner, based upon the turboprop-powered Dornier 328, developed by the German aircraft manufacturer Dornier Luftfahrt GmbH. It would be the last Dornier-designed aircraft to reach production',
+    },
+    firstFlight: new Date('1998-1-20'),
+
+    measurements: {
+        airframe: {
+            length: meter(21.11),
+            height: meter(7.24),
+        },
+
+        wingSpan: meter(20.98),
+        wingArea: meter(40).asX2,
+    },
+
+    weights: {
+        empty: kilogram(9420),
+        maxTakeoff: kilogram(15660),
+        maxLanding: kilogram(14090),
+        payload: kilogram(3410),
+    },
+
+    performance: {
+        range: kilometer(2740),
+        cruiseSpeed: kilometersHour(750),
+        serviceCeiling: meter(11000),
+
+        fuelCapacity: liter(4000),
+        // ToDo: cruiseFuelConsumption: { value: 250, unit: 'l/hour' },
+    },
+
+    takeoff: {
+        run: meter(1367),
+        thrust: kilonewton(2 * 26.9),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 85,
+    listPriceMlnUsd2020: 33 // $10.5 million (1996)
+}
+
+// ********************** Saab 90 ***********************
+    const plane_Saab2000: Liner = {
+        unid: undefined,
+
+        designation: {
+            brand: builders.Saab,
+            family: '2000',
+            remarks: 'Twin-engined high-speed turboprop airliner',
+        },
+        firstFlight: new Date('1992-3-26'),
+    
+        measurements: {
+            airframe: {
+                length: meter(27.28),
+                height: meter(7.73),
+            },
+    
+            wingSpan: meter(24.76),
+            wingArea: meter( 55.7).asX2,
+        },
+    
+        weights: {
+            empty: kilogram(13800),
+            maxTakeoff: kilogram(22800),
+            payload: kilogram(5900),
+        },
+    
+        performance: {
+            range: kilometer(2869),
+            cruiseSpeed: kilometersHour(665),
+            serviceCeiling: meter(9450),
+    
+            fuelCapacity: liter(5500),
+        },
+    
+        takeoff: {
+            run: meter(1200),
+        },
+    cargoBay: {
+        capacity: cubicMeter(10.7)
+    },
+        cockpitCrew: new Array<CrewPerson>(2),
+        powerplant: new Array<Engine>(2),
+        maxSeats: 58,
+        listPriceMlnUsd2020: 25, // $12.5M in 1991
+    }
+
 // ********************** GAF Nomad N22B ***********************
 const plane_NomadN22B: Liner = {
     unid: undefined,
@@ -1856,6 +1954,7 @@ export const fullAircraftsList: AircraftDescription[] = [
 
     plane_DouglasDc3,
     plane_Saab90,
+    plane_Saab2000,
     plane_NomadN22B,
     plane_CV240,
     plane_SN601,
