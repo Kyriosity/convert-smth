@@ -17,7 +17,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
   sort: MatSort;
 
   isLoading = false;
-  private readonly msSimulatedDelay = 1000;
+  readonly #msSimulatedDelay = 1000;
 
   constructor() {
     super();
@@ -40,7 +40,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
 
     let obs = merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
-    }), delay(this.msSimulatedDelay));
+    }), delay(this.#msSimulatedDelay));
     obs.subscribe(_ => this.isLoading = false);
 
     return obs;

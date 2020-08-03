@@ -16,17 +16,17 @@ export class uValPipe implements PipeTransform {
   }
 
   private get Presentation(): UValView {
-    if (!this._presentation)
-      this._presentation = new UValView(this._locale);
-    return this._presentation;
+    if (!this.#presentation)
+      this.#presentation = new UValView(this._locale);
+    return this.#presentation;
   }
 
-  private _presentation: UValView = null;
+  #presentation: UValView = null;
 
   private get Params(): PresentationParams {
-    if (!this._params)
-      this._params = new PresentationParams();
-    return this._params;
+    if (!this.#params)
+      this.#params = new PresentationParams();
+    return this.#params;
   }
-  private _params: PresentationParams = null;
+  #params: PresentationParams = null;
 }

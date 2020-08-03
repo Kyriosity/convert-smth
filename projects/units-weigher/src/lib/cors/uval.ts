@@ -4,18 +4,18 @@ export abstract class Unit<T extends number> { }
 
 export abstract class UVal<U extends Unit<number>> {
     constructor(public unit: U, v?: number) {
-        this.val = v
+        this.#val = v
     }
 
     abstract NonNegative(): boolean;
 
-    private _val?: number;
-    public get val() { return this._val };
+    #val?: number;
+    public get val() { return this.#val };
     public set val(val: number) {
         if (this.NonNegative && 0 > val)
             throw new UValErr(`${this.constructor.toString}: value can't be negative here`)
             
-        this._val = val
+        this.#val = val
     };
 }
 

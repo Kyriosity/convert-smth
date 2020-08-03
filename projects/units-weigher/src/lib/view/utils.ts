@@ -5,20 +5,20 @@ export const uQuestion = '\u0022'
 export const uFatQuestion = '\u2753';
 
 export class PresentationParams {
-    private _convertTo = '';
-    get ConvertTo(): string { return this._convertTo }
+    #convertTo = '';
+    get ConvertTo(): string { return this.#convertTo }
     get ConvertApplies(): boolean { return '' != this.ConvertTo; }
 
-    private _decimalFormat = '';
-    get DecimalFormat(): string { return this._decimalFormat; }
+    #decimalFormat = '';
+    get DecimalFormat(): string { return this.#decimalFormat; }
     get DecimalFormatApplies(): boolean { return '' != this.DecimalFormat; }
 
-    private _culture = '';
-    get Culture(): string { return this._culture; }
+    #culture = '';
+    get Culture(): string { return this.#culture; }
     get CultureApplies(): boolean { return '' != this.Culture; }
 
-    private _unitDisplay = 'unit-short';
-    get UnitDisplay(): string { return this._unitDisplay }
+    #unitDisplay = 'unit-short';
+    get UnitDisplay(): string { return this.#unitDisplay }
 
     parse(...args: string[]): void {
         this.reset();
@@ -28,13 +28,13 @@ export class PresentationParams {
             const arg = args[i].trim();
             if (!PresentationParams.isArgOmmited(arg)) {
                 if (0 === i)
-                    this._convertTo = arg;
+                    this.#convertTo = arg;
                 else if (1 === i)
-                    this._unitDisplay = arg;
+                    this.#unitDisplay = arg;
                 else if (2 === i)
-                    this._decimalFormat = arg;
+                    this.#decimalFormat = arg;
                 else if (3 === i)
-                    this._culture = arg;
+                    this.#culture = arg;
             }
         }
         if (args.length > maxParams) {
@@ -44,10 +44,10 @@ export class PresentationParams {
     }
 
     private reset() {
-        this._convertTo = '';
-        this._decimalFormat = '';
-        this._culture = '';
-        this._unitDisplay = '';
+        this.#convertTo = '';
+        this.#decimalFormat = '';
+        this.#culture = '';
+        this.#unitDisplay = '';
     }
 
     private static isArgOmmited(arg: string): boolean { return ('' == arg! || '-' == arg); }

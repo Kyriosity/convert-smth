@@ -4,17 +4,17 @@ import { gen } from '../weigher/gen';
 import { uFatQuestion, uWarn, PresentationParams, formatCustom, uQuestion } from './utils';
 
 export class UValView {
-    private weighers: gen;
+    #weighers: gen;
 
     constructor(private _locale?: string) {
-        this.weighers = new gen();
+        this.#weighers = new gen();
     }
 
     transform(uval: UVal<number>, params: PresentationParams): string {
         if (!uval)
             return '';
 
-        const weigher = this.weighers.for(uval);
+        const weigher = this.#weighers.for(uval);
         if (!weigher)
             return `${uval.val}${uFatQuestion}`;
 

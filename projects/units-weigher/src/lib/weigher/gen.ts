@@ -8,15 +8,15 @@ import { Volume } from './measures/Volume';
 import { Force } from './measures/Force';
 
 export class gen {
-    private _weighers: { name: string, measure: IWeigher }[] = [];
+    #weighers: { name: string, measure: IWeigher }[] = [];
 
     for(uval: UVal<number>): IWeigher {
         const className = uval.constructor.name
 
-        if (0 === this._weighers.filter(x => x.name === className).length)
-            this._weighers.push({ name: className, measure: this.add(className) })
+        if (0 === this.#weighers.filter(x => x.name === className).length)
+            this.#weighers.push({ name: className, measure: this.add(className) })
 
-        return this._weighers.filter(x => x.name === className)[0].measure;
+        return this.#weighers.filter(x => x.name === className)[0].measure;
     }
 
     private add(className: string): IWeigher {

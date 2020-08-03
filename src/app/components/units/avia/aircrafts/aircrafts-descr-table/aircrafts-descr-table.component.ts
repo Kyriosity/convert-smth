@@ -24,12 +24,12 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<AircraftDescrTableItem>;
   dataSource: AircraftsDescrTableDataSource;
 
-  get SelectedUnitsScheme() { return this._selectedUnitsScheme; }
+  get SelectedUnitsScheme() { return this.#selectedUnitsScheme; }
   set SelectedUnitsScheme(value: string) {
     this.dataSource.convert(value);
-    this._selectedUnitsScheme = value;
+    this.#selectedUnitsScheme = value;
   }
-  private _selectedUnitsScheme = "data";
+  #selectedUnitsScheme = "data";
 
   unitSchemes: DisplayScheme[] = [
     { value: 'data', viewValue: 'as in loaded data' },
