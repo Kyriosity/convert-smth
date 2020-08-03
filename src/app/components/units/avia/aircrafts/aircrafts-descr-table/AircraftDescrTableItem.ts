@@ -3,6 +3,8 @@ import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
 import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers';
 
+const uNonBreakingHyphen = '\u2011'
+
 export interface AircraftDescrTableItem {
     id: number;
     brand: string;
@@ -54,6 +56,6 @@ export module Digest {
         if (!item)
             return '- none -';
 
-        return `${item.name ? item.name + " " : ''}${item.family ? item.family : ''}${item.serie ? `-${item.serie}` : ''}${item.variant ? "-" + item.variant : ''}${item.modification? item.modification : ''}`;
+        return `${item.name ? item.name + " " : ''}${item.family ? item.family : ''}${item.serie ? `${uNonBreakingHyphen}${item.serie}` : ''}${item.variant ? `${uNonBreakingHyphen}${item.variant}` : ''}${item.modification? item.modification : ''}`;
     }
 }

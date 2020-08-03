@@ -16,8 +16,37 @@ body {
   margin: 7;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-.full-width-table {
+.uval-table-full-width {
   width: 100%;
+}
+
+.uval-column-full-wrap{
+  width: 5%;
+
+  word-wrap: break-word !important;
+  // word-break: break-word;
+  white-space: wrap !important;
+  
+  // overflow-wrap: break-word;
+ 
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.uval-column-strict-wrap{
+  width: 5%;
+
+  word-wrap: break-word !important;
+  // word-break: break-word;
+  white-space: unset !important;
+  
+  // overflow-wrap: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .table-disabled {
