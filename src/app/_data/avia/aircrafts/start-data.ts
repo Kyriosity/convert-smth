@@ -261,8 +261,8 @@ const plane_Dreamliner: Liner = {
     designation: {
         brand: builders.Boeing,
         name: 'Dreamliner',
-        serie: 787,
-        variant: 10,
+        family: '787',
+        serie: 10,
         remarks: 'stretche variant of wide-body composite-made airliner, fully designed in CAD',
     },
     firstFlight: new Date('2017-3-31'),
@@ -316,8 +316,8 @@ const plane_747_400: Liner = {
     designation: {
         brand: builders.Boeing,
         name: 'Jumbo Jet',
-        serie: 747,
-        variant: 400,
+        family: '747',
+        serie: 400,
         remarks: 'Wide-body, long–range, commercial jet airliner and cargo aircraft. Variant of first wide-body airplane produced',
     },
     firstFlight: new Date('1988-4-29'),
@@ -371,8 +371,7 @@ const bizJet_Gulfstream700: Liner = {
     designation: {
         brand: builders.Gulfstream,
         name: 'Gulfstream',
-        serie: 700,
-        modification: '',
+        family: '700',
         remarks: 'twin-engine business jet airplane',
     },
     firstFlight: new Date('2020-2-14'),
@@ -609,8 +608,7 @@ const plane_Cessna172: Liner = {
     designation: {
         brand: builders.Cessna,
         name: 'Skyhawk',
-        family: '',
-        serie: 172,
+        family: '172',
         modification: 'R', // since 1996
         remarks: 'Four-seat, single-engine, high wing, fixed-wing aircraft. First flown in 1955, more "172"s have been built than any other aircraft.',
     },
@@ -1093,7 +1091,7 @@ const plane_SN601: Liner = {
     designation: {
         brand: builders.Aerospatiale,
         name: 'Corvette',
-        serie: 601,
+        family: '601',
         modification: 'SN',
         remarks: 'a business jet of the early 1970s developed. In addition to its use as a VIP aircraft, a number of Corvettes were procured and operated by regional airlines, such as Air Alsace, Air Alpes, Air Champagne, TAT, and Sterling Airways. Airbus Industrie also operated a small fleet of Corvettes for internal transportation of staff between its key sites across Europe.',
     },
@@ -1250,8 +1248,8 @@ const plane_Trident: Liner = {
     designation: {
         brand: builders.HawkerSiddeley,
         name: 'Trident',
-        serie: 1,
-        variant: 28,
+        family: '1',
+        serie: 28,
         remarks: 'is a now-retired British short- (and later medium-) range airliner. It was the first T-tail rear-engined trijet airliner to be designed. It was also the first airliner to make a blind landing in revenue service in 1965.'
     },
     firstFlight: new Date('1962-1-9'),
@@ -1400,7 +1398,7 @@ const plane_Beechcraft1900: Liner = {
     designation: {
         brand: builders.Beechcraft,
         name: 'Beechcraft',
-        serie: 1900,
+        family: '1900',
         remarks: ' 19-passenger, pressurized twin-engine turboprop fixed-wing aircraft. Designed to carry passengers in all weather conditions from airports with relatively short runways.',
     },
     firstFlight: new Date('1982-9-3'),
