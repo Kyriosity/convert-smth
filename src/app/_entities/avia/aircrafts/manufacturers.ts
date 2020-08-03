@@ -31,6 +31,7 @@ export enum AircraftBuilders {
     Saab,
     Sikorsky,
     SudAviation,
+    VickersArmstrongs,
     Wright,
     Zeppelin,
 }
@@ -66,6 +67,7 @@ const namings: { [id in keyof typeof AircraftBuilders]?: naming; } = {
     Saab: { short: 'Saab', full: 'Svenska Aeroplan Aktiebolaget' },
     Sikorsky: { short: 'Sikorsky', full: 'Sikorsky Aircraft', details: 'is an American aircraft manufacturer based in Stratford, Connecticut. Established by american aviator Igor Sikorsky in 1923 and was among the first companies to manufacture helicopters for civilian and military use.' },
     SudAviation: { short: 'Sud Aviation', details: 'was a French state-owned aircraft manufacturer, originating from the merger of Sud-Est and Sud-Ouest. The company became a major manufactuter of helicopters, designing and producing several types which went on to be built in large numbers.'},
+    VickersArmstrongs: { short: 'Vickers-Armstrongs', full: 'Vickers-Armstrongs Limited', details: 'Was a British engineering conglomerate formed by the merger of the assets of Vickers Limited and Sir W G Armstrong Whitworth & Company in 1927.' },
     Wright: { short: 'Wright', full: 'Brothers Wright', details: 'brothers Orville and Wilbur' },
 
     Zeppelin: { short: 'Zeppelin', full: 'Luftschiffbau Zeppelin GmbH ', details: 'a German aircraft manufacturing company. It is perhaps best known for its leading role in the design and manufacture of rigid airships, commonly referred to as Zeppelins due to the company\'s prominence.' },

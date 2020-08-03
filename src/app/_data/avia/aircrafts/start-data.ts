@@ -1927,6 +1927,54 @@ const bizJet_P180Avanti: Liner = {
     listPriceMlnUsd2020: 7.695
 }
 
+// ********************** Vickers VC10 ***********************
+const plane_VickersVC10: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.VickersArmstrongs,
+        name: 'VC10',
+        remarks: 'Mid-sized, narrow-body long-range jet airliner. The airliner was designed to operate on long-distance routes from the shorter runways of the era and commanded excellent hot and high performance for operations from African airports. It had achieved the fastest crossing of the Atlantic by a subsonic jet airliner of 5 hours and 1 minute, a record that was held for 41 years.',
+    },
+    firstFlight: new Date('1964-4-29'),
+
+    measurements: {
+        airframe: {
+            length: foot(158 + 8/12),
+            height: foot(39 + 6/12),
+        },
+
+        wingSpan: foot( 146 + 2/12),
+        wingArea: foot(2851).asX2,
+    },
+
+    weights: {
+        empty: pound(139505),
+        maxTakeoff: pound(334878),
+    },
+
+    performance: {
+        range: mile(5850),
+        cruiseSpeed: milesHour(550),
+
+        serviceCeiling: foot(43000),
+        thrust: poundforce(22500),
+
+        fuelCapacity: imperialGallon(17925),
+    },
+
+    takeoff: {
+        run: foot(8280),
+    },
+
+    cockpitCrew: new Array<CrewPerson>(4),
+    powerplant: new Array<Engine>(4),
+
+    maxSeats: 151,
+    listPriceMlnUsd2020: 150 // £1.75 million
+}
+
+
 export const fullAircraftsList: AircraftDescription[] = [
     ship_ZeppelinNT,
 
@@ -1945,6 +1993,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_Cessna172,
     bizJet_PC24,
     bizJet_P180Avanti,
+    lightJet_HondaJetHA420,
     plane_A321neo,
     plane_SpaceJet,
     plane_Atr72,
@@ -1962,6 +2011,7 @@ export const fullAircraftsList: AircraftDescription[] = [
     plane_SN601,
     plane_TriStar,
     plane_Trident,
+    plane_VickersVC10,
     plane_Caravelle,
     plane_BAC111,
     plane_Beechcraft1900,
