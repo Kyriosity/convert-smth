@@ -1634,6 +1634,105 @@ const bizJet_PC24: Liner = {
     listPriceMlnUsd2020: 10.7
 }
 
+// ********************** HondaJet HA-420  ***********************
+const lightJet_HondaJetHA420: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Honda,
+        family: 'HA',
+        serie: 420,
+        name: 'Hondajet',
+        remarks: 'Very lIght business jet - first aircradt developed by the Honda Aircraft Company, which has received multiple awards for innovation.',
+    },
+    firstFlight: new Date('2003-12-3'),
+
+    measurements: {
+        airframe: {
+            length: foot(42 + 7 / 12),
+            height: foot(14 + 11 / 12),
+        },
+
+        wingSpan: foot(39 + 9 / 12),
+        wingArea: foot(176.7).asX2,
+    },
+
+    weights: {
+        empty: pound(7203),
+        maxTakeoff: pound(10701),
+        payload: pound(1400),
+    },
+
+    performance: {
+        range: nauticalMile(1437),
+        cruiseSpeed: knot(422),
+        serviceCeiling: foot(43000),
+        thrust: poundforce(2050),
+        fuelCapacity: cubicFoot(60741),
+    },
+
+    cargoBay: {
+        capacity: cubicFoot(66),
+    },
+
+    takeoff: {
+        run: foot(4000),
+    },
+
+
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 7,
+    listPriceMlnUsd2020: 28
+}
+
+// ********************** Saab 90 ***********************
+const plane_Saab90: Liner = {
+    unid: undefined,
+
+    designation: {
+        brand: builders.Saab,
+        name: 'Scandia',
+        serie: 90,
+        remarks: 'Twin-engined, short-to-medium haul passenger aircraft, designed as a successor for the Douglas DC-3.',
+    },
+    firstFlight: new Date('1946-11-16'),
+
+    measurements: {
+        airframe: {
+            length: meter(21.3),
+            height: meter(7.4),
+        },
+
+        wingSpan: meter(28),
+        wingArea: meter(85.7).asX2,
+    },
+
+    weights: {
+        empty: kilogram(9960),
+        maxTakeoff: kilogram(15900),
+    },
+
+    performance: {
+        range: kilometer(2650),
+        cruiseSpeed: kilometersHour(340),
+        serviceCeiling: meter(7500),
+
+        fuelCapacity: liter(2000),
+    },
+
+    takeoff: {
+        run: meter(850),
+    },
+    cargoBay: {
+        capacity: cubicMeter(10.7)
+    },
+    cockpitCrew: new Array<CrewPerson>(3),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 32,
+}
+
+
 // ********************** Dornier-Fairchild 328 JET ***********************
 const plane_DornierFairchild328Jet: Liner = {
     unid: undefined,
@@ -1685,148 +1784,51 @@ const plane_DornierFairchild328Jet: Liner = {
 }
 
 // ********************** Saab 90 ***********************
-    const plane_Saab90: Liner = {
-        unid: undefined,
-
-        designation: {
-            brand: builders.Saab,
-            name: 'Scandia',
-            serie: 90,
-            remarks: 'Twin-engined, short-to-medium haul passenger aircraft, designed as a successor for the Douglas DC-3.',
-        },
-        firstFlight: new Date('1946-11-16'),
-    
-        measurements: {
-            airframe: {
-                length: meter(21.3),
-                height: meter(7.4),
-            },
-    
-            wingSpan: meter(28),
-            wingArea: meter(85.7).asX2,
-        },
-    
-        weights: {
-            empty: kilogram(9960),
-            maxTakeoff: kilogram(15900),
-        },
-    
-        performance: {
-            range: kilometer(2650),
-            cruiseSpeed: kilometersHour(340),
-            serviceCeiling: meter(7500),
-    
-            fuelCapacity: liter(2000),
-        },
-    
-        takeoff: {
-            run: meter(850),
-        },
-    cargoBay: {
-        capacity: cubicMeter(10.7)
-    },
-        cockpitCrew: new Array<CrewPerson>(3),
-        powerplant: new Array<Engine>(2),
-        maxSeats: 32,
-    }
-
-
-// ********************** Dornier-Fairchild 328 JET ***********************
-const plane_DornierFairchild328Jet: Liner = {
+const plane_Saab2000: Liner = {
     unid: undefined,
 
     designation: {
-        brand: builders.Dornier,
-        name: 'JET',
-        family: '328',
-        serie: 300,
-        remarks: ' commuter airliner, based upon the turboprop-powered Dornier 328, developed by the German aircraft manufacturer Dornier Luftfahrt GmbH. It would be the last Dornier-designed aircraft to reach production',
+        brand: builders.Saab,
+        family: '2000',
+        remarks: 'Twin-engined high-speed turboprop airliner',
     },
-    firstFlight: new Date('1998-1-20'),
+    firstFlight: new Date('1992-3-26'),
 
     measurements: {
         airframe: {
-            length: meter(21.11),
-            height: meter(7.24),
+            length: meter(27.28),
+            height: meter(7.73),
         },
 
-        wingSpan: meter(20.98),
-        wingArea: meter(40).asX2,
+        wingSpan: meter(24.76),
+        wingArea: meter(55.7).asX2,
     },
 
     weights: {
-        empty: kilogram(9420),
-        maxTakeoff: kilogram(15660),
-        maxLanding: kilogram(14090),
-        payload: kilogram(3410),
+        empty: kilogram(13800),
+        maxTakeoff: kilogram(22800),
+        payload: kilogram(5900),
     },
 
     performance: {
-        range: kilometer(2740),
-        cruiseSpeed: kilometersHour(750),
-        serviceCeiling: meter(11000),
+        range: kilometer(2869),
+        cruiseSpeed: kilometersHour(665),
+        serviceCeiling: meter(9450),
 
-        fuelCapacity: liter(4000),
-        // ToDo: cruiseFuelConsumption: { value: 250, unit: 'l/hour' },
+        fuelCapacity: liter(5500),
     },
 
     takeoff: {
-        run: meter(1367),
-        thrust: kilonewton(2 * 26.9),
+        run: meter(1200),
     },
-
-    cockpitCrew: new Array<CrewPerson>(2),
-    powerplant: new Array<Engine>(2),
-    maxSeats: 85,
-    listPriceMlnUsd2020: 33 // $10.5 million (1996)
-}
-
-// ********************** Saab 90 ***********************
-    const plane_Saab2000: Liner = {
-        unid: undefined,
-
-        designation: {
-            brand: builders.Saab,
-            family: '2000',
-            remarks: 'Twin-engined high-speed turboprop airliner',
-        },
-        firstFlight: new Date('1992-3-26'),
-    
-        measurements: {
-            airframe: {
-                length: meter(27.28),
-                height: meter(7.73),
-            },
-    
-            wingSpan: meter(24.76),
-            wingArea: meter( 55.7).asX2,
-        },
-    
-        weights: {
-            empty: kilogram(13800),
-            maxTakeoff: kilogram(22800),
-            payload: kilogram(5900),
-        },
-    
-        performance: {
-            range: kilometer(2869),
-            cruiseSpeed: kilometersHour(665),
-            serviceCeiling: meter(9450),
-    
-            fuelCapacity: liter(5500),
-        },
-    
-        takeoff: {
-            run: meter(1200),
-        },
     cargoBay: {
         capacity: cubicMeter(10.7)
     },
-        cockpitCrew: new Array<CrewPerson>(2),
-        powerplant: new Array<Engine>(2),
-        maxSeats: 58,
-        listPriceMlnUsd2020: 25, // $12.5M in 1991
-    }
+    cockpitCrew: new Array<CrewPerson>(2),
+    powerplant: new Array<Engine>(2),
+    maxSeats: 58,
+    listPriceMlnUsd2020: 25, // $12.5M in 1991
+}
 
 // ********************** GAF Nomad N22B ***********************
 const plane_NomadN22B: Liner = {
@@ -1842,11 +1844,11 @@ const plane_NomadN22B: Liner = {
 
     measurements: {
         airframe: {
-            length: foot(41 + 3/12), 
-            height: foot(18 + 2/12), 
+            length: foot(41 + 3 / 12),
+            height: foot(18 + 2 / 12),
         },
 
-        wingSpan: foot(54 + 2/12),
+        wingSpan: foot(54 + 2 / 12),
         wingArea: foot(324).asX2,
     },
 
@@ -1900,7 +1902,7 @@ const bizJet_P180Avanti: Liner = {
     },
 
     weights: {
-        empty: kilogram(3799), 
+        empty: kilogram(3799),
         maxTakeoff: kilogram(5488),
         maxLanding: kilogram(5216),
     },
