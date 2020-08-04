@@ -49,7 +49,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
    convert(schemeId: string) {
     this.isLoading = true;
 
-    setTimeout(() => { this.isLoading = false; }, this.msSimulatedDelay);
+    setTimeout(() => { this.isLoading = false; }, this.#msSimulatedDelay);
   
   }
 
