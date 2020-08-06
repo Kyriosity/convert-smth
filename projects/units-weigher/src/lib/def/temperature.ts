@@ -1,7 +1,8 @@
 import { UVal } from '../cors/z_barrel';
 
 export class temperature extends UVal<TemperatureUnits> {
-    NonNegative = () => false // KD, ToDo: can be negative in C but not in K
+    // KD, ToDo: can be negative in C but not in K
+    get nonNegative(): boolean { return false }
 }
 
 export enum TemperatureUnits { 

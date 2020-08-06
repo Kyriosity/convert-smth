@@ -1,7 +1,7 @@
 import { UVal } from '../cors/z_barrel'
 
 export class mass extends UVal<MassUnits> { 
-    NonNegative = () => true
+    get nonNegative(): boolean { return true }
 }
 
 export enum MassUnits {

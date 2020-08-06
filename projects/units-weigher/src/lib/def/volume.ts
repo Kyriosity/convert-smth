@@ -1,7 +1,7 @@
 import { UVal } from '../cors/z_barrel';
 
 export class volume extends UVal<VolumeUnits> {
-    NonNegative = () => true
+    get nonNegative(): boolean { return true }
 }
 
 export enum VolumeUnits {

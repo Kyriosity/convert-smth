@@ -1,7 +1,7 @@
 import { UVal } from '../cors/z_barrel';
 
 export class velocity extends UVal<VelocityUnits> {
-    NonNegative = () => false
+    get nonNegative(): boolean { return false }
 }
 
 export enum VelocityUnits {

@@ -7,12 +7,12 @@ export abstract class UVal<U extends Unit<number>> {
         this.#val = v
     }
 
-    abstract NonNegative(): boolean;
+    abstract get nonNegative(): boolean;
 
     #val?: number;
     public get val() { return this.#val };
     public set val(val: number) {
-        if (this.NonNegative && 0 > val)
+        if (this.nonNegative && 0 > val)
             throw new UValErr(`${this.constructor.toString}: value can't be negative here`)
             
         this.#val = val

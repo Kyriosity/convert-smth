@@ -2,7 +2,7 @@ import { UVal } from '../cors/z_barrel';
 
 
 export class length extends UVal<LengthUnits> { 
-    NonNegative = () => true
+    get nonNegative(): boolean { return true }
 
     get asX2(): area { return new area(this.unit, this.val); }
 }
