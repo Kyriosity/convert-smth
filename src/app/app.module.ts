@@ -26,7 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/lingua/welcome/welcome.component';
 import { AircraftsComponent } from './components/units/avia/aircrafts/aircrafts.component';
 import { AircraftsDescrTableComponent } from './components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component';
-import { uValPipe } from 'projects/units-weigher/src/lib/uvalue.pipe';
+import { UValPipe } from 'projects/units-weigher/src/lib/uval.pipe';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { uValPipe } from 'projects/units-weigher/src/lib/uvalue.pipe';
     HomeComponent,
 
     // ToDo: export pipe thru public-api in lib
-    uValPipe
+    UValPipe
   ],
   imports: [
     BrowserModule,

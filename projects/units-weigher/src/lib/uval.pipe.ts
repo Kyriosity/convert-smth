@@ -7,7 +7,7 @@ import { UValView } from './view/uval-view';
 
 @Pipe({ name: 'uval' })
 
-export class uValPipe implements PipeTransform {
+export class UValPipe implements PipeTransform {
   constructor(@Inject(LOCALE_ID) private _locale: string) { }
 
   transform(value: UVal<number>, ...args: string[]): string {
