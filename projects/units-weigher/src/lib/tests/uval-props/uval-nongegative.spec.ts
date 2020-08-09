@@ -1,7 +1,7 @@
 import { UValErr, ERR_MSG_VALUE_CANTBE_NEGATIVE, } from '../../cors/z_barrel';
 import { meter, kilogram, kilometersHour, kelvin, newton, rankine, celsius, fahrenheit, TemperatureUnits, } from "../../def/z_barrel";
 
-describe(`uval-feature-pemanentra-nonnegative`, () => {
+describe(`uval-feature-permanent-nonnegative`, () => {
     it('setting minus value on non-negative throws', () => {
         const subj = kilogram(1)
         subj.val = 0

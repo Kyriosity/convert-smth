@@ -1,11 +1,12 @@
 import { UVal } from '../cors/z_barrel';
-import { force, mass, length, velocity, volume } from '../def/z_barrel';
+import { force, mass, length, velocity, volume, temperature } from '../def/z_barrel';
 import { IWeigher } from './iWeigher';
 import { Length } from './measures/Length';
 import { Mass } from './measures/Mass';
 import { Velocity } from './measures/Velocity';
 import { Volume } from './measures/Volume';
 import { Force } from './measures/Force';
+import { Temperature } from './measures/Temperature';
 
 export class gen {
     #weighers: { name: string, measure: IWeigher }[] = [];
@@ -31,8 +32,8 @@ export class gen {
         if (force.name === className)
             return new Force()
 
-        // if (temperature.name === className)
-        //     return new Temperature();
+        if (temperature.name === className)
+            return new Temperature();
 
         return null; // throw new UValErr(`${className} forgotten`);
     }

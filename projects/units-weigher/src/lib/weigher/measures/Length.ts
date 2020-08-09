@@ -3,7 +3,7 @@ import { linear } from '../linear'
 import { DecimalRatios } from '../../cors/z_barrel';
 
 export class Length extends linear<length, LengthUnits> {
-    rawUnitName = (unit: LengthUnits) => { return LengthUnits[unit] }
+    rawUnitName = (unit: LengthUnits) => LengthUnits[unit]
 
     protected readonly unitLabels = [
         { unit: LengthUnits.picometre, labels: ['', 'pm', 'picometer'] },

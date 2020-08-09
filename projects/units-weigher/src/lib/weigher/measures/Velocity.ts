@@ -2,7 +2,7 @@ import { VelocityUnits, velocity } from '../../def/z_barrel'
 import { linear } from '../linear'
 
 export class Velocity extends linear<velocity, VelocityUnits> {
-    rawUnitName = (unit: VelocityUnits) => { return VelocityUnits[unit] }
+    rawUnitName = (unit: VelocityUnits) => VelocityUnits[unit]
 
     protected readonly unitLabels = [
         { unit: VelocityUnits.metresPerSecond, labels: ['m/s', 'meters per second'] },
