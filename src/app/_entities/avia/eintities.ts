@@ -9,7 +9,7 @@ export interface Engine { }
 export interface FlyingMachineMeasurements {
     airframe: Dimensions,
     wingSpan: length,
-    wingArea: area,
+    wingArea?: area,
 }
 
 export interface FlyingMachinePerformance {

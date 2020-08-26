@@ -1,5 +1,6 @@
-import { VelocityUnits, velocity } from '../../def/z_barrel'
+
 import { linear } from '../linear'
+import { VelocityUnits, velocity } from '../../measurements/z_barrel'
 
 export class Velocity extends linear<velocity, VelocityUnits> {
     rawUnitName = (unit: VelocityUnits) => VelocityUnits[unit]

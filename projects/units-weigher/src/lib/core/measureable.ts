@@ -1,22 +1,8 @@
-import { UValErr, ERR_MSG_VALUE_CANTBE_NEGATIVE } from './errors';
+export interface Unit<T extends number> { }
 
-export abstract class Unit<T extends number> { }
-
-export abstract class UVal<U extends Unit<number>> {
-    constructor(public unit: U, v?: number) {
-        this.val = v
-    }
-
-    abstract get nonNegative(): boolean;
-
-    #val?: number;
-    public get val() { return this.#val };
-    public set val(val: number) {
-        if (this.nonNegative && 0 > val)
-            throw new UValErr(ERR_MSG_VALUE_CANTBE_NEGATIVE)
-            
-        this.#val = val
-    };
+export interface Measureable<U extends Unit<number>> {
+    readonly unit: U,
+    readonly value: number
 }
 
 export enum ULabelFormats {

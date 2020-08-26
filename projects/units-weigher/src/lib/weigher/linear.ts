@@ -1,11 +1,13 @@
-import { Unit, UVal, RatiosList } from '../cors/uval';
-import { UWeigher } from './iWeigher';
+import { Unit, RatiosList, Measureable } from '../core/z_barrel';
+import { Weigher } from './weigher';
 
-export abstract class linear<V extends UVal<U>, U extends Unit<number>> extends UWeigher<V, U> {
+export abstract class linear<M extends Measureable<U>, U extends Unit<number>> extends Weigher<M, U> {
     protected readonly unitSystems: RatiosList<U>[];
     protected readonly crossRatios: RatiosList<U>[];
 
-    factor(of: U, to: U): number {
+    protected converted = (uval: M, to: U) => uval.value * this.factor(uval.unit, to)
+
+    protected factor(of: U, to: U): number {
         if (of === to)
             return 1
 

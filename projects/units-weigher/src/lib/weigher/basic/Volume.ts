@@ -1,7 +1,10 @@
-import { VolumeUnits, volume } from '../../def/z_barrel';
+import { VolumeUnits,volume } from '../../measurements/z_barrel';
 import { linear } from '../linear';
 
 export class Volume extends linear<volume, VolumeUnits> {
+    create(unit: VolumeUnits, val: number): volume {
+        throw new Error("Method not implemented.");
+    }
     rawUnitName = (unit: VolumeUnits) => { return VolumeUnits[unit]}
 
     protected unitLabels = [
@@ -14,3 +17,4 @@ export class Volume extends linear<volume, VolumeUnits> {
         { unit: VolumeUnits.cubicFoot, labels: ['ft3', 'cu ft', 'cubic foot'] },
     ];
 }
+

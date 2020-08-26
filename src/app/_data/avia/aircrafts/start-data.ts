@@ -1,13 +1,12 @@
-import {
-    meter, kilometer, nauticalMile, inch, foot, mile,
-    kilogram, tonne, pound,
-    kilometersHour, knot, milesHour, Mach,
-    liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
-    kilonewton, poundforce, kilogramforce, Kilogram,
-} from 'units-weigher';
+
 import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers';
 import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
+import { meter, kilometer, nauticalMile, inch, foot, mile,
+    kilogram, tonne, pound,
+    kilometersHour, knot, milesHour, Mach,
+    liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
+    kilonewton, poundforce, kilogramforce, Kilogram, } from 'units-weigher';
 
 // ********************** Wright Flyer I ***********************
 const ship_ZeppelinNT: Liner = {
@@ -30,7 +29,7 @@ const ship_ZeppelinNT: Liner = {
         },
 
         wingSpan: meter(0),
-        wingArea: meter(0).asX2,
+        // // wingArea: meter(0).asX2,
     },
 
     weights: {
@@ -78,7 +77,7 @@ const plane_WrightFlyer: Liner = {
         },
 
         wingSpan: foot(40 + 4 / 12),
-        wingArea: foot(510).asX2,
+        // // wingArea: foot(510).asX2,
     },
 
     weights: {
@@ -121,7 +120,7 @@ const plane_SikorskyS42: Liner = {
         },
 
         wingSpan: foot(114 + 2 / 12),
-        wingArea: foot(1330).asX2,
+        // wingArea: foot(1330).asX2,
     },
 
     weights: {
@@ -165,7 +164,7 @@ const plane_Concorde: Liner = {
         },
 
         wingSpan: foot(84),
-        wingArea: foot(3856),
+        // wingArea: foot(3856),
     },
 
     weights: {
@@ -219,7 +218,7 @@ const plane_A380: Liner = {
         },
 
         wingSpan: meter(79.75),
-        wingArea: meter(845).asX2,
+        // wingArea: meter(845).asX2,
     },
 
     weights: {
@@ -274,7 +273,7 @@ const plane_Dreamliner: Liner = {
             width: foot(18),
         },
         wingSpan: foot(197.25), // 197 ft 3 in
-        wingArea: foot(197).asX2,
+        // wingArea: foot(197).asX2,
     },
 
     weights: {
@@ -330,7 +329,7 @@ const plane_747_400: Liner = {
         },
 
         wingSpan: foot(211.41667), // 211 ft 5 in (64.44 m)
-        wingArea: foot(5.650).asX2,
+        // wingArea: foot(5.650).asX2,
     },
 
     weights: {
@@ -384,7 +383,7 @@ const bizJet_Gulfstream700: Liner = {
         },
 
         wingSpan: foot(103),
-        wingArea: foot(1.283).asX2,
+        // wingArea: foot(1.283).asX2,
     },
 
     weights: {
@@ -438,7 +437,7 @@ const plane_Crj700: Liner = {
         },
 
         wingSpan: foot(76 + 3 / 12),
-        wingArea: foot(760),
+        // wingArea: foot(760),
     },
 
     weights: {
@@ -493,7 +492,7 @@ const freighter_Mriya: Freighter = {
         },
 
         wingSpan: meter(88.4),
-        wingArea: meter(905),
+        // wingArea: meter(905),
     },
 
     weights: {
@@ -557,7 +556,7 @@ const freighter_BelugaXl: Freighter = {
         },
 
         wingSpan: meter(60.3),
-        wingArea: meter(361.6).asX2,
+        // wingArea: meter(361.6).asX2,
     },
 
     weights: {
@@ -621,7 +620,7 @@ const plane_Cessna172: Liner = {
         },
 
         wingSpan: foot(36 * 12 + 1),
-        wingArea: foot(174).asX2,
+        // wingArea: foot(174).asX2,
     },
 
     weights: {
@@ -676,7 +675,7 @@ const plane_A321neo: Liner = {
         },
 
         wingSpan: meter(35.80),
-        wingArea: meter(122.6).asX2,
+        // wingArea: meter(122.6).asX2,
     },
 
     weights: {
@@ -729,7 +728,7 @@ const plane_Atr72: Liner = {
         },
 
         wingSpan: meter(27.05),
-        wingArea: meter(61).asX2,
+        // wingArea: meter(61).asX2,
     },
 
     weights: {
@@ -782,7 +781,7 @@ const plane_B377Sg: Freighter = {
         },
 
         wingSpan: inch(156.25),
-        wingArea: foot(1964.6).asX2,
+        // wingArea: foot(1964.6).asX2,
     },
 
     weights: {
@@ -840,7 +839,7 @@ const plane_Erj145Er: Liner = {
         },
 
         wingSpan: meter(20.04),
-        wingArea: meter(51.18).asX2,
+        // wingArea: meter(51.18).asX2,
     },
 
     weights: {
@@ -893,7 +892,7 @@ const plane_Fokker70: Liner = {
         },
 
         wingSpan: meter(28.08),
-        wingArea: meter(93.5).asX2,
+        // wingArea: meter(93.5).asX2,
     },
 
     weights: {
@@ -944,7 +943,7 @@ const plane_737_100: Liner = {
         },
 
         wingSpan: foot(93),
-        wingArea: foot(979.9).asX2,
+        // wingArea: foot(979.9).asX2,
     },
 
     weights: {
@@ -1000,7 +999,7 @@ const freighter_747_400LCF: Freighter = {
         },
 
         wingSpan: inch(211 * 12 + 5),
-        wingArea: foot(5825).asX2,
+        // wingArea: foot(5825).asX2,
     },
 
     weights: {
@@ -1056,7 +1055,7 @@ const plane_DouglasDc3: Liner = {
         },
 
         wingSpan: foot(95 + 1 / 6),
-        wingArea: foot(987).asX2,
+        // wingArea: foot(987).asX2,
     },
 
     weights: {
@@ -1104,7 +1103,7 @@ const plane_SN601: Liner = {
         },
 
         wingSpan: meter(12.87),
-        wingArea: meter(22).asX2,
+        // wingArea: meter(22).asX2,
     },
 
     weights: {
@@ -1156,7 +1155,7 @@ const plane_TriStar: Liner = {
         },
 
         wingSpan: foot(155 + 4 / 12),
-        wingArea: foot(3456).asX2,
+        // wingArea: foot(3456).asX2,
     },
 
     weights: {
@@ -1208,7 +1207,7 @@ const bizJet_Falcon: Liner = {
         },
 
         wingSpan: meter(26.21),
-        wingArea: meter(70.7).asX2,
+        // wingArea: meter(70.7).asX2,
     },
 
     weights: {
@@ -1261,7 +1260,7 @@ const plane_Trident: Liner = {
         },
 
         wingSpan: foot(89 + 10 / 12),
-        wingArea: foot(1358).asX2,
+        // wingArea: foot(1358).asX2,
     },
 
     weights: {
@@ -1314,14 +1313,14 @@ const plane_Caravelle: Liner = {
         },
 
         wingSpan: meter(34.3),
-        wingArea: meter(146.7).asX2,
+        // wingArea: meter(146.7).asX2,
     },
 
     weights: {
         empty: kilogram(22200),
         maxTakeoff: kilogram(46000),
 
-        payload: kilogram(-1),
+//        payload: kilogram(-1),
     },
 
     performance: {
@@ -1335,9 +1334,9 @@ const plane_Caravelle: Liner = {
         // fuelCapacity: (),
     },
 
-    takeoff: {
-        run: meter(-1),
-    },
+ //   takeoff: {
+//        run: meter(-1),
+ //   },
 
     cockpitCrew: new Array<CrewPerson>(3),
     powerplant: new Array<Engine>(2),
@@ -1364,14 +1363,14 @@ const plane_DH34: Liner = {
         },
 
         wingSpan: foot(51 + 4 / 12),
-        wingArea: foot(590).asX2,
+        // wingArea: foot(590).asX2,
     },
 
     weights: {
         empty: pound(4574),
         maxTakeoff: pound(7200),
 
-        payload: kilogram(-1),
+     //   payload: kilogram(-1),
     },
 
     performance: {
@@ -1410,7 +1409,7 @@ const plane_Beechcraft1900: Liner = {
         },
 
         wingSpan: foot(57 + 9 / 12),
-        wingArea: foot(310).asX2,
+        // wingArea: foot(310).asX2,
     },
 
     weights: {
@@ -1458,7 +1457,7 @@ const plane_SpaceJet: Liner = {
         },
 
         wingSpan: meter(35.80),
-        wingArea: meter(-1).asX2,
+ //     // wingArea: meter(-1).asX2,
     },
 
     weights: {
@@ -1510,7 +1509,7 @@ const plane_CV240: Liner = {
         },
 
         wingSpan: foot(91 + 9 / 12),
-        wingArea: foot(817).asX2,
+        // wingArea: foot(817).asX2,
     },
 
     weights: {
@@ -1552,7 +1551,7 @@ const plane_BAC111: Liner = {
         },
 
         wingSpan: foot(88 + 6 / 12),
-        wingArea: foot(980).asX2,
+        // wingArea: foot(980).asX2,
     },
 
     weights: {
@@ -1603,7 +1602,7 @@ const bizJet_PC24: Liner = {
         },
 
         wingSpan: meter(17),
-        wingArea: meter(30.91).asX2,
+        // wingArea: meter(30.91).asX2,
     },
 
     weights: {
@@ -1652,7 +1651,7 @@ const lightJet_HondaJetHA420: Liner = {
         },
 
         wingSpan: foot(39 + 9 / 12),
-        wingArea: foot(176.7).asX2,
+        // wingArea: foot(176.7).asX2,
     },
 
     weights: {
@@ -1703,7 +1702,7 @@ const plane_Saab90: Liner = {
         },
 
         wingSpan: meter(28),
-        wingArea: meter(85.7).asX2,
+        // wingArea: meter(85.7).asX2,
     },
 
     weights: {
@@ -1751,7 +1750,7 @@ const plane_DornierFairchild328Jet: Liner = {
         },
 
         wingSpan: meter(20.98),
-        wingArea: meter(40).asX2,
+        // wingArea: meter(40).asX2,
     },
 
     weights: {
@@ -1799,7 +1798,7 @@ const plane_Saab2000: Liner = {
         },
 
         wingSpan: meter(24.76),
-        wingArea: meter(55.7).asX2,
+        // wingArea: meter(55.7).asX2,
     },
 
     weights: {
@@ -1847,7 +1846,7 @@ const plane_NomadN22B: Liner = {
         },
 
         wingSpan: foot(54 + 2 / 12),
-        wingArea: foot(324).asX2,
+        // wingArea: foot(324).asX2,
     },
 
     weights: {
@@ -1896,7 +1895,7 @@ const bizJet_P180Avanti: Liner = {
             height: meter(4),
         },
         wingSpan: meter(14),
-        wingArea: meter(16).asX2,
+        // wingArea: meter(16).asX2,
     },
 
     weights: {
@@ -1943,7 +1942,7 @@ const plane_VickersVC10: Liner = {
         },
 
         wingSpan: foot( 146 + 2/12),
-        wingArea: foot(2851).asX2,
+        // wingArea: foot(2851).asX2,
     },
 
     weights: {

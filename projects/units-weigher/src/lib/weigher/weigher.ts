@@ -1,38 +1,40 @@
-import { UVal, Unit, ULabel, ULabelFormats } from '../cors/z_barrel';
+import { Unit, ULabel, ULabelFormats, Measureable } from '../core/z_barrel';
 import { parseUnitFormat, selectUnitLabel } from './utils';
 
-export interface IWeigher {
-    convert(that, to): void
-    differ(of, to): number
+// interface IIWeigher {
+//     convert(that, to): void
+//     differ(of, to): number
 
-    parseUnit(unitName: string)
-    nameUnit(uval, input?: string, culture?: string): string
-    rawUnitName(unit): string
-}
+//     parseUnit(unitName: string)
+//     nameUnit(uval, input?: string, culture?: string): string
+//     rawUnitName(unit): string
+// }
 
-interface Weigher<V extends UVal<U>, U extends Unit<number>> extends IWeigher {
-    convert(that: V, to: U): void
-    differ(of: V, to: V): number
+export interface IWeigher<M extends Measureable<U>, U extends Unit<number>> { // extends IIWeigher {
+    convert(m: M, to: U): void
+    differ(of: M, to: M): number
 
     parseUnit(unitName: string): U
     nameUnit(uval: U, input?: string, culture?: string): string
     rawUnitName(unit: U): string
 }
 
-export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implements Weigher<V, U> {
+export abstract class Weigher<M extends Measureable<U>, U extends Unit<number>> implements IWeigher<M, U> {
     protected readonly unitLabels: ULabel<U>[];
 
-    protected abstract factor(of: U, to: U): number;
-    abstract rawUnitName(unit: U): string;
+    protected abstract converted(uval: M, to: U)
 
-    convert(that: V, to: U): void {
-        that.val *= this.factor(that.unit, to);
-        that.unit = to;
+    abstract rawUnitName(unit: U): string
+
+    protected create(u: U, v: number): M { return {unit: u, value: v} as M }
+
+    convert(m: M, to: U): void {
+        m = this.create(to, this.converted(m, to))
     }
 
-    differ(of: V, to: V): number {
+    differ(of: M, to: M): number {
         this.convert(of, to.unit);
-        return of.val - to.val;
+        return of.value - to.value;
     }
 
     parseUnit(label: string): U {
@@ -51,9 +53,6 @@ export abstract class UWeigher<V extends UVal<U>, U extends Unit<number>> implem
         if (ULabelFormats.customCoded == parsedFormat)
             return formatInput
 
-        const lbls = this.unitLabels?.filter(x => x.unit == of)[0]?.labels;
         return selectUnitLabel(this.unitLabels?.filter(x => x.unit == of)[0]?.labels, parsedFormat)
     }
 }
-
-

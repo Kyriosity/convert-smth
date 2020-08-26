@@ -1,7 +1,6 @@
-import { MassUnits, mass } from '../../def/z_barrel';
-import { DecimalRatios } from '../../cors/z_barrel';
+import { MassUnits, mass } from '../../measurements/z_barrel';
+import { DecimalRatios } from '../../core/z_barrel';
 import { linear } from '../linear';
-
 
 export class Mass extends linear<mass, MassUnits> {
     rawUnitName = (unit: MassUnits) => MassUnits[unit]
@@ -42,4 +41,3 @@ const KiloMeetsPound = [
     { unit: MassUnits.kilogramme, ratio: 0.45359237, isBase: true },
     { unit: MassUnits.pound, ratio: 1 }
 ];
-

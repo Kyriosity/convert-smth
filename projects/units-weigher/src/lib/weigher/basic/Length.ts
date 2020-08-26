@@ -1,6 +1,6 @@
-import { length, LengthUnits } from '../../def/z_barrel';
 import { linear } from '../linear'
-import { DecimalRatios } from '../../cors/z_barrel';
+import { DecimalRatios } from '../../core/z_barrel';
+import { LengthUnits, length } from '../../measurements/z_barrel';
 
 export class Length extends linear<length, LengthUnits> {
     rawUnitName = (unit: LengthUnits) => LengthUnits[unit]
