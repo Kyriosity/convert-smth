@@ -1,20 +1,21 @@
-import { VolumeUnits,volume } from '../../measurements/z_barrel';
+import { volume } from '../../core/z_barrel';
 import { linear } from '../linear';
+import { Volumes } from '../../core/units';
 
-export class Volume extends linear<volume, VolumeUnits> {
-    create(unit: VolumeUnits, val: number): volume {
+export class Volume extends linear<volume> {
+    create(unit: Volumes, val: number): volume {
         throw new Error("Method not implemented.");
     }
-    rawUnitName = (unit: VolumeUnits) => { return VolumeUnits[unit]}
+    rawUnitName = (unit: Volumes) => { return Volumes[unit]}
 
     protected unitLabels = [
-        { unit: VolumeUnits.litre, labels: ['lt', 'liter'] },
-        { unit: VolumeUnits.cubicMetre, labels: ['m3', 'cu m', 'cubic meter'] },
+        { unit: Volumes.litre, labels: ['lt', 'liter'] },
+        { unit: Volumes.cubicMetre, labels: ['m3', 'cu m', 'cubic meter'] },
 
-        { unit: VolumeUnits.usGallon, labels: ['gal', 'US gallon'] },
-        { unit: VolumeUnits.imperialGallon, labels: ['Imp. gal', 'imperial gallon'] },
+        { unit: Volumes.usGallon, labels: ['gal', 'US gallon'] },
+        { unit: Volumes.imperialGallon, labels: ['Imp. gal', 'imperial gallon'] },
 
-        { unit: VolumeUnits.cubicFoot, labels: ['ft3', 'cu ft', 'cubic foot'] },
+        { unit: Volumes.cubicFoot, labels: ['ft3', 'cu ft', 'cubic foot'] },
     ];
 }
 

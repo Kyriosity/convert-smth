@@ -1,26 +1,27 @@
-import { Unit, Measureable } from '../core/z_barrel';
 import { Weigher } from './weigher';
+import { Measureable } from '../core/z_barrel';
+import { Unit } from '../core/units';
 
-export abstract class functional<M extends Measureable<U>, U extends Unit<number>> extends Weigher<M, U> {
-    protected readonly funcs: ConversionFunc<U>[] = []
+export abstract class functional<M extends Measureable<Unit>> extends Weigher<M> {
+    protected readonly funcs: ConversionFunc<Unit>[] = []
 
-    protected converted(m: M, to: U): number {
-        if (m.unit === to)
+    protected recalc(uval: M, to: Unit): number {
+        if (uval.unit === to)
             return 1
 
-        const directConversions = this.funcs.filter(x => x.of === m.unit && x.to === to)
+        const directConversions = this.funcs.filter(x => x.of === uval.unit && x.to === to)
 
         if (directConversions && directConversions.length != 0)
-            return directConversions[0].convert(m.value)
+            return directConversions[0].convert(uval.value)
 
         // if none lookup the shortest chain of funcs
         throw new Error(`not implemented`)
     }
-}
+ }
 
-export interface ConversionFunc<U extends Unit<number>> {
-    of: U
-    to: U
+export interface ConversionFunc<Unit> {
+    of: Unit
+    to: Unit
     convert: (from: number) => number
 }
 

@@ -1,6 +1,5 @@
-export * from './factory';
 export * from './weigher'
-export * from './basic/Length'
+export * from './basic/Distance'
 export * from './basic/Mass'
 export * from './basic/Velocity'
 export * from './basic/Volume'

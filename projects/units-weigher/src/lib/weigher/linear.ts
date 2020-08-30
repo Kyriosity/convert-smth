@@ -1,13 +1,15 @@
-import { Unit, RatiosList, Measureable } from '../core/z_barrel';
+import { ListOfRatios,  } from '../core/z_barrel';
 import { Weigher } from './weigher';
+import { Measureable } from '../core/z_barrel';
+import { Unit } from '../core/units';
 
-export abstract class linear<M extends Measureable<U>, U extends Unit<number>> extends Weigher<M, U> {
-    protected readonly unitSystems: RatiosList<U>[];
-    protected readonly crossRatios: RatiosList<U>[];
+export abstract class linear<M extends Measureable<Unit>> extends Weigher<M> {
+    protected readonly unitSystems: ListOfRatios<Unit>[];
+    protected readonly crossRatios: ListOfRatios<Unit>[];
 
-    protected converted = (uval: M, to: U) => uval.value * this.factor(uval.unit, to)
+    protected recalc = (uval: M, to: Unit) => uval.value * this.factor(uval.unit, to)
 
-    protected factor(of: U, to: U): number {
+    protected factor(of: Unit, to: Unit): number {
         if (of === to)
             return 1
 
@@ -33,22 +35,22 @@ export abstract class linear<M extends Measureable<U>, U extends Unit<number>> e
         return ratio;
     }
 
-    private findBaseUnit(unit: U): U {
+    private findBaseUnit(unit: Unit): Unit {
         const entries = this.unitSystems?.filter(x => { const vals = x.map(r => r.unit); return vals.includes(unit) })
 
         const res = !entries || 1 !== entries.length ? null : entries[0].filter(x => x.isBase)[0].unit
         return res
     }
 
-    protected findSameSysRatio(of: U, to: U): number {
+    protected findSameSysRatio(of: Unit, to: Unit): number {
         return this.findRatio(of, to, this.unitSystems)
     };
 
-    protected findCrossSysRatio(from: U, to: U): number {
+    protected findCrossSysRatio(from: Unit, to: Unit): number {
         return this.findRatio(from, to, this.crossRatios)
     };
 
-    protected findRatio(of: U, to: U, ratios: RatiosList<U>[]) {
+    protected findRatio(of: Unit, to: Unit, ratios: ListOfRatios<Unit>[]) {
         if (!of || !to)
             return undefined
 

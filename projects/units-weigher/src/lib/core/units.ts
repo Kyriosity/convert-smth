@@ -1,5 +1,6 @@
-import { Measureable } from '../core/z_barrel';
-export enum LengthUnits {
+export type Unit = Temperatures | Forces | Distances | Masses | Volumes | Velocities
+
+export enum Distances {
     picometre,
     nanometre,
     micrometre,
@@ -34,14 +35,14 @@ export enum LengthUnits {
     rod
 }
 
-export enum TemperatureUnits {
+export enum Temperatures {
     Kelvin = 1,
     Celsius = 2,
     Fahrenheit = 3,
     Rankine = 4,
 }
 
-export enum VolumeUnits {
+export enum Volumes {
     // metric/SI
     cubicCentimetre,
     litre,
@@ -65,7 +66,7 @@ export enum VolumeUnits {
     oilBarrel, // 42 US Gallons
 }
 
-export enum ForceUnits {
+export enum Forces {
     Newton,
     kiloNewton,
     kilogrammmeforce, //  = 9,80665N
@@ -75,7 +76,7 @@ export enum ForceUnits {
     dyne,  // centimetre–gram–second (CGS) system of units, 10-5N
 }
 
-export enum MassUnits {
+export enum Masses {
     picogramme,
     nanogramme,
     microgramme,
@@ -98,7 +99,7 @@ export enum MassUnits {
     ukTon,
 }
 
-export enum VelocityUnits {
+export enum Velocities {
     metresPerSecond,
     kilometrePerHour,
 
@@ -110,13 +111,3 @@ export enum VelocityUnits {
 
     Mach, // speed of sound, 1.2438,8 km/h
 }
-
-export interface length extends Measureable<LengthUnits> {}
-export interface area extends length {}
-
-export interface mass extends Measureable<MassUnits> {}
-export interface volume extends Measureable<VolumeUnits> {}
-export interface velocity extends Measureable<VelocityUnits> {}
-export interface force extends Measureable<ForceUnits> {}
-
-export interface temperature extends Measureable<TemperatureUnits> {}

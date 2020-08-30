@@ -1,12 +1,9 @@
-
 import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers';
 import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
-import { meter, kilometer, nauticalMile, inch, foot, mile,
-    kilogram, tonne, pound,
-    kilometersHour, knot, milesHour, Mach,
-    liter, cubicMeter, cubicFoot, usGallon, imperialGallon,
-    kilonewton, poundforce, kilogramforce, Kilogram, } from 'units-weigher';
+import { meter, kilogram, kilometer, kilometersHour, foot, pound, milesHour, mile, usGallon, Mach,
+     poundforce, imperialGallon, tonne, kilonewton, 
+     liter, cubicMeter, knot, nauticalMile, cubicFoot, inch, kilogramforce } from 'units-weigher';
 
 // ********************** Wright Flyer I ***********************
 const ship_ZeppelinNT: Liner = {
@@ -17,7 +14,7 @@ const ship_ZeppelinNT: Liner = {
         name: 'Zeppelin',
         family: 'NT',
         serie: 7,
-        remarks: 'helium-filled airshis being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.[1]',
+        remarks: 'helium-filled airship being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.',
     },
     firstFlight: new Date('1997-11-18'),
 
@@ -1921,7 +1918,7 @@ const bizJet_P180Avanti: Liner = {
     powerplant: new Array<Engine>(2),
     maxSeats: 9,
 
-    listPriceMlnUsd2020: 7.695
+    listPriceMlnUsd2020: 7.7
 }
 
 // ********************** Vickers VC10 ***********************

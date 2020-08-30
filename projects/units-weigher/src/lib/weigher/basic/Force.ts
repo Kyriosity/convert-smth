@@ -1,17 +1,17 @@
-
 import { linear } from '../linear'
-import { ForceUnits, force } from '../../measurements/z_barrel';
+import { force } from '../../core/z_barrel';
+import { Forces } from '../../core/units';
 
-export class Force extends linear<force, ForceUnits> {
-    rawUnitName = (unit: ForceUnits) => ForceUnits[unit]
+export class Force extends linear<force> {
+    rawUnitName = (unit: Forces) => Forces[unit]
 
     protected readonly unitLabels = [
-        { unit: ForceUnits.Newton, labels: ['N', 'Newton'] },
-        { unit: ForceUnits.kiloNewton, labels: ['kN', 'kiloNewton'] },
-        { unit: ForceUnits.kilogrammmeforce, labels: ['kgf', 'kilogram force'] },
+        { unit: Forces.Newton, labels: ['N', 'Newton'] },
+        { unit: Forces.kiloNewton, labels: ['kN', 'kiloNewton'] },
+        { unit: Forces.kilogrammmeforce, labels: ['kgf', 'kilogram force'] },
 
-        { unit: ForceUnits.poundforce, labels: ['pound', 'pound force'] },
+        { unit: Forces.poundforce, labels: ['pound', 'pound force'] },
 
-        { unit: ForceUnits.dyne, labels: ['d.', 'dyne'] },
+        { unit: Forces.dyne, labels: ['d.', 'dyne'] },
     ]
 }

@@ -1,22 +1,23 @@
-import { MassUnits, mass } from '../../measurements/z_barrel';
+import { mass } from '../../core/z_barrel';
 import { DecimalRatios } from '../../core/z_barrel';
 import { linear } from '../linear';
+import { Masses } from '../../core/units';
 
-export class Mass extends linear<mass, MassUnits> {
-    rawUnitName = (unit: MassUnits) => MassUnits[unit]
+export class Mass extends linear<mass> {
+    rawUnitName = (unit: Masses) => Masses[unit]
 
     protected readonly unitLabels = [
-        { unit: MassUnits.picogramme, labels: ['pg', 'picogram'] },
-        { unit: MassUnits.nanogramme, labels: ['ng', 'nanogramm'] },
-        { unit: MassUnits.microgramme, labels: ['mcg', 'microgramm'] },
-        { unit: MassUnits.milligramme, labels: ['mg', 'milligramm'] },
+        { unit: Masses.picogramme, labels: ['pg', 'picogram'] },
+        { unit: Masses.nanogramme, labels: ['ng', 'nanogramm'] },
+        { unit: Masses.microgramme, labels: ['mcg', 'microgramm'] },
+        { unit: Masses.milligramme, labels: ['mg', 'milligramm'] },
 
-        { unit: MassUnits.gramme, labels: ['g', 'gramm'] },
-        { unit: MassUnits.kilogramme, labels: ['kg', 'kilogramm'] },
-        { unit: MassUnits.tonne, labels: ['tn', 'tonne'] },
+        { unit: Masses.gramme, labels: ['g', 'gramm'] },
+        { unit: Masses.kilogramme, labels: ['kg', 'kilogramm'] },
+        { unit: Masses.tonne, labels: ['tn', 'tonne'] },
 
-        { unit: MassUnits.ounce, labels: ['oz', 'ounce'] },
-        { unit: MassUnits.pound, labels: ['lb', 'pound'] },
+        { unit: Masses.ounce, labels: ['oz', 'ounce'] },
+        { unit: Masses.pound, labels: ['lb', 'pound'] },
     ];
 
     protected readonly unitSystems = [metric, internationalPound]
@@ -25,19 +26,19 @@ export class Mass extends linear<mass, MassUnits> {
 }
 
 const metric = [
-    { unit: MassUnits.gramme, ratio: DecimalRatios.milli },
-    { unit: MassUnits.milligramme, ratio: DecimalRatios.milli },
-    { unit: MassUnits.kilogramme, ratio: DecimalRatios.kilo, isBase: true },
-    { unit: MassUnits.centner, ratio: 100 * 1000 },
-    { unit: MassUnits.tonne, ratio: DecimalRatios.kilo },
+    { unit: Masses.gramme, ratio: DecimalRatios.milli },
+    { unit: Masses.milligramme, ratio: DecimalRatios.milli },
+    { unit: Masses.kilogramme, ratio: DecimalRatios.kilo, isBase: true },
+    { unit: Masses.centner, ratio: 100 * 1000 },
+    { unit: Masses.tonne, ratio: DecimalRatios.kilo },
 ]
 
 const internationalPound = [
-    { unit: MassUnits.ounce, ratio: 1, },
-    { unit: MassUnits.pound, ratio: 16, isBase: true },
+    { unit: Masses.ounce, ratio: 1, },
+    { unit: Masses.pound, ratio: 16, isBase: true },
 ];
 
 const KiloMeetsPound = [
-    { unit: MassUnits.kilogramme, ratio: 0.45359237, isBase: true },
-    { unit: MassUnits.pound, ratio: 1 }
+    { unit: Masses.kilogramme, ratio: 0.45359237, isBase: true },
+    { unit: Masses.pound, ratio: 1 }
 ];

@@ -1,4 +1,4 @@
-import { length, velocity, mass, volume, UValErr } from 'units-weigher';
+import { distance, velocity, mass, volume, UValErr } from 'units-weigher';
 import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
 import { MachineDesignation } from 'src/app/_entities/avia/eintities';
 import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers';
@@ -10,9 +10,9 @@ export interface AircraftDescrTableItem {
     brand: string;
     name: string;
     
-    range: length; 
+    range: distance; 
     cruiseSpeed: velocity;
-    ceiling: length;
+    ceiling: distance;
     maxTakeoffWeight: mass;
     fuelCapacity: volume;
 

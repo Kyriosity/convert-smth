@@ -1,3 +1,4 @@
-export * from './measureable';
+export * from './declarations';
 export * from './errors';
+export * from './measureables'
 

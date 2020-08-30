@@ -1,15 +1,16 @@
-import { Measureable } from '../core/z_barrel';
-import { weigher } from '../weigher/factory';
+import { weighersStore } from '../factories/weighersStore';
 import { uFatQuestion, uWarn, PresentationParams, formatCustom, uQuestion } from './utils';
+import { Measureable } from '../core/z_barrel';
+import { Unit } from '../core/units';
 
 export class MeasureView {
-    #weighers: weigher;
+    #weighers: weighersStore;
 
     constructor(private _locale?: string) {
-        this.#weighers = new weigher();
+        this.#weighers = new weighersStore();
     }
 
-    transform(uval: Measureable<number>, params: PresentationParams): string {
+    transform(uval: Measureable<Unit>, params: PresentationParams): string {
         if (!uval)
             return '';
 
@@ -23,7 +24,7 @@ export class MeasureView {
                 return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`;
 
             const initLabel = weigher.nameUnit(uval.unit) ?? weigher.rawUnitName(uval.unit);
-            weigher.convert(uval, toUnit);
+            uval = weigher.convert(uval, toUnit);
             if (!uval || !uval.value)
                 return `${uWarn} ${initLabel} -> ${params.ConvertTo}`;
         }

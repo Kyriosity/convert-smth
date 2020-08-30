@@ -1,9 +1,4 @@
-export interface Unit<T extends number> { }
 
-export interface Measureable<U extends Unit<number>> {
-    readonly unit: U,
-    readonly value: number
-}
 
 export enum ULabelFormats {
     none = -2,
@@ -14,18 +9,18 @@ export enum ULabelFormats {
     full = 2,
 }
 
-export interface ULabel<U extends Unit<number>> {
-    unit: U,
+export interface ULabel<Unit> {
+    unit: Unit,
     labels: string[]
 }
 
-export interface Ratio<U extends Unit<number>> {
-    unit: U,
+export interface Ratio<Unit> {
+    unit: Unit,
     ratio: number,
     isBase?: boolean;
 }
 
-export interface RatiosList<U extends Unit<number>> extends Array<Ratio<U>> { }
+export interface ListOfRatios<Unit> extends Array<Ratio<Unit>> { }
 
 export enum DecimalRatios {
     pico = 10 ** -12,

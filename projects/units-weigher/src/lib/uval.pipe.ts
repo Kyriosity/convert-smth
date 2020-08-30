@@ -1,18 +1,17 @@
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
-
-import { Measureable } from './core/z_barrel';
 import { PresentationParams } from './view/utils';
 import { MeasureView } from './view/measure-view';
-
+import { Measureable } from './core/z_barrel';
+import { Unit } from './core/units';
 
 @Pipe({ name: 'uval' })
 
 export class UValPipe implements PipeTransform {
   constructor(@Inject(LOCALE_ID) private _locale: string) { }
 
-  transform(ma: Measureable<number>, ...args: string[]): string {
+  transform(uval: Measureable<Unit>, ...args: string[]): string {    
     this.Params.parse(...args);
-    return this.Presentation.transform(ma, this.Params);
+    return this.Presentation.transform(uval, this.Params);
   }
 
   private get Presentation(): MeasureView {
