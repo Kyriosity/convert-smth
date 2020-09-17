@@ -1,18 +1,18 @@
-import { UValErr, Measureable, Measurement } from '../core/z_barrel';
-import { Unit } from '../core/units';
-import { Distance, Mass, Velocity, Volume, Force, Temperature, IWeigher } from '../weigher/z_barrel';
+import { UValErr, Measureable, Measurement } from '../core/z_barrel'
+import { Unit } from '../core/units'
+import { Distance, Mass, Velocity, Volume, Force, Temperature, IWeigher } from '../weigher/z_barrel'
 
 export class weighersStore {
-    #weighers: { kind: Measurement, weigher: IWeigher<Measureable<Unit>> }[] = []
+    private weighers: { kind: Measurement, weigher: IWeigher<Measureable<Unit>> }[] = []
 
     for<M extends Measureable<Unit>>(uval: M): IWeigher<Measureable<Unit>> {
         const weigherKind = uval.kind
 
-        if (0 < this.#weighers.filter(x => x.kind === weigherKind).length)
-            return this.#weighers.filter(x => x.kind === weigherKind)[0].weigher
+        if (0 < this.weighers.filter(x => x.kind === weigherKind).length)
+            return this.weighers.filter(x => x.kind === weigherKind)[0].weigher
 
         const issued = this.issue(weigherKind)
-        this.#weighers.push({ kind: weigherKind, weigher: issued })
+        this.weighers.push({ kind: weigherKind, weigher: issued })
         return issued
     }
 
@@ -30,6 +30,6 @@ export class weighersStore {
         if (Measurement.Temperature === kind)
             return new Temperature()
 
-        throw new UValErr(`${kind} forgotten`);
+        throw new UValErr(`${kind} forgotten`)
     }
 }
