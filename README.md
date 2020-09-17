@@ -1,12 +1,19 @@
-# ConverterWorksDemo
+# Intro
+The language of this project is Typescript.
+This project renders physical values (like mass, temperature) as declared variables and means of their presentation and conversion.
+One one hand it's a library of such units with routines, and on the other - table of aircraft specs, presenting these features.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+## Disclaimer
 
-## Development server
+It was my first trial of Angular/Typescript and not the sure not the best (my native language is C#). Any rational critic would be highly appreciated.
+There's not enough tests but any and each ultimate user is encouraged to cover the library with own tests. That would be safer and. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## What you get
+a) a library 
+b) uval pipe
+c) uval service
 
-## Code scaffolding
+## Open points
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
