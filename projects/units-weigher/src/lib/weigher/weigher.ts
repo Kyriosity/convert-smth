@@ -1,4 +1,4 @@
-import { ULabel, ULabelFormats,  } from '../core/z_barrel'
+import { ULabel, ULabelFormats, } from '../core/z_barrel'
 import { parseUnitFormat, selectUnitLabel } from './utils'
 import { Measureable } from '../core/z_barrel'
 import { Unit } from '../core/units'
@@ -15,20 +15,16 @@ export interface IWeigher<M extends Measureable<Unit>> {
 export abstract class Weigher<M extends Measureable<Unit>> implements IWeigher<M> {
     protected readonly unitLabels: ULabel<Unit>[];
 
-    protected abstract recalc(subj: M, to: Unit): number 
-
+    protected abstract recalc(subj: M, to: Unit): number
     abstract rawLabel(unit: Unit): string
 
-    protected create(u: Unit, val: number): M { return {unit: u, value: val} as M }
+    protected readonly create = (u: Unit, val: number) => ({ unit: u, value: val } as M)
 
-    convert(subj: M, to: Unit): M { return this.create(to, this.recalc(subj, to)) }
+    readonly convert = (subj: M, to: Unit) => this.create(to, this.recalc(subj, to))
 
-    differ(subj: M, to: M): number {
-        const equi = this.convert(subj, to.unit)
-        return equi.value - to.value
-    }
+    readonly differ = (subj: M, to: M) => this.convert(subj, to.unit).value - to.value
 
-    parseUnit(label: string): Unit {
+    readonly parseUnit = (label: string) => {
         const entries = this.unitLabels?.filter(x => x.labels.includes(label))
         if (!entries || 0 == entries.length)
             return undefined;
@@ -36,7 +32,7 @@ export abstract class Weigher<M extends Measureable<Unit>> implements IWeigher<M
         return entries[0].unit
     }
 
-    label(unit: Unit, formatInput?: string, culture?: string): string {
+    readonly label = (unit: Unit, formatInput?: string, culture?: string) => {
         const parsedFormat = formatInput ? parseUnitFormat(formatInput) : ULabelFormats.short
         if (ULabelFormats.none == parsedFormat)
             return ''
