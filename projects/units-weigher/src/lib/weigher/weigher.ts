@@ -24,8 +24,8 @@ export abstract class Weigher<M extends Measureable<Unit>> implements IWeigher<M
     convert(subj: M, to: Unit): M { return this.create(to, this.recalc(subj, to)) }
 
     differ(subj: M, to: M): number {
-        this.convert(subj, to.unit)
-        return subj.value - to.value
+        const equi = this.convert(subj, to.unit)
+        return equi.value - to.value
     }
 
     parseUnit(label: string): Unit {
