@@ -1,10 +1,11 @@
+import { DomainEntity } from 'src/app/_core/basics';
 import { Engine, MachineDesignation, CargoBay, CrewPerson,
-  FlyingMachineMeasurements, FlyingMachineWeights, FlyingMachinePerformance, FlyingMachineTakeOff } from '../eintities';
-import { DomainEntity } from '../../_shared/base.entities';
+  FlyingMachineSize, FlyingMachineWeights, FlyingMachinePerformance, FlyingMachineTakeOff }
+   from '../eintities'
 
 export interface AircraftDescription extends DomainEntity {
     designation: MachineDesignation,
-    measurements: FlyingMachineMeasurements,
+    measurements: FlyingMachineSize,
     weights: FlyingMachineWeights,
     performance: FlyingMachinePerformance,
     takeoff?: FlyingMachineTakeOff,

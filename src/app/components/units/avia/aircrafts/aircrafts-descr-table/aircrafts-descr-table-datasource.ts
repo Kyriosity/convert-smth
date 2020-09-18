@@ -3,11 +3,11 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { map, delay } from 'rxjs/operators'
 import { Observable, of as observableOf, merge } from 'rxjs'
-import { AircraftDescrTableItem, Digest } from './AircraftDescrTableItem'
+import { AircraftDigestPlain, Digest } from './AircraftDigestPlain'
 import { fullAircraftsList } from 'src/app/_data/avia/aircrafts/start-data'
 
-export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTableItem> {
-  data: AircraftDescrTableItem[] = []
+export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlain> {
+  data: AircraftDigestPlain[] = []
   paginator: MatPaginator
   sort: MatSort
 
@@ -22,9 +22,9 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
    * Connect this data source to the table. The table will only update when the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<AircraftDescrTableItem[]> {
+  connect(): Observable<AircraftDigestPlain[]> {
     this.isLoading = true
-    this.data = fullAircraftsList.map(x => Digest.from(x))
+    this.data = fullAircraftsList.map(x => Digest.flatten(x))
 
     // Combine everything that affects the rendered data into one update stream for the data-table to consume.
     const dataMutations = [
@@ -55,7 +55,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
   /**
    * Paginate the data (client-side). If server-side replace by request to the server.
    */
-  private getPagedData(data: AircraftDescrTableItem[]) {
+  private getPagedData(data: AircraftDigestPlain[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize
     return data.splice(startIndex, this.paginator.pageSize)
   }
@@ -63,7 +63,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
   /**
    * Sort the data (client-side). If server-side replace by request to the server.
    */
-  private getSortedData(data: AircraftDescrTableItem[]) {
+  private getSortedData(data: AircraftDigestPlain[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data
     }
@@ -72,8 +72,8 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDescrTable
       const isAsc = this.sort.direction === 'asc'
       switch (this.sort.active) {
         case 'brand': return compare(a.brand, b.brand, isAsc)
-        case 'name': return compare(a.name, b.name, isAsc)
-        case 'id': return compare(+a.id, +b.id, isAsc)
+        case 'name': return compare(a.title, b.title, isAsc)
+        case 'id': return compare(+a.unid, +b.unid, isAsc)
         case 'cockpitCrew': return compare(a.cockpitCrew, b.cockpitCrew, isAsc)
         case 'firstFlight': return dateCompare(a.firstFlight, b.firstFlight)
         default: return 0

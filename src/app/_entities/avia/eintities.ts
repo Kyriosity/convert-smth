@@ -1,12 +1,11 @@
 import { AircraftBuilders } from './aircrafts/manufacturers';
 import { distance, Dimensions, area, velocity, force, volume, mass } from 'units-weigher';
 
-
 export interface CrewPerson {}
 
 export interface Engine { }
 
-export interface FlyingMachineMeasurements {
+export interface FlyingMachineSize {
     airframe: Dimensions,
     wingSpan: distance,
     wingArea?: area,
@@ -44,7 +43,7 @@ export interface CargoBay {
 
 export interface MachineDesignation {
     brand: AircraftBuilders,
-    name?: string,
+    title?: string,
 
     serie?: number,
     variant?: number,

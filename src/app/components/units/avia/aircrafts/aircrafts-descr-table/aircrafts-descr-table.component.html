@@ -22,9 +22,9 @@
       <td mat-cell *matCellDef="let row" class="uval-column-full-wrap">{{row.brand}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row" class="uval-column-strict-wrap">{{row.name}}</td>
+      <td mat-cell *matCellDef="let row" class="uval-column-strict-wrap">{{row.title}}</td>
     </ng-container>
 
     <ng-container matColumnDef="firstFlight">
@@ -52,14 +52,14 @@
       <td mat-cell *matCellDef="let row">{{row.cruiseSpeed | uval : 'Mach' : 'unit-none' : '.2-2' }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="ceiling">
+    <ng-container matColumnDef="serviceCeiling">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Ceiling</th>
-      <td mat-cell *matCellDef="let row">{{row.ceiling | uval : "" : "unit-code" : ""}}</td>
+      <td mat-cell *matCellDef="let row">{{row.serviceCeiling | uval : "" : "unit-code" : ""}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="maxTakeoffWeight">
+    <ng-container matColumnDef="maxTakeoff">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Max. takeoff<br/>weight</th>
-      <td mat-cell *matCellDef="let row">{{row.maxTakeoffWeight | uval : '-' : '-' : '.0-3'}}</td>
+      <td mat-cell *matCellDef="let row">{{row.maxTakeoff | uval : '-' : '-' : '.0-3'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fuelCapacity">
@@ -82,9 +82,9 @@
       <td mat-cell *matCellDef="let row">{{row.powerplant}} X</td>
     </ng-container>
 
-    <ng-container matColumnDef="priceM2020">
+    <ng-container matColumnDef="listPriceMlnUsd2020">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Price $M,<br>as in 2020</th>
-      <td mat-cell *matCellDef="let row">{{row.priceM2020}}</td>
+      <td mat-cell *matCellDef="let row">{{row.listPriceMlnUsd2020}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
