@@ -1,7 +1,7 @@
-import { mass } from '../../core/z_barrel';
-import { DecimalRatios } from '../../core/z_barrel';
-import { linear } from '../linear';
-import { Masses } from '../../core/units';
+import { mass } from '../../core/z_barrel'
+import { DecimalRatios } from '../../core/z_barrel'
+import { linear } from '../linear'
+import { Masses } from '../../core/units'
 
 export class Mass extends linear<mass> {
     rawUnitName = (unit: Masses) => Masses[unit]
@@ -18,7 +18,7 @@ export class Mass extends linear<mass> {
 
         { unit: Masses.ounce, labels: ['oz', 'ounce'] },
         { unit: Masses.pound, labels: ['lb', 'pound'] },
-    ];
+    ]
 
     protected readonly unitSystems = [metric, internationalPound]
 
@@ -36,9 +36,9 @@ const metric = [
 const internationalPound = [
     { unit: Masses.ounce, ratio: 1, },
     { unit: Masses.pound, ratio: 16, isBase: true },
-];
+]
 
 const KiloMeetsPound = [
     { unit: Masses.kilogramme, ratio: 0.45359237, isBase: true },
     { unit: Masses.pound, ratio: 1 }
-];
+]

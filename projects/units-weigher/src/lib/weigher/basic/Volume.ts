@@ -1,11 +1,8 @@
-import { volume } from '../../core/z_barrel';
-import { linear } from '../linear';
-import { Volumes } from '../../core/units';
+import { volume } from '../../core/z_barrel'
+import { linear } from '../linear'
+import { Volumes } from '../../core/units'
 
 export class Volume extends linear<volume> {
-    create(unit: Volumes, val: number): volume {
-        throw new Error("Method not implemented.");
-    }
     rawUnitName = (unit: Volumes) => { return Volumes[unit]}
 
     protected unitLabels = [

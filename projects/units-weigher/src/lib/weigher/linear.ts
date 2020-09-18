@@ -1,11 +1,11 @@
-import { ListOfRatios,  } from '../core/z_barrel';
-import { Weigher } from './weigher';
-import { Measureable } from '../core/z_barrel';
-import { Unit } from '../core/units';
+import { ListOfRatios,  } from '../core/z_barrel'
+import { Weigher } from './weigher'
+import { Measureable } from '../core/z_barrel'
+import { Unit } from '../core/units'
 
 export abstract class linear<M extends Measureable<Unit>> extends Weigher<M> {
-    protected readonly unitSystems: ListOfRatios<Unit>[];
-    protected readonly crossRatios: ListOfRatios<Unit>[];
+    protected readonly unitSystems: ListOfRatios<Unit>[]
+    protected readonly crossRatios: ListOfRatios<Unit>[]
 
     protected recalc = (uval: M, to: Unit) => uval.value * this.factor(uval.unit, to)
 
@@ -62,11 +62,10 @@ export abstract class linear<M extends Measureable<Unit>> extends Weigher<M> {
         if (!entries || 0 == entries!.length)
             return undefined
 
-        const entry = entries[0];
-        const ofFactor = entry.filter(x => x.unit == of)[0].ratio;
-        const toFactor = entry.filter(x => x.unit == to)[0].ratio;
+        const entry = entries[0]
+        const ofFactor = entry.filter(x => x.unit == of)[0].ratio
+        const toFactor = entry.filter(x => x.unit == to)[0].ratio
 
-        const ratio = ofFactor / toFactor;
-        return ratio;
-    };
+        return ofFactor / toFactor
+    }
 }

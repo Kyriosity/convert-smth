@@ -1,7 +1,7 @@
 import { linear } from '../linear'
-import { DecimalRatios } from '../../core/z_barrel';
-import { distance } from '../../core/z_barrel';
-import { Distances } from '../../core/units';
+import { DecimalRatios } from '../../core/z_barrel'
+import { distance } from '../../core/z_barrel'
+import { Distances } from '../../core/units'
 
 export class Distance extends linear<distance> {
     rawUnitName = (unit: Distances) => Distances[unit]
@@ -25,7 +25,7 @@ export class Distance extends linear<distance> {
 
         { unit: Distances.nauticalMile, labels: ['', 'nmi', 'nautical mile'] },
         { unit: Distances.mile, labels: ['', 'mi', 'mile'] },
-    ];
+    ]
 
     protected readonly unitSystems = [metricAndExactRelated, feetBased]
     protected readonly crossRatios = [toMeter]
@@ -47,7 +47,7 @@ const metricAndExactRelated = [
     { unit: Distances.terametre, ratio: DecimalRatios.tera },
 
     { unit: Distances.nauticalMile, ratio: 1852 },
-];
+]
 
 const feetBased = [
     { unit: Distances.thou, ratio: 1 / 12 * 1000 },
@@ -58,7 +58,7 @@ const feetBased = [
     { unit: Distances.furlong, ratio: 660 },
     { unit: Distances.mile, ratio: 5280 },
     { unit: Distances.league, ratio: 3 * 15840 },
-];
+]
 
 const toMeter = [
     { unit: Distances.metre, ratio: 1, isBase: true },

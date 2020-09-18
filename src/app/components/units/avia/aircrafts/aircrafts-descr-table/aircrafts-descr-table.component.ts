@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { AfterViewInit, Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core'
+import { MatPaginator } from '@angular/material/paginator'
+import { MatSort } from '@angular/material/sort'
+import { MatTable } from '@angular/material/table'
 
 import { AircraftsDescrTableDataSource } from './aircrafts-descr-table-datasource';
 import { AircraftDescrTableItem } from './AircraftDescrTableItem';
 
 interface DisplayScheme {
-  value: string;
-  viewValue: string;
+  value: string
+  viewValue: string
 }
 
 @Component({
@@ -19,26 +19,26 @@ interface DisplayScheme {
 })
 
 export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<AircraftDescrTableItem>;
-  dataSource: AircraftsDescrTableDataSource;
+  @ViewChild(MatPaginator) paginator: MatPaginator
+  @ViewChild(MatSort) sort: MatSort
+  @ViewChild(MatTable) table: MatTable<AircraftDescrTableItem>
+  dataSource: AircraftsDescrTableDataSource
 
   get SelectedUnitsScheme() { return this.#selectedUnitsScheme; }
   set SelectedUnitsScheme(value: string) {
-    this.dataSource.convert(value);
-    this.#selectedUnitsScheme = value;
+    this.dataSource.convert(value)
+    this.#selectedUnitsScheme = value
   }
-  #selectedUnitsScheme = "data";
+  #selectedUnitsScheme = "data"
 
   unitSchemes: DisplayScheme[] = [
     { value: 'data', viewValue: 'as in loaded data' },
     { value: 'metric', viewValue: 'metric values' },
     { value: 'us-avia', viewValue: 'N. America avia' },
-  ];
+  ]
 
   displayedColumns = ['brand', 'name', 'firstFlight', 'range', 'rangeKm', 'cruiseSpeed', 'cruiseMach',
-    'ceiling', 'maxTakeoffWeight', 'fuelCapacity', 'seats', 'cockpitCrew', 'powerplant', 'priceM2020'];
+    'ceiling', 'maxTakeoffWeight', 'fuelCapacity', 'seats', 'cockpitCrew', 'powerplant', 'priceM2020']
 
   ngOnInit() {
     this.dataSource = new AircraftsDescrTableDataSource();

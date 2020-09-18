@@ -1,6 +1,6 @@
-import { Weigher } from './weigher';
-import { Measureable } from '../core/z_barrel';
-import { Unit } from '../core/units';
+import { Weigher } from './weigher'
+import { Measureable } from '../core/z_barrel'
+import { Unit } from '../core/units'
 
 export abstract class functional<M extends Measureable<Unit>> extends Weigher<M> {
     protected readonly funcs: ConversionFunc<Unit>[] = []

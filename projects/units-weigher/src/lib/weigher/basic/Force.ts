@@ -1,6 +1,6 @@
 import { linear } from '../linear'
-import { force } from '../../core/z_barrel';
-import { Forces } from '../../core/units';
+import { force } from '../../core/z_barrel'
+import { Forces } from '../../core/units'
 
 export class Force extends linear<force> {
     rawUnitName = (unit: Forces) => Forces[unit]
