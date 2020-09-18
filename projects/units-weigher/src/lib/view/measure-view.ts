@@ -1,39 +1,39 @@
-import { weighersStore } from '../factories/weighersStore';
-import { uFatQuestion, uWarn, PresentationParams, formatCustom, uQuestion } from './utils';
-import { Measureable } from '../core/z_barrel';
-import { Unit } from '../core/units';
+import { Unit } from '../core/units'
+import { Measureable } from '../core/z_barrel'
+import { weighersStore } from '../factories/weighersStore'
+import { uFatQuestion, uWarn, PresentationParams, formatCustom, uQuestion } from './utils'
 
 export class MeasureView {
-    #weighers: weighersStore;
+    #weighers: weighersStore
 
     constructor(private _locale?: string) {
-        this.#weighers = new weighersStore();
+        this.#weighers = new weighersStore()
     }
 
     transform(uval: Measureable<Unit>, params: PresentationParams): string {
         if (!uval)
-            return '';
+            return ''
 
-        const weigher = this.#weighers.for(uval);
+        const weigher = this.#weighers.for(uval)
         if (!weigher)
-            return `${uval.value}${uFatQuestion}`;
+            return `${uval.value}${uFatQuestion}`
 
         if (params.ConvertApplies) {
             const toUnit = weigher.parseUnit(params.ConvertTo);
             if (!toUnit)
-                return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`;
+                return `${uval.unit}->${uFatQuestion} ${params.ConvertTo}`
 
-            const initLabel = weigher.nameUnit(uval.unit) ?? weigher.rawUnitName(uval.unit);
+            const initLabel = weigher.label(uval.unit) ?? weigher.rawLabel(uval.unit)
             uval = weigher.convert(uval, toUnit);
             if (!uval || !uval.value)
-                return `${uWarn} ${initLabel} -> ${params.ConvertTo}`;
+                return `${uWarn} ${initLabel} -> ${params.ConvertTo}`
         }
 
         const fVal = params.DecimalFormatApplies || params.CultureApplies
             ? formatCustom(uval.value, params, this._locale)
-            : uval.value.toLocaleString();
+            : uval.value.toLocaleString()
 
-        const label = weigher.nameUnit(uval.unit, params.UnitDisplay) ?? `${uQuestion}${weigher.rawUnitName(uval.unit)}${uQuestion}`;
-        return `${fVal} ${label}`;
+        const label = weigher.label(uval.unit, params.UnitDisplay) ?? `${uQuestion}${weigher.rawLabel(uval.unit)}${uQuestion}`
+        return `${fVal} ${label}`
     }
 }

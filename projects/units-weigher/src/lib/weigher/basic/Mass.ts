@@ -4,7 +4,7 @@ import { linear } from '../linear'
 import { Masses } from '../../core/units'
 
 export class Mass extends linear<mass> {
-    rawUnitName = (unit: Masses) => Masses[unit]
+    rawLabel = (unit: Masses) => Masses[unit]
 
     protected readonly unitLabels = [
         { unit: Masses.picogramme, labels: ['pg', 'picogram'] },

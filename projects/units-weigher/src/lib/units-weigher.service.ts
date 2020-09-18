@@ -11,8 +11,8 @@ export class UnitsWeigherService {
   private weighers: weighersStore
   constructor() { this.weighers = new weighersStore() }
 
-  differ<M extends Measureable<Unit>>(of: M, to: M): number {
-    const weigher = this.weighers.for(of)
-    return weigher.differ(of, to)
+  differ<M extends Measureable<Unit>>(subj: M, to: M): number {
+    const weigher = this.weighers.for(subj)
+    return weigher.differ(subj, to)
   }
 }

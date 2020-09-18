@@ -3,7 +3,7 @@ import { force } from '../../core/z_barrel'
 import { Forces } from '../../core/units'
 
 export class Force extends linear<force> {
-    rawUnitName = (unit: Forces) => Forces[unit]
+    rawLabel = (unit: Forces) => Forces[unit]
 
     protected readonly unitLabels = [
         { unit: Forces.Newton, labels: ['N', 'Newton'] },

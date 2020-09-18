@@ -3,7 +3,7 @@ import { linear } from '../linear'
 import { Volumes } from '../../core/units'
 
 export class Volume extends linear<volume> {
-    rawUnitName = (unit: Volumes) => { return Volumes[unit]}
+    rawLabel = (unit: Volumes) => { return Volumes[unit]}
 
     protected unitLabels = [
         { unit: Volumes.litre, labels: ['lt', 'liter'] },

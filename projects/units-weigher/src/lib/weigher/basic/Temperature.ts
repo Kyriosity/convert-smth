@@ -4,7 +4,7 @@ import { temperature } from '../../core/z_barrel'
 import { Temperatures } from '../../core/units'
 
 export class Temperature extends functional<temperature> {
-    rawUnitName = (unit: Temperatures) => Temperatures[unit]
+    rawLabel = (unit: Temperatures) => Temperatures[unit]
 
     protected readonly funcs = [
         C2F, C2K,

@@ -4,7 +4,7 @@ import { distance } from '../../core/z_barrel'
 import { Distances } from '../../core/units'
 
 export class Distance extends linear<distance> {
-    rawUnitName = (unit: Distances) => Distances[unit]
+    rawLabel = (unit: Distances) => Distances[unit]
 
     protected readonly unitLabels = [
         { unit: Distances.picometre, labels: ['', 'pm', 'picometer'] },
