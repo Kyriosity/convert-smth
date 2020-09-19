@@ -42,7 +42,7 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
     propsAvia.performance.range, 'rangeKm', 
     propsAvia.performance.cruiseSpeed, 'cruiseMach',
     propsAvia.performance.serviceCeiling, propsAvia.weight.maxTakeoff, propsAvia.performance.fuelCapacity, 
-    'seats', propsAvia.cockpitCrew, propsAvia.powerplant, 
+    propsAvia.maxSeats, propsAvia.cockpitCrew, propsAvia.powerplant, 
     propsAvia.listPriceMlnUsd2020]
 
   ngOnInit() {
