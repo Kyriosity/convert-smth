@@ -1,5 +1,5 @@
 import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers';
-import { LinerDescription as Liner, CargoAirplaneDescription as Freighter, AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
+import { LinerNfo as Liner, CargoAirplaneNfo as Freighter, AircraftNfo } from 'src/app/_entities/avia/aircrafts/entities';
 import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
 import { meter, kilogram, kilometer, kilometersHour, foot, pound, milesHour, mile, usGallon, Mach,
      poundforce, imperialGallon, tonne, kilonewton, 
@@ -8,13 +8,13 @@ import { meter, kilogram, kilometer, kilometersHour, foot, pound, milesHour, mil
 // ********************** Wright Flyer I ***********************
 const ship_ZeppelinNT: Liner = {
     unid: undefined,
+    remarks: 'helium-filled airship being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.',
 
     designation: {
         brand: builders.Zeppelin,
         title: 'Zeppelin',
         family: 'NT',
         serie: 7,
-        remarks: 'helium-filled airship being manufactured since the 1990s by the German company Zeppelin Luftschifftechnik GmbH (ZLT) in Friedrichshafen.',
     },
     firstFlight: new Date('1997-11-18'),
 
@@ -59,11 +59,11 @@ const ship_ZeppelinNT: Liner = {
 
 const plane_WrightFlyer: Liner = {
     unid: undefined,
+    remarks: 'First successful heavier-than-air powered aircraft.',
 
     designation: {
         brand: builders.Wright,
         title: 'Flyer',
-        remarks: 'First successful heavier-than-air powered aircraft.',
     },
     firstFlight: new Date('1903-12-17'),
 
@@ -100,13 +100,13 @@ const plane_WrightFlyer: Liner = {
 // ********************** Sikorsky S-42 ***********************
 const plane_SikorskyS42: Liner = {
     unid: undefined,
+    remarks: 'A commercial flying boat designed and built by Sikorsky Aircraft to meet requirements for a long-range flying boat laid out by Pan Am. The innovative design included wing flaps, variable-pitch propellers, and a tail-carrying full-length hull. The prototype quickly established ten world records for payload-to-height. The fleet of S42 was used primarily on the Miami - Rio de Janeiro route. ',
 
     designation: {
         brand: builders.Sikorsky,
         title: 'Flying Clipper',
         family: 'S',
         serie: 42,
-        remarks: 'A commercial flying boat designed and built by Sikorsky Aircraft to meet requirements for a long-range flying boat laid out by Pan Am. The innovative design included wing flaps, variable-pitch propellers, and a tail-carrying full-length hull. The prototype quickly established ten world records for payload-to-height. The fleet of S42 was used primarily on the Miami - Rio de Janeiro route. ',
     },
     firstFlight: new Date('1934-3-29'), // prototype
 
@@ -144,12 +144,12 @@ const plane_SikorskyS42: Liner = {
 // ********************** CONCORDE ***********************
 const plane_Concorde: Liner = {
     unid: undefined,
+    remarks: 'the last passenger supersonic now (2020)',
 
     designation: {
         brand: builders.BAC,
         title: 'Concorde',
         modification: '',
-        remarks: 'the last passenger supersonic now (2020)',
     },
     firstFlight: new Date('1969-3-2'),
 
@@ -198,12 +198,12 @@ const plane_Concorde: Liner = {
 // ********************** AIRBUS A380 ***********************
 const plane_A380: Liner = {
     unid: undefined,
+    remarks: 'largest passenger aircraft ever [year 2020] with two fuselage-long decks',
 
     designation: {
         brand: builders.Airbus,
         title: 'A380',
         variant: 800,
-        remarks: 'largest passenger aircraft ever [year 2020] with two fuselage-long decks',
     },
     firstFlight: new Date('2005-04-27'),
 
@@ -253,13 +253,13 @@ const plane_A380: Liner = {
 // ********************** BOEING DREAMLINER 787-10 ***********************
 const plane_Dreamliner: Liner = {
     unid: undefined,
+    remarks: 'stretche variant of wide-body composite-made airliner, fully designed in CAD',
 
     designation: {
         brand: builders.Boeing,
         title: 'Dreamliner',
         family: '787',
         serie: 10,
-        remarks: 'stretche variant of wide-body composite-made airliner, fully designed in CAD',
     },
     firstFlight: new Date('2017-3-31'),
 
@@ -308,13 +308,13 @@ const plane_Dreamliner: Liner = {
 // ********************** BOEING 747-400 ***********************
 const plane_747_400: Liner = {
     unid: undefined,
-
+    remarks: 'Wide-body, long–range, commercial jet airliner and cargo aircraft. Variant of first wide-body airplane produced',
+ 
     designation: {
         brand: builders.Boeing,
         title: 'Jumbo Jet',
         family: '747',
         serie: 400,
-        remarks: 'Wide-body, long–range, commercial jet airliner and cargo aircraft. Variant of first wide-body airplane produced',
     },
     firstFlight: new Date('1988-4-29'),
 
@@ -363,12 +363,12 @@ const plane_747_400: Liner = {
 // ********************** GULFSTREAM 700 ***********************
 const bizJet_Gulfstream700: Liner = {
     unid: undefined,
-
+    remarks: 'twin-engine business jet airplane',
+ 
     designation: {
         brand: builders.Gulfstream,
         title: 'Gulfstream',
         family: '700',
-        remarks: 'twin-engine business jet airplane',
     },
     firstFlight: new Date('2020-2-14'),
 
@@ -418,12 +418,12 @@ const bizJet_Gulfstream700: Liner = {
 // ********************** BOMBARDIER CRJ-700 ***********************
 const plane_Crj700: Liner = {
     unid: undefined,
-
+    remarks: 'regional jet',
+ 
     designation: {
         brand: builders.Bombardier,
         family: 'CRJ',
         serie: 700,
-        remarks: 'regional jet',
     },
     firstFlight: new Date('1999-5-27'),
 
@@ -472,13 +472,13 @@ const plane_Crj700: Liner = {
 // ********************** ANTONOV MRIYA ***********************
 const freighter_Mriya: Freighter = {
     unid: undefined,
-
+    remarks: 'biggest flying aircraft in the world with the single machine in operation',
+ 
     designation: {
         brand: builders.Antonov,
         title: 'Mriya',
         family: 'An',
         variant: 225,
-        remarks: 'biggest flying aircraft in the world with the single machine in operation',
     },
     firstFlight: new Date('1988-12-21'),
 
@@ -534,14 +534,14 @@ const freighter_Mriya: Freighter = {
 // ********************** AIRBUS BELUGA XL ***********************
 const freighter_BelugaXl: Freighter = {
     unid: undefined,
-
+    remarks: 'A large transport aircraft based on the Airbus A330 airliner. The aircraft entered service with Airbus Transport on 9 January 2020[ to replace the Airbus Beluga in the movement of oversized aircraft components, for example wings. The Beluga XL made its first flight on 19 July 2018, and received its type certification on 13 November 2019.',
+ 
     designation: {
         title: 'Beluga XL',
         brand: builders.Airbus,
         family: '330',
         serie: 743,
         modification: 'L',
-        remarks: 'A large transport aircraft based on the Airbus A330 airliner. The aircraft entered service with Airbus Transport on 9 January 2020[ to replace the Airbus Beluga in the movement of oversized aircraft components, for example wings. The Beluga XL made its first flight on 19 July 2018, and received its type certification on 13 November 2019.',
     },
     firstFlight: new Date('2018-7-19'),
 
@@ -600,13 +600,13 @@ const freighter_BelugaXl: Freighter = {
 // ********************** CESSNA 172 ***********************
 const plane_Cessna172: Liner = {
     unid: undefined,
-
+    remarks: 'Four-seat, single-engine, high wing, fixed-wing aircraft. First flown in 1955, more "172"s have been built than any other aircraft.',
+ 
     designation: {
         brand: builders.Cessna,
         title: 'Skyhawk',
         family: '172',
         modification: 'R', // since 1996
-        remarks: 'Four-seat, single-engine, high wing, fixed-wing aircraft. First flown in 1955, more "172"s have been built than any other aircraft.',
     },
     firstFlight: new Date('1955-6-12'),
 
@@ -654,13 +654,13 @@ const plane_Cessna172: Liner = {
 // ********************** A321neo ***********************
 const plane_A321neo: Liner = {
     unid: undefined,
-
+    remarks: 'A development of the A320 family of narrow-body jet-airliners produced by Airbus (neo - for "new engine option)"',
+ 
     designation: {
         brand: builders.Airbus,
         family: 'A',
         serie: 321,
         modification: 'neo',
-        remarks: 'A development of the A320 family of narrow-body jet-airliners produced by Airbus (neo - for "new engine option)"',
     },
     firstFlight: new Date('2016-2-12'),
 
@@ -708,12 +708,12 @@ const plane_A321neo: Liner = {
 // ********************** ATR72 ***********************
 const plane_Atr72: Liner = {
     unid: undefined,
-
+    remarks: 'twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy',
+ 
     designation: {
         brand: builders.ATR,
         title: 'ATR',
         serie: 72,
-        remarks: 'twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy',
     },
     firstFlight: new Date('1988-10-27'),
 
@@ -760,14 +760,14 @@ const plane_Atr72: Liner = {
 // ********************** Aero Spacelines B-377-SG Super Guppy ***********************
 const plane_B377Sg: Freighter = {
     unid: undefined,
-
+    remarks: 'Large, wide-bodied cargo aircraft that is used for hauling outsize cargo components. The only airplane in the world capable of carrying a complete third stage of the Saturn V rocket.',
+ 
     designation: {
         brand: builders.AeroSpacelines,
         title: 'Super Guppy',
         family: 'B',
         serie: 377,
         modification: 'SG',
-        remarks: 'Large, wide-bodied cargo aircraft that is used for hauling outsize cargo components. The only airplane in the world capable of carrying a complete third stage of the Saturn V rocket.',
     },
     firstFlight: new Date('1965-8-31'),
 
@@ -819,13 +819,13 @@ const plane_B377Sg: Freighter = {
 // ********************** EMBRAER ERJ-145 ***********************
 const plane_Erj145Er: Liner = {
     unid: undefined,
-
+    remarks: 'twin-engine regional jet with extended range',
+ 
     designation: {
         brand: builders.Embraer,
         family: 'ERJ',
         serie: 145,
         modification: 'ER',
-        remarks: 'twin-engine regional jet with extended range',
     },
     firstFlight: new Date('1995-8-11'),
 
@@ -872,12 +872,12 @@ const plane_Erj145Er: Liner = {
 // ********************** Focker 70 ***********************
 const plane_Fokker70: Liner = {
     unid: undefined,
-
+    remarks: 'narrow-body, twin-engined, medium-range, turbofan regional airliner ',
+ 
     designation: {
         brand: builders.Fokker,
         title: 'Fokker',
         serie: 100,
-        remarks: 'narrow-body, twin-engined, medium-range, turbofan regional airliner ',
     },
     firstFlight: new Date('1993-4-4'),
 
@@ -923,13 +923,13 @@ const plane_Fokker70: Liner = {
 // ********************** Boeing 737-100 ***********************
 const plane_737_100: Liner = {
     unid: undefined,
-
+    remarks: 'a narrow-body aircraft developed to supplement the 727 on short and thin routes, the twinjet retains the 707 fuselage cross-section and nose with two underwing turbofans.',
+ 
     designation: {
         brand: builders.Boeing,
         family: 'B',
         serie: 737,
         variant: 100,
-        remarks: 'a narrow-body aircraft developed to supplement the 727 on short and thin routes, the twinjet retains the 707 fuselage cross-section and nose with two underwing turbofans.',
     },
     firstFlight: new Date('1967-4-9'),
 
@@ -977,14 +977,14 @@ const plane_737_100: Liner = {
 // ********************** Boeing 747-400 LCF ***********************
 const freighter_747_400LCF: Freighter = {
     unid: undefined,
-
+    remarks: 'an extensively modified Boeing 747-400 that is used exclusively for transporting Boeing 787 Dreamliner aircraft components to Boeing\'s assembly plants from suppliers around the world',
+ 
     designation: {
         brand: builders.Boeing,
         title: 'LCF', // Large Cargo Freigter
         family: '747',
         serie: 400,
         modification: 'LCF',
-        remarks: 'an extensively modified Boeing 747-400 that is used exclusively for transporting Boeing 787 Dreamliner aircraft components to Boeing\'s assembly plants from suppliers around the world',
     },
     firstFlight: new Date('2006-9-9'),
 
@@ -1016,7 +1016,6 @@ const freighter_747_400LCF: Freighter = {
     },
     cargoBay: {
         capacity: cubicFoot(65000),
-
     },
     takeoff: {
         run: foot(9908),
@@ -1034,6 +1033,7 @@ const freighter_747_400LCF: Freighter = {
 // ********************** Douglas DC-3 ***********************
 const plane_DouglasDc3: Liner = {
     unid: undefined,
+    remarks: 'a propeller-driven airliner which had a lasting effect on the airline industry in the 1930s/1940s; considered the first airliner that could profitably carry only passengers.',
 
     designation: {
         brand: builders.Douglas,
@@ -1041,7 +1041,6 @@ const plane_DouglasDc3: Liner = {
         family: 'DC',
         serie: 3,
         modification: '',
-        remarks: 'a propeller-driven airliner which had a lasting effect on the airline industry in the 1930s/1940s; considered the first airliner that could profitably carry only passengers.',
     },
     firstFlight: new Date('1935-12-17'),
 
@@ -1083,13 +1082,13 @@ const plane_DouglasDc3: Liner = {
 
 const plane_SN601: Liner = {
     unid: undefined,
+    remarks: 'a business jet of the early 1970s developed. In addition to its use as a VIP aircraft, a number of Corvettes were procured and operated by regional airlines, such as Air Alsace, Air Alpes, Air Champagne, TAT, and Sterling Airways. Airbus Industrie also operated a small fleet of Corvettes for internal transportation of staff between its key sites across Europe.',
 
     designation: {
         brand: builders.Aerospatiale,
         title: 'Corvette',
         family: '601',
         modification: 'SN',
-        remarks: 'a business jet of the early 1970s developed. In addition to its use as a VIP aircraft, a number of Corvettes were procured and operated by regional airlines, such as Air Alsace, Air Alpes, Air Champagne, TAT, and Sterling Airways. Airbus Industrie also operated a small fleet of Corvettes for internal transportation of staff between its key sites across Europe.',
     },
     firstFlight: new Date('1970-7-16'),
 
@@ -1133,6 +1132,7 @@ const plane_SN601: Liner = {
 // ********************** Lockheed L-1011 TriStar ***********************
 const plane_TriStar: Liner = {
     unid: undefined,
+    remarks: 'an American medium-to-long-range, wide-body trijet airliner by Lockheed Corporation. It was the third wide-body airliner to enter commercial operations, after the Boeing 747 and the McDonnell Douglas DC-10. ',
 
     designation: {
         brand: builders.Lockheed,
@@ -1140,7 +1140,6 @@ const plane_TriStar: Liner = {
         family: 'L',
         serie: 1011,
         variant: 1,
-        remarks: 'an American medium-to-long-range, wide-body trijet airliner by Lockheed Corporation. It was the third wide-body airliner to enter commercial operations, after the Boeing 747 and the McDonnell Douglas DC-10. ',
     },
     firstFlight: new Date('1970-11-16'),
 
@@ -1170,12 +1169,11 @@ const plane_TriStar: Liner = {
         thrust: poundforce(42000),
 
         fuelCapacity: usGallon(23814),
-        // ToDo: cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
+        // cruiseFuelConsumption: { value: 11, unit: 'ton/hour' } // a plane like a Boeing 747 uses approximately 1 gallon of fuel (about 4 liters) every second. 
     },
 
     takeoff: {
         run: meter(2560),
-
     },
 
     cockpitCrew: new Array<CrewPerson>(3),
@@ -1188,12 +1186,12 @@ const plane_TriStar: Liner = {
 // ********************** Dassault Falcon 7X  ***********************
 const bizJet_Falcon: Liner = {
     unid: undefined,
-
+    remarks: 'a large-cabin, 5,950 nautical miles (11,020 km) range business jet developed from Falcon 900',
+ 
     designation: {
         brand: builders.Dassault,
         title: 'Falcon',
         family: '7X',
-        remarks: 'a large-cabin, 5,950 nautical miles (11,020 km) range business jet developed from Falcon 900'
     },
     firstFlight: new Date('2005-5-5'),
 
@@ -1240,14 +1238,14 @@ const bizJet_Falcon: Liner = {
 // ********************** Hawker Siddeley Trident 1/1C ***********************
 const plane_Trident: Liner = {
     unid: undefined,
-
+    remarks: 'is a now-retired British short- (and later medium-) range airliner. It was the first T-tail rear-engined trijet airliner to be designed. It was also the first airliner to make a blind landing in revenue service in 1965.',
+ 
     designation: {
         brand: builders.HawkerSiddeley,
         title: 'Trident',
         family: '1',
         serie: 28,
-        remarks: 'is a now-retired British short- (and later medium-) range airliner. It was the first T-tail rear-engined trijet airliner to be designed. It was also the first airliner to make a blind landing in revenue service in 1965.'
-    },
+     },
     firstFlight: new Date('1962-1-9'),
 
     measurements: {
@@ -1292,14 +1290,14 @@ const plane_Trident: Liner = {
 // ********************** Sud Aviation Caravelle ***********************
 const plane_Caravelle: Liner = {
     unid: undefined,
-
+    remarks: 'is a French short/medium-range jet airliner. It holds the distinction of being the world\'s first jet-powered airliner to be developed for the short/medium-range market. The Caravelle established the aft-mounted engine, clean-wing design configuration that is still used widely by smaller jetliners.',
+ 
     designation: {
         brand: builders.SudAviation,
         title: 'Caravelle',
         family: 'SE',
         serie: 210,
         variant: 1,
-        remarks: 'is a French short/medium-range jet airliner. It holds the distinction of being the world\'s first jet-powered airliner to be developed for the short/medium-range market. The Caravelle established the aft-mounted engine, clean-wing design configuration that is still used widely by smaller jetliners.',
     },
     firstFlight: new Date('1955-5-27'),
 
@@ -1345,11 +1343,11 @@ const plane_Caravelle: Liner = {
 // ********************** de Havilland DH.34 ***********************
 const plane_DH34: Liner = {
     unid: undefined,
-
+    remarks: ' a single engined British biplane airliner built by the de Havilland Aircraft Company in the 1920s. 12 were built, with the DH.34 serving with Imperial Airways and its predecessors for several years.',
+ 
     designation: {
         brand: builders.deHavilland,
         title: 'DH.34',
-        remarks: ' a single engined British biplane airliner built by the de Havilland Aircraft Company in the 1920s. 12 were built, with the DH.34 serving with Imperial Airways and its predecessors for several years.',
     },
     firstFlight: new Date('1922-3-26'),
 
@@ -1390,12 +1388,12 @@ const plane_DH34: Liner = {
 // ********************** Beechcraft 1900 ***********************
 const plane_Beechcraft1900: Liner = {
     unid: undefined,
-
+    remarks: ' 19-passenger, pressurized twin-engine turboprop fixed-wing aircraft. Designed to carry passengers in all weather conditions from airports with relatively short runways.',
+  
     designation: {
         brand: builders.Beechcraft,
         title: 'Beechcraft',
         family: '1900',
-        remarks: ' 19-passenger, pressurized twin-engine turboprop fixed-wing aircraft. Designed to carry passengers in all weather conditions from airports with relatively short runways.',
     },
     firstFlight: new Date('1982-9-3'),
 
@@ -1438,12 +1436,12 @@ const plane_Beechcraft1900: Liner = {
 // ********************** Mitsubishi SpaceJet ***********************
 const plane_SpaceJet: Liner = {
     unid: undefined,
-
+    remarks: 'Twin-engine regional jet aircraft manufactured by Mitsubishi Aircraft Corporation in a partnership with Toyota, with design assistance from Subaru. It will be the first airliner designed and produced in Japan since the NAMC YS-11 of the 1960s.',
+ 
     designation: {
         brand: builders.Mitsubishi,
         title: 'SpaceJet',
         family: 'M90',
-        remarks: 'Twin-engine regional jet aircraft manufactured by Mitsubishi Aircraft Corporation in a partnership with Toyota, with design assistance from Subaru. It will be the first airliner designed and produced in Japan since the NAMC YS-11 of the 1960s.'
     },
     firstFlight: new Date('2015-11-11'),
 
@@ -1490,12 +1488,12 @@ const plane_SpaceJet: Liner = {
 // ********************** Convair CV240 ***********************
 const plane_CV240: Liner = {
     unid: undefined,
-
+    remarks: 'an American airliner that Convair manufactured from 1947 to 1954, initially as a possible replacement for the ubiquitous Douglas DC-3. Featuring a more modern design with cabin pressurization, the 240 series made some inroads as a commercial airliner.',
+ 
     designation: {
         brand: builders.Convair,
         title: '',
         family: 'CV240',
-        remarks: 'an American airliner that Convair manufactured from 1947 to 1954, initially as a possible replacement for the ubiquitous Douglas DC-3. Featuring a more modern design with cabin pressurization, the 240 series made some inroads as a commercial airliner.',
     },
     firstFlight: new Date('1947-3-16'),
 
@@ -1531,13 +1529,13 @@ const plane_CV240: Liner = {
 // ********************** BAC One Eleven ***********************
 const plane_BAC111: Liner = {
     unid: undefined,
+    remarks: 'British short-range jet airliner widely used from the 1960s to the 1990s (retired only in 2019). The aircraft was also produced under licence in Romania during the 1980s as the Rombac One-Eleven.',
 
     designation: {
         brand: builders.BAC,
         title: 'One Eleven',
         family: '111',
         serie: 200,
-        remarks: 'British short-range jet airliner widely used from the 1960s to the 1990s (retired only in 2019). The aircraft was also produced under licence in Romania during the 1980s as the Rombac One-Eleven.'
     },
     firstFlight: new Date('1963-8-20'),
 
@@ -1583,12 +1581,12 @@ const plane_BAC111: Liner = {
 // ********************** Pilatus PC-24 SpaceJet ***********************
 const bizJet_PC24: Liner = {
     unid: undefined,
+    remarks: 'Light business jet with rugged airfield capability.',
 
     designation: {
         brand: builders.Pilatus,
         family: 'PC',
         serie: 24,
-        remarks: 'Light business jet with rugged airfield capability.'
     },
     firstFlight: new Date('2015-5-11'),
 
@@ -1631,13 +1629,13 @@ const bizJet_PC24: Liner = {
 // ********************** HondaJet HA-420  ***********************
 const lightJet_HondaJetHA420: Liner = {
     unid: undefined,
-
+    remarks: 'Very lIght business jet - first aircradt developed by the Honda Aircraft Company, which has received multiple awards for innovation.',
+ 
     designation: {
         brand: builders.Honda,
         family: 'HA',
         serie: 420,
         title: 'Hondajet',
-        remarks: 'Very lIght business jet - first aircradt developed by the Honda Aircraft Company, which has received multiple awards for innovation.',
     },
     firstFlight: new Date('2003-12-3'),
 
@@ -1683,12 +1681,12 @@ const lightJet_HondaJetHA420: Liner = {
 // ********************** Saab 90 ***********************
 const plane_Saab90: Liner = {
     unid: undefined,
+    remarks: 'Twin-engined, short-to-medium haul passenger aircraft, designed as a successor for the Douglas DC-3.',
 
     designation: {
         brand: builders.Saab,
         title: 'Scandia',
         serie: 90,
-        remarks: 'Twin-engined, short-to-medium haul passenger aircraft, designed as a successor for the Douglas DC-3.',
     },
     firstFlight: new Date('1946-11-16'),
 
@@ -1726,17 +1724,16 @@ const plane_Saab90: Liner = {
     maxSeats: 32,
 }
 
-
 // ********************** Dornier-Fairchild 328 JET ***********************
 const plane_DornierFairchild328Jet: Liner = {
     unid: undefined,
+    remarks: ' commuter airliner, based upon the turboprop-powered Dornier 328, developed by the German aircraft manufacturer Dornier Luftfahrt GmbH. It would be the last Dornier-designed aircraft to reach production',
 
     designation: {
         brand: builders.Dornier,
         title: 'JET',
         family: '328',
         serie: 300,
-        remarks: ' commuter airliner, based upon the turboprop-powered Dornier 328, developed by the German aircraft manufacturer Dornier Luftfahrt GmbH. It would be the last Dornier-designed aircraft to reach production',
     },
     firstFlight: new Date('1998-1-20'),
 
@@ -1780,11 +1777,11 @@ const plane_DornierFairchild328Jet: Liner = {
 // ********************** Saab 90 ***********************
 const plane_Saab2000: Liner = {
     unid: undefined,
+    remarks: 'Twin-engined high-speed turboprop airliner',
 
     designation: {
         brand: builders.Saab,
         family: '2000',
-        remarks: 'Twin-engined high-speed turboprop airliner',
     },
     firstFlight: new Date('1992-3-26'),
 
@@ -1827,12 +1824,12 @@ const plane_Saab2000: Liner = {
 // ********************** GAF Nomad N22B ***********************
 const plane_NomadN22B: Liner = {
     unid: undefined,
+    remarks: 'Utility twin-turboprop, high-wing aircraft with a retractable gear. Design work began in the mid-1960s. Despite some export and commercial operations, sales were not as sufficient and production stopped in 1985.',
 
     designation: {
         brand: builders.GAF,
         title: 'Nomad',
         family: 'N22B',
-        remarks: 'Utility twin-turboprop, high-wing aircraft with a retractable gear. Design work began in the mid-1960s. Despite some export and commercial operations, sales were not as sufficient and production stopped in 1985.',
     },
     firstFlight: new Date('1971-7-23'),
 
@@ -1873,16 +1870,15 @@ const plane_NomadN22B: Liner = {
     listPriceMlnUsd2020: 15 // A$991 000 in 1981
 }
 
-
 // ********************** Piaggio P.180 Avanti ***********************
 const bizJet_P180Avanti: Liner = {
     unid: undefined,
+    remarks: 'Italian executive transport aircraft with twin turboprop engines mounted in pusher configuration.',
 
     designation: {
         brand: builders.Piaggio,
         title: 'Avanti',
         family: 'P.180',
-        remarks: 'Italian executive transport aircraft with twin turboprop engines mounted in pusher configuration.'
     },
     firstFlight: new Date('1986-9-23'),
 
@@ -1924,11 +1920,11 @@ const bizJet_P180Avanti: Liner = {
 // ********************** Vickers VC10 ***********************
 const plane_VickersVC10: Liner = {
     unid: undefined,
+    remarks: 'Mid-sized, narrow-body long-range jet airliner. The airliner was designed to operate on long-distance routes from the shorter runways of the era and commanded excellent hot and high performance for operations from African airports. It had achieved the fastest crossing of the Atlantic by a subsonic jet airliner of 5 hours and 1 minute, a record that was held for 41 years.',
 
     designation: {
         brand: builders.VickersArmstrongs,
         title: 'VC10',
-        remarks: 'Mid-sized, narrow-body long-range jet airliner. The airliner was designed to operate on long-distance routes from the shorter runways of the era and commanded excellent hot and high performance for operations from African airports. It had achieved the fastest crossing of the Atlantic by a subsonic jet airliner of 5 hours and 1 minute, a record that was held for 41 years.',
     },
     firstFlight: new Date('1964-4-29'),
 
@@ -1968,8 +1964,7 @@ const plane_VickersVC10: Liner = {
     listPriceMlnUsd2020: 150 // £1.75 million
 }
 
-
-export const fullAircraftsList: AircraftDescription[] = [
+export const fullAircraftsList: AircraftNfo[] = [
     ship_ZeppelinNT,
 
     plane_WrightFlyer,

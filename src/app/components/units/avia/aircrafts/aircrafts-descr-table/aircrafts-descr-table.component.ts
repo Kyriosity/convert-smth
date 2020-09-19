@@ -3,9 +3,9 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTable } from '@angular/material/table'
 
-import { AircraftsDescrTableDataSource } from './aircrafts-descr-table-datasource';
-import { AircraftDigestPlain } from './AircraftDigestPlain';
-import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia';
+import { AircraftsDescrTableDataSource } from './aircrafts-descr-table-datasource'
+import { AircraftDigestPlain } from './AircraftDigestPlain'
+import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia'
 
 interface DisplayScheme {
   value: string
@@ -25,7 +25,7 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable) table: MatTable<AircraftDigestPlain>
   dataSource: AircraftsDescrTableDataSource
 
-  get SelectedUnitsScheme() { return this.#selectedUnitsScheme; }
+  get SelectedUnitsScheme() { return this.#selectedUnitsScheme }
   set SelectedUnitsScheme(value: string) {
     this.dataSource.convert(value)
     this.#selectedUnitsScheme = value
@@ -46,12 +46,12 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
     propsAvia.listPriceMlnUsd2020]
 
   ngOnInit() {
-    this.dataSource = new AircraftsDescrTableDataSource();
+    this.dataSource = new AircraftsDescrTableDataSource()
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    this.dataSource.sort = this.sort
+    this.dataSource.paginator = this.paginator
+    this.table.dataSource = this.dataSource
   }
 }

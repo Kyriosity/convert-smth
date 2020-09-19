@@ -50,5 +50,4 @@ export interface MachineDesignation {
     modification?: string,
 
     family?: string,
-    remarks?: string
 }

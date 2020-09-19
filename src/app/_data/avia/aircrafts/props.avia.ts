@@ -1,14 +1,14 @@
-import { EnsureExistingMemberName } from 'src/app/_core/basics';
-import { AircraftDescription, LinerDescription } from 'src/app/_entities/avia/aircrafts/entities';
-import { CargoBay, FlyingMachinePerformance, FlyingMachineSize, FlyingMachineTakeOff, FlyingMachineWeights, MachineDesignation } from 'src/app/_entities/avia/eintities';
+import { EnsureExistingMemberName } from 'src/app/_core/basics'
+import { AircraftNfo, LinerNfo } from 'src/app/_entities/avia/aircrafts/entities'
+import { CargoBay, FlyingMachinePerformance, FlyingMachineSize, FlyingMachineTakeOff, FlyingMachineWeights, MachineDesignation } from 'src/app/_entities/avia/eintities'
 
-const _x_ = EnsureExistingMemberName;
+const _x_ = EnsureExistingMemberName
 
 export const propsAvia = {
-    firstFlight: _x_<AircraftDescription>("firstFlight"),
-    cockpitCrew: _x_<AircraftDescription>("cockpitCrew"),
-    powerplant: _x_<AircraftDescription>("powerplant"),
-    listPriceMlnUsd2020: _x_<AircraftDescription>("listPriceMlnUsd2020"),
+    firstFlight: _x_<AircraftNfo>("firstFlight"),
+    cockpitCrew: _x_<AircraftNfo>("cockpitCrew"),
+    powerplant: _x_<AircraftNfo>("powerplant"),
+    listPriceMlnUsd2020: _x_<AircraftNfo>("listPriceMlnUsd2020"),
     
     designation: {
         brand: _x_<MachineDesignation>("brand"),
@@ -47,5 +47,5 @@ export const propsAvia = {
         dims: _x_<CargoBay>("dims"),
     },
 
-    maxSeats: _x_<LinerDescription>("maxSeats"),
+    maxSeats: _x_<LinerNfo>("maxSeats"),
 } as const

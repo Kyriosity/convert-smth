@@ -1,35 +1,35 @@
-import { distance, velocity, mass, volume, UValErr } from 'units-weigher';
-import { AircraftDescription } from 'src/app/_entities/avia/aircrafts/entities';
-import { MachineDesignation } from 'src/app/_entities/avia/eintities';
-import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers';
-import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia';
+import { distance, velocity, mass, volume, UValErr } from 'units-weigher'
+import { AircraftNfo } from 'src/app/_entities/avia/aircrafts/entities'
+import { MachineDesignation } from 'src/app/_entities/avia/eintities'
+import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers'
+import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia'
 
 const uNonBreakingHyphen = '\u2011'
 
 export interface AircraftDigestPlain {
-    unid: number;
-    brand: string;
-    title: string;
+    unid: number
+    brand: string
+    title: string
     
-    range: distance;
-    cruiseSpeed: velocity;
-    serviceCeiling: distance;
-    maxTakeoff: mass;
-    fuelCapacity: volume;
+    range: distance
+    cruiseSpeed: velocity
+    serviceCeiling: distance
+    maxTakeoff: mass
+    fuelCapacity: volume
 
-    maxSeats: number;
-    cockpitCrew: number;
-    powerplant: number;
+    maxSeats: number
+    cockpitCrew: number
+    powerplant: number
 
-    firstFlight: Date;
-    listPriceMlnUsd2020: number;
+    firstFlight: Date
+    listPriceMlnUsd2020: number
   }
 
 export module Digest {
 
-    export function flatten(source: AircraftDescription): AircraftDigestPlain {
+    export function flatten(source: AircraftNfo): AircraftDigestPlain {
         if (!source)
-            throw new UValErr('no source submitted');
+            throw new UValErr('no source submitted')
 
         const digest: AircraftDigestPlain = {
             unid: source.unid,
@@ -49,14 +49,14 @@ export module Digest {
 
             firstFlight: source.firstFlight,
             listPriceMlnUsd2020: source.listPriceMlnUsd2020,
-        };
-        return digest;
+        }
+        return digest
     }
 
     function designate(item: MachineDesignation): string {
         if (!item)
-            return '- none -';
+            return '- none -'
 
-        return `${item.title ? item.title + " " : ''}${item.family ? item.family : ''}${item.serie ? `${uNonBreakingHyphen}${item.serie}` : ''}${item.variant ? `${uNonBreakingHyphen}${item.variant}` : ''}${item.modification? item.modification : ''}`;
+        return `${item.title ? item.title + " " : ''}${item.family ? item.family : ''}${item.serie ? `${uNonBreakingHyphen}${item.serie}` : ''}${item.variant ? `${uNonBreakingHyphen}${item.variant}` : ''}${item.modification? item.modification : ''}`
     }
 }
