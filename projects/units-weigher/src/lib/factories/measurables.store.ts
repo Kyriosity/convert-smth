@@ -1,4 +1,4 @@
-import { mkTemperature, mkDistance, mkMass, mkVelocity, mkForce, mkVolume } from './_measurablesCreator'
+import { mkTemperature, mkDistance, mkMass, mkVelocity, mkForce, mkVolume } from './_measurables.creator'
 import { temperature, distance, mass, velocity, force, volume } from '../core/z_barrel'
 import { Temperatures, Distances, Masses, Velocities, Forces, Volumes } from '../core/units'
 

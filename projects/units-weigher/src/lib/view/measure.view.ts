@@ -1,6 +1,6 @@
 import { Unit } from '../core/units'
 import { Measureable } from '../core/z_barrel'
-import { weighersStore } from '../factories/weighersStore'
+import { weighersStore } from '../factories/weighers.store'
 import { uFatQuestion, uWarn, PresentationParams, formatCustom, uQuestion } from './utils'
 
 export class MeasureView {

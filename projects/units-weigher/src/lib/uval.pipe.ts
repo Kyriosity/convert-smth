@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core'
 import { PresentationParams } from './view/utils'
-import { MeasureView } from './view/measure-view'
+import { MeasureView } from './view/measure.view'
 import { Measureable } from './core/z_barrel'
 import { Unit } from './core/units'
 

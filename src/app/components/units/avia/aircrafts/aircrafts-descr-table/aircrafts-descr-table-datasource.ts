@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { map, delay } from 'rxjs/operators'
 import { Observable, of as observableOf, merge } from 'rxjs'
-import { AircraftDigestPlain, Digest } from './AircraftDigestPlain'
+import { AircraftDigestPlain, Digest } from './aircraft.digest.plain'
 import { fullAircraftsList } from 'src/app/_data/avia/aircrafts/start-data'
 
 export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlain> {

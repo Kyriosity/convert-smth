@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort'
 import { MatTable } from '@angular/material/table'
 
 import { AircraftsDescrTableDataSource } from './aircrafts-descr-table-datasource'
-import { AircraftDigestPlain } from './AircraftDigestPlain'
+import { AircraftDigestPlain } from './aircraft.digest.plain'
 import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia'
 
 interface DisplayScheme {
