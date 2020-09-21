@@ -1,14 +1,18 @@
 ## Disclaimer
-This hobby part-time project was my first dive into Angular/Typescript (my *native* language for the last decade has been C#). Along with deeper than "hello world" experience with VS Code, GitHub, npm, markdown.
+This hobby part-time project was my first deep dive into Angular/Typescript along with VS Code, GitHub, npm, markdown.<sup>1</sup>
+
+**It's not an overall solution but rather groundwork of a framework**
+
+<sup>1</sup> *Nevertheless i'm over 25 years in IT and my *native* language for the last decade has been C#*
 
 # Physical units for Typescript
-This Angular project is about physical values like mass, temperature. It renders their smooth declaration, presentation and conversion.\
+This Angular project is about physical values like mass, temperature. It renders their smooth declaration, presentation and conversion.
 
 Hope, these code snippets will speak better:
 ```typescript
 const nextStation = meter(300)
 
-process(TheEarth.Mass.Tonne)
+record(TheEarth.Mass.Tonne)
 
 let myKittenWeight: mass
 myKittenWeight = kilogram(3)
@@ -32,3 +36,9 @@ Any rational critic would be highly appreciated. As well as cooperation ("many h
 
 
 There're not enough tests but any ultimate user is encouraged to cover the library with own tests. That would be safer and more independent than in-built tests.
+
+
+/// ToDo:
+ranges for weigher
+customizing ranges of unit over natural
+preventing camel calculation jumps
