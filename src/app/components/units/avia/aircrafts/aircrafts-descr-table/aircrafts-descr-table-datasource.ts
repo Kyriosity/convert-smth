@@ -5,6 +5,7 @@ import { map, delay } from 'rxjs/operators'
 import { Observable, of as observableOf, merge } from 'rxjs'
 import { AircraftDigestPlain, Digest } from './aircraft.digest.plain'
 import { fullAircraftsList } from 'src/app/_data/avia/aircrafts/start-data'
+import { ICompare, SortBubble } from 'src/app/_core/sorting/compare'
 
 export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlain> {
   data: AircraftDigestPlain[] = []
@@ -14,7 +15,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
   isLoading = false
   readonly #msSimulatedDelay = 1000
 
-  constructor() {
+  constructor(private sorter: ICompare) {
     super()
   }
 
@@ -41,13 +42,12 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
     return obs
   }
 
-   convert(schemeId: string) {
+  convert(schemeId: string) {
     this.isLoading = true
-
     setTimeout(() => { this.isLoading = false }, this.#msSimulatedDelay)
   }
 
-  disconnect() { 
+  disconnect() {
     // clean up connections
     // free held resource
   }
@@ -69,28 +69,16 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
     }
 
     return data.sort((a, b) => {
-      const isAsc = this.sort.direction === 'asc'
-      switch (this.sort.active) {
-        case 'brand': return compare(a.brand, b.brand, isAsc)
-        case 'name': return compare(a.title, b.title, isAsc)
-        case 'id': return compare(+a.unid, +b.unid, isAsc)
-        case 'cockpitCrew': return compare(a.cockpitCrew, b.cockpitCrew, isAsc)
-        case 'firstFlight': return dateCompare(a.firstFlight, b.firstFlight)
-        default: return 0
-      }
+      let bubble = this.sorter.whirl(a, b)
+      if (SortBubble.Equals == bubble || SortBubble.BothNone == bubble || SortBubble.NotApplicable == bubble)
+        return 0
+
+      if (SortBubble.LeftNone === bubble)
+        bubble = SortBubble.Lesser
+      else if (SortBubble.Greater === bubble)
+        bubble = SortBubble.Greater
+
+        return this.sort.direction !== 'asc'? -1 * bubble : bubble
     })
   }
 }
-
-function compare(a: string | number, b: string | number, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1)
-}
-
-function dateCompare(a: Date, b: Date): number {
-  return a < b ? -1 : 1
-}
-
-function boolCompare(a: boolean, b: boolean): number {
-  return a == b ? 0 : (a ? 1 : -1)
-}
-

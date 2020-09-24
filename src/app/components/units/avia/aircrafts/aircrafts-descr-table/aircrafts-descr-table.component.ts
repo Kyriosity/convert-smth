@@ -46,7 +46,7 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
     propsAvia.listPriceMlnUsd2020]
 
   ngOnInit() {
-    this.dataSource = new AircraftsDescrTableDataSource()
+    this.dataSource = new AircraftsDescrTableDataSource(null)
   }
 
   ngAfterViewInit() {
