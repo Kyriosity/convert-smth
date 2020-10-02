@@ -1,32 +1,30 @@
-
-https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes
-
 # Intro
-This Angular project began in 2020 as my hobby dive into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**</sup>
+This Angular project began in 2020 as a hobby dive into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**</sup>
 
-It's all about physical values (like temperature, distance, mass). Their declaration, presenation, conversion. It's really challenging <sup>**_n**</sup>
+It's all about physical values (like temperature, distance, mass), their declaration, presenation, conversion. It's really a big challenge <sup>**_n**</sup>
 
 **It's not an overall solution but rather groundwork of a framework**
 
-<sub><sup>**_i**</sup> Nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>
-
+<sub><sup>**_i**</sup> Nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
 <sub><sup>**_i**</sup> even ridd off of quantum physics</sub>
 
-# U(nit)Values, or physical values for Typescript
-Let it be code snippets 
+# U(nit)Values, or physical values, for Typescript
+Let's intrigue you with just a tiny subsets of snippets 
 ```typescript
 const nextStation = meter(300)
 
-record(TheEarth.Mass.Tonne)
+publish(TheEarth.Mass.Tonne)
 
 let tempo: velocity
 tempo = camera1.flash(yourCar)
 ```
-If you like more details, please look at [snippets]()
+When you liked it, then please [snippets]()
 
+If you event liked that, then some concepts behind:
 + uniform declaration
 + presentation
 + conversion
++ ops (under construction)
 
 ## Coming next
 ### Math operations
