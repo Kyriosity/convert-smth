@@ -1,39 +1,35 @@
-# Intro
-This Angular project began in 2020 as a hobby dive into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**</sup>
+# U(nit)Values, or physical values, for Typescript
+This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**</sup>
 
-It's all about physical values (like temperature, distance, mass), their declaration, presenation, conversion. It's really a big challenge <sup>**_n**</sup>
+It's all about making physical values (like temperature, distance, or mass) native for development. And it's a really big challenge, no kidding <sup>**_n**</sup>
 
-**It's not an overall solution but rather groundwork of a framework**
+**So far it's not an overall solution but rather groundwork of a framework**
 
 <sub><sup>**_i**</sup> Nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
-<sub><sup>**_i**</sup> even ridd off of quantum physics</sub>
+<sub><sup>**_i**</sup> even ridd off of quantum mech</sub>
 
-# U(nit)Values, or physical values, for Typescript
-Let's intrigue you with just a tiny subsets of snippets 
+# What you get
+It's always better by code snippets ...
+## Uniform declaration
 ```typescript
-const nextStation = meter(300)
+let nextMetroStation = meter(347)
 
-publish(TheEarth.Mass.Tonne)
+tell(TheEarth.Mass.Tonne)
 
 let tempo: velocity
 tempo = camera1.flash(yourCar)
+const highwaySpeedLimit = milesPerHour(90)
 ```
-When you liked it, then please [snippets]()
+## Conversion and presentation
+pipes
 
-If you event liked that, then some concepts behind:
-+ uniform declaration
-+ presentation
-+ conversion
-+ ops (under construction)
-
-## Coming next
-### Math operations
-I'm thinking on the syntax meanwhile - both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - too dubios for physical units, consider: 
+## Math operations )
+I'm thinking on the syntax meanwhile - both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - would too dubios for physical units, consider: 
 ```typescript 
 let cargoTotal: mass 
-cargoTotal = tone(4) - kilogram(90); cargoSum += pound(200) // what unit shall be derived here
+cargoTotal = tone(4) - kilogram(90); cargoSum += pound(200) // and what unit shall be derived here?
 ```
-## Deeper dive
+## How to 
 One one hand it's a library of such units with routines, and on the other - table of aircraft specifications, presenting these features.
 
 b) uval service
