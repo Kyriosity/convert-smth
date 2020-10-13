@@ -1,32 +1,50 @@
+enum Bubble {
+    down = -1,
+    equ = 0,
+    up = 1
+}
+
+export interface Charity {
+    thx4(subsribed: boolean): string
+    thx4(money: number): string
+}
+
+class GoodPeople implements Charity {
+    thx4(subsribed: boolean): string
+    thx4(money: number): string
+    thx4(money: any) { return 'thank u' }
+}
 
 export interface ICompare {
-    whirl(a, b): SortBubble
+    whirl(that: any, to: any): Bubble
 }
 
-export class Comparer implements ICompare {
-    private numProps = []
-    private txtProps = []
-    private boolProps = []
+export class Compare implements ICompare {
+    whirl(that: any, to: any) {
+        if (!that)
+            return !to ? Bubble.equ : this.leftNone()
+        if (!to)
+            return this.rightNone()
 
-// TODO: PARAMETRISE FOR RETURN !!!
-    
-    whirl(a: any, b: any): SortBubble { //ToDo: TYPE DESCRIPTION ???
-        if (!a)
-            return !b ? SortBubble.Equals : SortBubble.LeftNone
-        if (!b)
-            return SortBubble.RightNone
+        if (typeof that === 'number')
+            return this.compareNum(that, to)
+        if (typeof that == 'string')
+            return this.compareTxt(that, to)
 
-        return null
+        return undefined
     }
+
+    protected leftNone = () => Bubble.down
+    protected rightNone = () => Bubble.up
+
+    protected compareNum = (a: number, b: number) => a === b ? Bubble.equ :
+        a < b ? Bubble.down : Bubble.up
+
+    protected compareTxt = (a: string, b: string) => (a < b ? -1 : 1)
+
+    protected compareDate = (a: Date, b: Date) => a === b ? Bubble.equ :
+        a < b ? Bubble.down : Bubble.up
+
+    protected compareBool = (a: boolean, b: boolean) => a === b ? Bubble.equ :
+        (a ? Bubble.up : Bubble.down)
 }
-
-const compareNum = (a: number, b: number) => a === b ? SortBubble.Equals :
-    a < b ? SortBubble.Lesser : SortBubble.Greater
-
-const compareTxt = (a: string, b: string) => (a < b ? -1 : 1)
-
-const compareDate = (a: Date, b: Date) => a === b ? SortBubble.Equals :
-    a < b ? SortBubble.Lesser : SortBubble.Greater
-
-const compareBool = (a: boolean, b: boolean): number => a === b ? SortBubble.Equals :
-    (a ? SortBubble.Greater : SortBubble.Lesser)

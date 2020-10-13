@@ -5,7 +5,7 @@ import { map, delay } from 'rxjs/operators'
 import { Observable, of as observableOf, merge } from 'rxjs'
 import { AircraftDigestPlain, Digest } from './aircraft.digest.plain'
 import { fullAircraftsList } from 'src/app/_data/avia/aircrafts/start-data'
-import { ICompare, SortBubble } from 'src/app/_core/sorting/compare'
+import { ICompare } from 'src/app/_core/sorting/compare'
 
 export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlain> {
   data: AircraftDigestPlain[] = []
@@ -70,15 +70,8 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
 
     return data.sort((a, b) => {
       let bubble = this.sorter.whirl(a, b)
-      if (SortBubble.Equals == bubble || SortBubble.BothNone == bubble || SortBubble.NotApplicable == bubble)
-        return 0
 
-      if (SortBubble.LeftNone === bubble)
-        bubble = SortBubble.Lesser
-      else if (SortBubble.Greater === bubble)
-        bubble = SortBubble.Greater
-
-        return this.sort.direction !== 'asc'? -1 * bubble : bubble
+      return this.sort.direction !== 'asc' ? -1 * bubble : bubble
     })
   }
 }

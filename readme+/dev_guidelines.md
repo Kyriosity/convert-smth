@@ -17,22 +17,30 @@ A weigher can't compare different types of measurables
 // KD, ToDo: tests
 
 ## Think of performance
-+ `Measurebles` are structs with smallest footprint. Don't extend them with any logic.
++ `Measurebles` are structs with the smallest footprint. Do NOT extend them with any logic.
 + Any validation, transformation shall be *external* and on demand. Thus i stripped Measureables of any tempting logic
 
 ## Tests
 There're not enough tests but any ultimate user is encouraged to cover the library with own probes. That would be safer and independent than in-built tests.
 
 ## Method overloading
-For a Java or C# developer method overloading is native, but it won't work in Javascript. At the moment there's an arguable syntax sugar
+For a Java or C# developer method overloading is native, but it won't work in Javascript. At the moment there's an arguable syntax sugar that looks
 
 ```typescript
+export interface Charity {
+    thx4(subsribed: boolean): string
+    thx4(money: number): string
+}
 
+class GoodPeople implements Charity {
+    thx4(subsribed: boolean): string
+    thx4(money: number): string
+    thx4(money: any) { return 'thank u' }
+}
 ```
-Benefits: implementation method may take an overhead of the common logic and validation
+The last method is *implementation method* where you shall differentiate types
 
-What would be nice: syntax sugar in Typescript generates methods with diferring names (e.g. with a suffix)
-
+But here think twice if domain naming has been correct!
 ## My coding wisches as IMHO
 * avoid **`;`** when possible. It's a 'good part' of TS that a line break is enough to terminate statements
 * avoid one-after-one repetitions for even the best named things

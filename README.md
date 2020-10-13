@@ -9,40 +9,50 @@ It's all about making physical values (like temperature, distance, or mass) nati
 <sub><sup>**_i**</sup> even ridd off of quantum mech</sub>
 
 # What you get
-It's always better by code snippets ...
+It's always better by code snippets. 
 ## Uniform declaration
 ```typescript
+const footInH0Scale = millimeter(3.5) // rail transport modelling
+
 let nextMetroStation = meter(347)
 
 tell(TheEarth.Mass.Tonne)
 
 let tempo: velocity
 tempo = camera1.flash(yourCar)
-const highwaySpeedLimit = milesPerHour(90)
+const localSpeedLimit = milesPerHour(90)
 ```
-## Conversion and presentation
+## Conversion
+const euroBottle = liter(0.5)
+const inUsWouldBe = IWeig
+
+
+## Presentation
 pipes
 
-## Math operations )
-I'm thinking on the syntax meanwhile - both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - would too dubios for physical units, consider: 
+## Math operations
+I'm thinking on the syntax meanwhile.
+Both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - would too dubios for physical units, consider: 
 ```typescript 
 let cargoTotal: mass 
-cargoTotal = tone(4) - kilogram(90); cargoSum += pound(200) // and what unit shall be derived here?
+cargoTotal = tonne(4) - kilogram(90); cargoSum += pound(200) // and what unit shall be derived here?
 ```
-## How to 
+Now let's think
+letCargoTotal = weight.in(tonne)
+kilogram()
+
+
+## How to understand the project
 One one hand it's a library of such units with routines, and on the other - table of aircraft specifications, presenting these features.
 
 b) uval service
 c) uval pipe, that actually is a pipe for uval
 
-
-## Get started
-
-Build the library and the project
-
 ## ToDos
 Validating a unit against a natural range (say, Kelvin scale begins of zero <sup>4</sup>)
+
 Floating point calculation
+
 preventing camel calculation jumps
 
 VALIDATOR for RANGEs: BOTH BUILT IN AND CUSTOM (see footnote)
@@ -52,6 +62,4 @@ VALIDATOR for RANGEs: BOTH BUILT IN AND CUSTOM (see footnote)
 ## Further reading
 [Concepts](readme+/_concepts.md)
 
-[Code snippets](README.specs.ts)
-
-[Dev notes]()
+[Dev guidelines](readme+/dev_guidelines.md)
