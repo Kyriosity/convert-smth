@@ -15,7 +15,7 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
   isLoading = false
   readonly #msSimulatedDelay = 1000
 
-  constructor(private sorter: ICompare) {
+  constructor(private comparer: ICompare) {
     super()
   }
 
@@ -64,13 +64,14 @@ export class AircraftsDescrTableDataSource extends DataSource<AircraftDigestPlai
    * Sort the data (client-side). If server-side replace by request to the server.
    */
   private getSortedData(data: AircraftDigestPlain[]) {
-    if (!this.sort.active || this.sort.direction === '') {
+    const propName = this.sort.active
+    if (!propName || !this.sort.direction) {
       return data
     }
 
     return data.sort((a, b) => {
-      let bubble = this.sorter.whirl(a, b)
-
+      
+      const bubble = this.comparer.whirl(a[propName], b[propName])
       return this.sort.direction !== 'asc' ? -1 * bubble : bubble
     })
   }

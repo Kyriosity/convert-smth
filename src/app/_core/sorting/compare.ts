@@ -4,31 +4,21 @@ enum Bubble {
     up = 1
 }
 
-export interface Charity {
-    thx4(subsribed: boolean): string
-    thx4(money: number): string
-}
-
-class GoodPeople implements Charity {
-    thx4(subsribed: boolean): string
-    thx4(money: number): string
-    thx4(money: any) { return 'thank u' }
-}
-
 export interface ICompare {
     whirl(that: any, to: any): Bubble
 }
 
-export class Compare implements ICompare {
+export class Comparer implements ICompare {
     whirl(that: any, to: any) {
         if (!that)
             return !to ? Bubble.equ : this.leftNone()
         if (!to)
             return this.rightNone()
 
-        if (typeof that === 'number')
+        let thatType = typeof that
+        if ('number' === thatType)
             return this.compareNum(that, to)
-        if (typeof that == 'string')
+        if ('string' === thatType)
             return this.compareTxt(that, to)
 
         return undefined

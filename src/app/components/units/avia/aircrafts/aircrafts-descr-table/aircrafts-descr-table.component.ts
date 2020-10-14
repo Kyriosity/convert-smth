@@ -6,6 +6,7 @@ import { MatTable } from '@angular/material/table'
 import { AircraftsDescrTableDataSource } from './aircrafts-descr-table-datasource'
 import { AircraftDigestPlain } from './aircraft.digest.plain'
 import { propsAvia } from 'src/app/_data/avia/aircrafts/props.avia'
+import { Comparer } from 'src/app/_core/sorting/compare'
 
 interface DisplayScheme {
   value: string
@@ -46,7 +47,7 @@ export class AircraftsDescrTableComponent implements AfterViewInit, OnInit {
     propsAvia.listPriceMlnUsd2020]
 
   ngOnInit() {
-    this.dataSource = new AircraftsDescrTableDataSource(null)
+    this.dataSource = new AircraftsDescrTableDataSource(new Comparer())
   }
 
   ngAfterViewInit() {
