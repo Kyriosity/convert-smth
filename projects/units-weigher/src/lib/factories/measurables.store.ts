@@ -93,3 +93,10 @@ export var cubicFoot = (val: number): volume => mkVolume(Volumes.cubicFoot, val)
 
 export var usGallon = (val: number): volume => mkVolume(Volumes.usGallon, val)
 export var imperialGallon = (val: number): volume => mkVolume(Volumes.imperialGallon, val)
+
+export var imperialPint = (val: number): volume => mkVolume(Volumes.imperialPint, val)
+export var usPint = (val: number): volume => mkVolume(Volumes.usPint, val)
+
+export const Liter = liter(NaN).unit
+export const ImperialPint = imperialPint(NaN).unit
+export const UsPint = usPint(NaN).unit

@@ -1,5 +1,8 @@
 # Overall development concepts
-That's what i learned from numerous corporate and tailor-made projects, and would like to share.
+That's what i learned from numerous corporate and tailor-made projects, and would like to share. <sup>**_d**</sup>
+
+<sup>**_d**</sup><sub> Disclaimer: due to the lack of time and big amount of coding i couldn't follow all these practies in this project</sub>
+
 ## Naming code entities
 Names of libraries, packages, classes, methods, vars - it's the ultimate challenge: hard and time consuming work of the whole team. <sup>**_t**</sup>
 However benefits are
@@ -12,7 +15,6 @@ However benefits are
 Well, under time pressure i may also name logics classes as *services*, *helpers*, but it's barely a good practice 
 
 <sup>**_t**</sup><sub> The team aren't only developers but customers, end users</sub>
-
 
 ## Comments in the code
 Self descriptive, clean code requires no comments. Otherwise this signalises poor naming.

@@ -27,11 +27,19 @@ const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.
 ```
 ## Conversion
 const euroBottle = liter(0.5)
-const inUsWouldBe = IWeigher.convert(euroBottle, Pinte)
-
+const inUkWouldBe = Volume.convert(euroBottle, ImperialPint)
 
 ## Presentation
-pipes
+
+### Labels
+
+### Angular pipe
+The library provides an angular pipe for both conversion and presentation of UValues.
+
+[Read more about pipe](readme+/uval-pipe.md)
+
+### Sorting
+Is so far not a part of the library but ...
 
 ## Math operations
 I'm thinking on the syntax meanwhile.
