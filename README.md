@@ -14,17 +14,20 @@ It's always better by code snippets.
 ```typescript
 const footInH0Scale = millimeter(3.5) // rail transport modelling
 
-let nextMetroStation = meter(347)
-
-tell(TheEarth.Mass.Tonne)
-
 let tempo: velocity
-tempo = camera1.flash(yourCar)
-const localSpeedLimit = milesPerHour(90)
+tempo = camera1.flash(aVehicle)
+
+interface State {
+    hightestElevation: distance,
+    recordHigh: temperature
+}
+const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(100) }
+const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
+
 ```
 ## Conversion
 const euroBottle = liter(0.5)
-const inUsWouldBe = IWeig
+const inUsWouldBe = IWeigher.convert(euroBottle, Pinte)
 
 
 ## Presentation
@@ -35,12 +38,16 @@ I'm thinking on the syntax meanwhile.
 Both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - would too dubios for physical units, consider: 
 ```typescript 
 let cargoTotal: mass 
-cargoTotal = tonne(4) - kilogram(90); cargoSum += pound(200) // and what unit shall be derived here?
+cargoTotal = tonne(4) - kilogram(90); cargoSum += pound(200)
+// and even with the overloaded + what unit shall be derived here?
 ```
 Now let's think
 letCargoTotal = weight.in(tonne)
 kilogram()
 
+## Predefined 'constants'
+
+tell(TheEarth.Mass.Tonne) 
 
 ## How to understand the project
 One one hand it's a library of such units with routines, and on the other - table of aircraft specifications, presenting these features.
@@ -53,13 +60,15 @@ Validating a unit against a natural range (say, Kelvin scale begins of zero <sup
 
 Floating point calculation
 
-preventing camel calculation jumps
+preventing "camel" calculation jumps, i.e. when a tiny is multiplicated with very big and then again wih a tiny one
 
 VALIDATOR for RANGEs: BOTH BUILT IN AND CUSTOM (see footnote)
 
 <sub><sup>5</sup> [oops, Ludwig-Maximilians University got something cooler](https://www.mpg.de/research/negative-absolute-temperature#:~:text=Thus%2C%20nothing%20can%20be%20colder,nonetheless%20has%20negative%20Kelvin%20values).</sub>
 
 ## Further reading
-[Concepts](readme+/_concepts.md)
+[Project concepts](readme+/_project_concepts.md)
 
-[Dev guidelines](readme+/dev_guidelines.md)
+[Dev: overall guidelines](readme+/dev_concepts.md)
+
+[Dev: project guidelines](readme+/dev_guidelines.md)
