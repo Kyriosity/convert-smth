@@ -53,7 +53,7 @@ const cargoTotal = tonne(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets)
 const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 // the crew rejected to transport pets cause the cargo bay isn't pressuresized
 ```
-<sub><sup>**_u**</sup>&nbsp;&nbsp;initially set *Unit* is immutable</sub>\
+<sub><sup>**_u**</sup>&nbsp;&nbsp;initially given *Unit* is immutable</sub>\
 <sub><sup>**_o**</sup>&nbsp;&nbsp;Both TS and JS don't facilitate overload of arithmetic ops (+, -, *, /). All the same this could be a performance hit and too implicit with resulted in unit</sub>
 
 ## Predefined UValues
