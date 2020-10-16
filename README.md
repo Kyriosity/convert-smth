@@ -3,18 +3,21 @@ This Angular project began in 2020 as a hobby dive of mine into Angular/Typescri
 
 It's all about making physical values (like temperature, mass) integrated in development and decently looking in UI.
 
-**So far it's not an overall solution but rather a draft of groundwork for framework**&nbsp;&nbsp;<sup>**_b**</sup>
+So far it's **not an overall solution but rather** a **draft** of **groundwork** for **framework**&nbsp;&nbsp;<sup>**_b**</sup>
 
 &nbsp;&nbsp;<sub><sup>**_i**</sup>&nbsp;&nbsp;nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
 &nbsp;&nbsp;<sub><sup>**_b**</sup>&nbsp;&nbsp;a big challenge asking for countless controversial concepts and tons of well-tempered code</sub>
 
-## How it looks
-Build the only library in this project and serve the only app there. Navigate to **Units**.\
-Or/**and** look at [snapshot of this demo (aircrafts table)](readme+/img_aircrafts-commented.jpg).
+## How it looks for user
+Just `ng build` the only library in this project and `ng serve`. Navigate to **Units**.\
+Or/**and** look at [commented snapshot of this demo](readme+/img_aircrafts-commented.jpg).&nbsp;&nbsp;<sup>**_d**
+
+
+&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;both there must be a table of aircrafts with some of their specs as `uvalues`<sup>
 ## How it works
 ### Declaration
 ```typescript
-const theChallengerDeep = meter(10929)
+const theChallengerDeep = meter(10929) // wiki: deepest known point in the Earth's seabed hydrosphere 
 console.log(theChallengerDeep.value) // 10929
 console.log(theChallengerDeep.unit === Meter) // true
 console.log(theChallengerDeep.unit == Foot) // false
@@ -36,7 +39,7 @@ const inUkWouldBe = euroBottle.to(ImperialPint)
 euroBottle.to(Meter) // this won't compile
 ```
 ### Presentation
-Includes formatting, labeling, parsing, ng-pipe and is worth of [separate paper](readme+/doc_uval-presentation.md)
+Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
 
 ### Math operations
 UValue exposes its `value` property that you can set/modify in the usual fashion:&nbsp;&nbsp;<sup>**_u**</sup>
@@ -53,8 +56,8 @@ const cargoTotal = tonne(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets)
 const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 // the crew rejected to transport pets cause the cargo bay isn't pressuresized
 ```
-<sub><sup>**_u**</sup>&nbsp;&nbsp;while initially given *Unit* is immutable</sub>\
-<sub><sup>**_o**</sup>&nbsp;&nbsp;both TS and JS don't facilitate overload of arithmetic ops (+, -, *, /); all the same this could be a performance hit and too implicit with resulted in unit</sub>
+&nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;while initially given *Unit* is immutable</sub>\
+&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /); all the same this could be a performance hit and too implicit with resulted in unit</sub>
 
 ## Predefined UValues
 [See more](readme+/doc_predefined-uvalues.md)
