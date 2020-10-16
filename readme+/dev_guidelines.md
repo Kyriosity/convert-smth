@@ -5,9 +5,11 @@ Albeit all *measureables* or their *weighers*, *presenters* share their respecte
 E.g. *mass* can't be assigned to, or, compared with *acceleration*, as well *speed* - to/with *distance*
 A weigher can't compare different types of measurables
 
-+ prefix interfaces with `I` if only it's a pure definition with cast <sup>**_i**</sup>
+## Interfaces
+Surprise for Java/C# developers, that interfaces in TS aren't interfaces. They are rather a join of structs and interfaces. And this is a good part - you spare at least one declaration.
+Thus prefix interfaces with `I` if only it's a pure definition&nbsp;&nbsp;<sup>**_i**</sup>
 
-<sup>**_i**</sup><sub> rule of thumb - only abstract classes could be ancestors and it's never used for object instantiation, but it shall be used as arguments or return value</sub>
+<sup>**_i**</sup><sub>&nbsp;&nbsp;rule of thumb - only abstract classes or other interfaces could be ancestors and it's never used for object instantiation, but it shall be used as arguments or return value</sub>
 
 
 ## Prohibit unit casting
@@ -15,7 +17,7 @@ A weigher can't compare different types of measurables
 // KD, ToDo: tests
 
 ## Think of performance
-+ Any validation, transformation shall be *external* and on demand. Thus i stripped Measureables of any tempting logic
+Everything, that doesn't return a *measurable* shall be external.
 
 ## Tests
 There're not enough tests but any ultimate user is encouraged to cover the library with own. That would be safer and independent than in-built tests.

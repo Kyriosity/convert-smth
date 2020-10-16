@@ -12,9 +12,9 @@ However the benefits are
 + eliminating the piles of requirements, specifications and other docu that are hard to comprehense but easy to misunderstood, forget, or mostly ignore
 + lesser time for a newcomer to get on a project
 
-Well, under time pressure i may also name logics classes as *services*, *helpers*, but it's barely a good practice.
+Well, under time pressure i may also name logics classes as *services*, *helpers*, but it's barely a good piece of practice.
 
-<sup>**_t**</sup><sub>&nbsp;&nbsp;The team aren't only developers but customers, testers, and, sure, end users</sub>
+&nbsp;&nbsp;<sup>**_t**</sup><sub>&nbsp;&nbsp;The team aren't only developers but customers, testers, and, sure, end users</sub>
 
 ## Comments in the code
 Self-descriptive, clean codes need no comments. Otherwise this signalises poor naming.\
@@ -30,8 +30,10 @@ Thus i'd use any change request to clean the code, update syntax, refactor, impr
 ## Test driven development
 Broadly misunderstood as test coverage. In my humble opinion it's more about concepts, where a good question is already an answer.
 
-On the other side i'm not an advocate of unit tests for everything. 
+On the other side i'm not an advocate of unit tests for everything.\
+If a method does `2+2` and the postfactum unit test checks it against `2+2`, is it really of great value?\
+But this is ok when tests are logical and written first.
 
-If a method does *2+2* and the postfactum unit test checks it against *2+2*, is it really of great value?\
-But this is ok when tests are logical and written first. 
-
+## Interfaces
+It's not an enlightment щf mine, but in each language interfaces shall be high-granuled, to be further combined in higher-level business-domain interfaces.
+With this done, one is safe with the first letter in **S**.O.L.I.D. As well a cast to a basic interface will make development cleaner and prevent much of bugs.
