@@ -1,21 +1,25 @@
 # U(nit)Values, or physical values, for Typescript
-This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**</sup>
+This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript along with VS Code, GitHub, npm. <sup>**_i**
 
-It's all about making physical values (like temperature, distance, or mass) native for development. And it's a really big challenge, no kidding <sup>**_n**</sup>
+It's all about making physical values (like temperature, mass) native for development and nice for presentation.
 
-**So far it's not an overall solution but rather groundwork of a framework**
+**So far it's not an overall solution but rather a draft of groundwork for framework**&nbsp;&nbsp;<sup>**_b**</sup>
 
-<sub><sup>**_i**</sup> Nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
-<sub><sup>**_i**</sup> even ridd off of quantum mech</sub>
+<sub><sup>**_i**</sup>&nbsp;Nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
+<sub><sup>**_b**</sup>&nbsp;it's a big challenge with countless controversial concepts asking for tons of well-tempered code</sub>
 
-# What you get
-It's always better by code snippets. 
+# How it looks
+Build the only library in this project and serve the only app there. Navigate to **Units**.\
+Or/**and** look at [snapshot of aircraftstable](readme+/img_aircrafts-commented.jpg).
+# How it works
 ## Uniform declaration
 ```typescript
-const footInH0Scale = millimeter(3.5) // rail transport modelling
+const theChallengerDeep = meter(10929)
+console.log(theChallengerDeep.value) // 10929
+console.log(theChallengerDeep.unit === Meter) // true
+console.log(theChallengerDeep.unit === Foot) // false
 
-let tempo: velocity
-tempo = camera1.flash(aVehicle)
+let tempo: velocity; tempo = camera1.flash(aVehicle)
 
 interface State {
     hightestElevation: distance,
@@ -23,58 +27,44 @@ interface State {
 }
 const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(100) }
 const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
-
 ```
 ## Conversion
+Is simple as an ABC but still type safe
+```typescript
 const euroBottle = liter(0.5)
-const inUkWouldBe = Volume.convert(euroBottle, ImperialPint)
-
+const inUkWouldBe = euroBottle.to(ImperialPint)
+euroBottle.to(Meter) // this won't compile
+```
 ## Presentation
-
-### Labels
-
-### Angular pipe
-The library provides an angular pipe for both conversion and presentation of UValues.
-
-[Read more about pipe](readme+/uval-pipe.md)
-
-### Sorting
-Is so far not a part of the library but ...
+Its description is worth of [separate paper](readme+/doc_uval-presentation.md)
 
 ## Math operations
-I'm thinking on the syntax meanwhile.
-Both TS and JS don't facilitate overload of arithmetic ops (like '+'). All the same - would too dubios for physical units, consider: 
+UValue exposes it's `value` property that you can set/modify in usual way
 ```typescript 
-let cargoTotal: mass 
-cargoTotal = tonne(4) - kilogram(90); cargoSum += pound(200)
-// and even with the overloaded + what unit shall be derived here?
+let tempo = milesPerHour(70); tempo.value -= 20
 ```
-Now let's think
-letCargoTotal = weight.in(tonne)
-kilogram()
+ When it takes more than one UValue this project offers the following syntax sugar: <sup>**_o**</sup>
+```typescript 
+const plane = tonne(45.5); const fuel = kilogram(15000); const removedSeats = kilogram(15 * 75)
+plane.add(fuel).subtract(removedSeats) // plane is still in tonnes
 
-## Predefined 'constants'
+const pets = kilogram()
+const cargoTotal = tonne(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets)
+const takeoffWeight = plane.plus(cargoTotal).minus(pets)
+// the crew rejected to transport pets cause cargo bay isn't pressuresized
+```
+<sub><sup>**_o**</sup> Both TS and JS don't facilitate overload of arithmetic ops (+, -, *, /). All the same this could be a performance hit and too implicit with resulted in unit</sub>
 
-tell(TheEarth.Mass.Tonne) 
+## Predefined UValues
+[See more](readme+/doc_predefined-uvalues.md)
 
-## How to understand the project
-One one hand it's a library of such units with routines, and on the other - table of aircraft specifications, presenting these features.
+## Units schemes
+[See more](readme+/doc_uvalues-schemes.md)
 
-b) uval service
-c) uval pipe, that actually is a pipe for uval
+## Open points
+[See more](readme+/doc_open-points.md)
 
-## ToDos
-Validating a unit against a natural range (say, Kelvin scale begins of zero <sup>4</sup>)
-
-Floating point calculation
-
-preventing "camel" calculation jumps, i.e. when a tiny is multiplicated with very big and then again wih a tiny one
-
-VALIDATOR for RANGEs: BOTH BUILT IN AND CUSTOM (see footnote)
-
-<sub><sup>5</sup> [oops, Ludwig-Maximilians University got something cooler](https://www.mpg.de/research/negative-absolute-temperature#:~:text=Thus%2C%20nothing%20can%20be%20colder,nonetheless%20has%20negative%20Kelvin%20values).</sub>
-
-## Further reading
+## Further reading for developer
 [Project concepts](readme+/_project_concepts.md)
 
 [Dev: overall guidelines](readme+/dev_concepts.md)

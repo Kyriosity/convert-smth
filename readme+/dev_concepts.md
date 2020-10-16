@@ -30,5 +30,7 @@ Thus i'd use any change in code to clean it, update syntax, refactor, improve na
 ## Test driven development
 Broadly misunderstood as test coverage. In my humble opinion it's more about concepts, where a good question is already an answer.
 
-On the other side i'm not on advocate of unit tests for everything. If a method does *2+2* and the unit test checks against *2+2* is it really of great value?
+On the other side i'm not on advocate of unit tests for everything. 
+
+If a method does *2+2* and the unit test checks against *2+2* is it really of great value? Actually these are unit tests created after the coding of classes.
 

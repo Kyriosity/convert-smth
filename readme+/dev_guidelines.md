@@ -1,7 +1,7 @@
 # Development guidelines for this project
 
 ## Keep type safety 
-Albeit all *measureables* or their *weighers* share their respected parent definitions/implementations they must **not ever** intercept.
+Albeit all *measureables* or their *weighers*, *presenters* share their respected parent definitions/implementations they must **not ever** intercept.
 E.g. *mass* can't be assigned to, or, compared with *acceleration*, as well *speed* - to/with *distance*
 A weigher can't compare different types of measurables
 
@@ -15,7 +15,6 @@ A weigher can't compare different types of measurables
 // KD, ToDo: tests
 
 ## Think of performance
-+ `Measurebles` are structs with the smallest footprint. Do NOT extend them with any logic.
 + Any validation, transformation shall be *external* and on demand. Thus i stripped Measureables of any tempting logic
 
 ## Tests

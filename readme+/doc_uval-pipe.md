@@ -6,7 +6,6 @@ For example of its application look into the markup of
 [Aircrafts table](src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html).
 
 
-
 &nbsp;&nbsp;&nbsp;{{ value_expression | `uval` [ : unit [ : labelFormat [ : digitsInfo [ : locale ] ]]] }}
 
 ## Input value
