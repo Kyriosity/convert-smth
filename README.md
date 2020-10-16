@@ -13,7 +13,7 @@ Just `ng build` the only library in this project and `ng serve`. Navigate to **U
 Or/**and** look at [commented snapshot of this demo](readme+/img_aircrafts-commented.jpg).&nbsp;&nbsp;<sup>**_d**
 
 
-&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;both there must be a table of aircrafts with some of their specs as `uvalues`<sup>
+&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;both there must be a table of aircrafts with some of their props as<sup> `uvalues`
 ## How it works
 ### Declaration
 ```typescript
@@ -65,12 +65,8 @@ const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 ## Units schemes
 [See more](readme+/doc_uvalues-schemes.md)
 
-## Open points
-[See more](readme+/doc_open-points.md)
-
-## Further reading for developer
-[Project concepts](readme+/_project_concepts.md)
-
-[Dev: overall guidelines](readme+/dev_concepts.md)
-
-[Dev: project guidelines](readme+/dev_guidelines.md)
+## Further reading for project development
+[Open points](readme+/doc_open-points.md)\
+[Project concepts](readme+/_project_concepts.md)\
+[Dev: overall guidelines](readme+/dev_concepts.md)\
+[Dev: project guidelines](readme+/dev_guidelines.md)\
