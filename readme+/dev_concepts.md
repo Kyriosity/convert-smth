@@ -12,7 +12,7 @@ However the benefits are
 + eliminating the piles of requirements, specifications and other docu that are hard to comprehense but easy to misunderstood, forget, or mostly ignore
 + lesser time for a newcomer to get on a project
 
-Well, under time pressure i may also name logics classes as *services*, *helpers*, but it's barely a good piece of practice.
+Well, under time pressure i may also name logics classes as *services*, *helpers*, *utils* but it's barely a good piece of practice.
 
 &nbsp;&nbsp;<sup>**_t**</sup><sub>&nbsp;&nbsp;The team aren't only developers but customers, testers, and, sure, end users</sub>
 
@@ -24,7 +24,7 @@ Exclusions are, e.g., references to not fixed third-party bugs (that required a 
 Never change a running system. That's what would opponents of the refactoring tell.
 True, if this is a stable part, which can be treated as black box.
 
-Otherwise changes and additions within continuos developement will sooner or later bring the code to the hardly controlled chaos.\
+Otherwise changes and additions within continuos developement will sooner or later bring the code to the hardly controllable chaos.\
 Thus i'd use any change request to clean the code, update syntax, refactor, improve naming and delete as much as possible.
 
 ## Test driven development

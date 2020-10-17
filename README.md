@@ -2,6 +2,7 @@
 This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript.&nbsp;&nbsp;<sup>**_i**
 
 It's all about making physical values (like temperature, mass) integrated in development and decently looking in UI.
+Most modern languages/scripts have already some built-in, like date, time or, hmmm, currency but they're a drop in the sea. 
 
 So far it's **not an overall solution but rather** a **draft** of **groundwork** for **framework**&nbsp;&nbsp;<sup>**_b**</sup>
 
@@ -12,8 +13,7 @@ So far it's **not an overall solution but rather** a **draft** of **groundwork**
 Just `ng build` the only library in this project and `ng serve`. Navigate to **Units**.\
 Or/**and** look at [commented snapshot of this demo](readme+/img_aircrafts-commented.jpg).&nbsp;&nbsp;<sup>**_d**
 
-
-&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;both there must be a table of aircrafts with some of their props as<sup> `uvalues`
+&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;in both there must be a table of aircrafts with many of their props as `UValues`</sub>
 ## How it works
 ### Declaration
 ```typescript
@@ -32,21 +32,23 @@ const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(1
 const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
 ```
 ### Conversion of units
-Simpler than ABC but still type safe
+Simpler than ABC but still type safe. &nbsp;&nbsp;<sup>**_u**</sup>
 ```typescript
-const euroBottle = liter(0.5)
-const inUkWouldBe = euroBottle.to(ImperialPint)
+const bottle = liter(0.5)
+const inUkWouldBe = bottle.to(ImperialPint)
+const bottle2 = bottle.to() // use to clone
 euroBottle.to(Meter) // this won't compile
+euroBottle.unit = Liter // this too, even if the same
 ```
-### Presentation
-Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
+&nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;*unit* is immutable, since it wouldn't be intuitive if conversion runs on it's setter</sub>
 
 ### Math operations
-UValue exposes its `value` property that you can set/modify in the usual fashion:&nbsp;&nbsp;<sup>**_u**</sup>
+UValue exposes its `value` property that you can set/modify in the usual fashion:
 ```typescript 
 let tempo = milesPerHour(90); tempo.value -= 20; tempo.value = 30 
 ```
- When it takes more than one UValue this project offers the following syntax sugar:&nbsp;&nbsp;<sup>**_o**</sup>
+
+ When it takes more than one `UValue` this project offers the following syntax sugar:&nbsp;&nbsp;<sup>**_o**</sup>
 ```typescript 
 const plane = tonne(45.5); const fuel = kilogram(15000); const unusedEquipment = kilogram(15 * 75)
 plane.add(fuel).subtract(unusedEquipment) // plane is still in tonnes
@@ -56,17 +58,19 @@ const cargoTotal = tonne(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets)
 const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 // the crew rejected to transport pets cause the cargo bay isn't pressuresized
 ```
-&nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;while initially given *Unit* is immutable</sub>\
-&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /); all the same this could be a performance hit and too implicit with resulted in unit</sub>
+&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /); all the same this could be a performance hit and too implicit with resulted in *unit*</sub>
+
+### Presentation
+Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
 
 ## Predefined UValues
-[See more](readme+/doc_predefined-uvalues.md)
+[Read more](readme+/doc_predefined-uvalues.md)
 
 ## Units schemes
-[See more](readme+/doc_uvalues-schemes.md)
+[Read more](readme+/doc_uvalues-schemes.md)
 
 ## Further reading for project development
-[Open points](readme+/doc_open-points.md)\
 [Project concepts](readme+/_project_concepts.md)\
 [Dev: overall guidelines](readme+/dev_concepts.md)\
 [Dev: project guidelines](readme+/dev_guidelines.md)\
+[Open points](readme+/doc_open-points.md)
