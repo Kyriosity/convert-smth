@@ -13,11 +13,11 @@ So far it's **not an overall solution but rather** a **draft** of **groundwork**
 Just `ng build` the only library in this project and `ng serve`. Navigate to **Units**.\
 Or/**and** look at [commented snapshot of this demo](readme+/img_aircrafts-commented.jpg).&nbsp;&nbsp;<sup>**_d**
 
-&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;in both there must be a table of aircrafts with many of their props as `UValues`</sub>
-## How it works
+&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;in both there must be a table of aircrafts with many of their props as *UValues*</sub>
+## How it works for developer
 ### Declaration
 ```typescript
-const theChallengerDeep = meter(10929) // wiki: deepest known point in the Earth's seabed hydrosphere 
+const theChallengerDeep = meter(10929) // deepest known point in the world ocean 
 console.log(theChallengerDeep.value) // 10929
 console.log(theChallengerDeep.unit === Meter) // true
 console.log(theChallengerDeep.unit == Foot) // false
@@ -32,13 +32,13 @@ const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(1
 const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
 ```
 ### Conversion of units
-Simpler than ABC but still type safe. &nbsp;&nbsp;<sup>**_u**</sup>
+Easier than ABC but still type safe. &nbsp;&nbsp;<sup>**_u**</sup>
 ```typescript
 const bottle = liter(0.5)
 const inUkWouldBe = bottle.to(ImperialPint)
 const bottle2 = bottle.to() // use to clone
 euroBottle.to(Meter) // this won't compile
-euroBottle.unit = Liter // this too, even if the same
+euroBottle.unit = Liter // this either, even if the same unit
 ```
 &nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;*unit* is immutable, since it wouldn't be intuitive if conversion runs on it's setter</sub>
 
