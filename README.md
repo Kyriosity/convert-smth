@@ -2,18 +2,16 @@
 This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript.&nbsp;&nbsp;<sup>**_i**
 
 It's all about making physical values (like temperature, mass) integrated in development and decently looking in UI.
-Most modern languages/scripts have already some built-in, like date, time or, hmmm, currency but they're a drop in the sea. 
 
-So far it's **not an overall solution but rather** a **draft** of **groundwork** for **framework**&nbsp;&nbsp;<sup>**_b**</sup>
+**So far it's not an overall solution but rather a draft of possible framework**&nbsp;&nbsp;<sup>**_b**</sup>
 
 &nbsp;&nbsp;<sub><sup>**_i**</sup>&nbsp;&nbsp;nevertheless i'm since 1990s in IT (from deep backend to far frontend) and for the recent decade my *native* language has been amazing **C#**</sub>\
-&nbsp;&nbsp;<sub><sup>**_b**</sup>&nbsp;&nbsp;a big challenge asking for countless controversial concepts and tons of well-tempered code</sub>
+&nbsp;&nbsp;<sub><sup>**_b**</sup>&nbsp;&nbsp;a big challenge asking for countless overlapping concepts and tons of well-tempered code</sub>
 
 ## How it looks for user
-Just `ng build` the only library in this project and `ng serve`. Navigate to **Units**.\
-Or/**and** look at [commented snapshot of this demo](readme+/img_aircrafts-commented.jpg).&nbsp;&nbsp;<sup>**_d**
+Just `ng build` the only library in this project and `ng serve` the app. Navigate to **Units**.\
+Or/**and** look at [commented snapshot of that demo](readme+/img_aircrafts-commented.jpg)
 
-&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;in both there must be a table of aircrafts with many of their props as *UValues*</sub>
 ## How it works for developer
 ### Declaration
 ```typescript
@@ -21,8 +19,6 @@ const theChallengerDeep = meter(10929) // deepest known point in the world ocean
 console.log(theChallengerDeep.value) // 10929
 console.log(theChallengerDeep.unit === Meter) // true
 console.log(theChallengerDeep.unit == Foot) // false
-
-let tempo: velocity; tempo = camera1.flash(aCar)
 
 interface State {
     hightestElevation: distance,
@@ -32,9 +28,9 @@ const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(1
 const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
 ```
 ### Conversion of units
-Easier than ABC but still type safe. &nbsp;&nbsp;<sup>**_u**</sup>
+Easier than ABC but still type safe.&nbsp;&nbsp;<sup>**_u**</sup>
 ```typescript
-const bottle = liter(0.5)
+let bottle = liter(0.5)
 const inUkWouldBe = bottle.to(ImperialPint)
 const bottle2 = bottle.to() // use to clone
 euroBottle.to(Meter) // this won't compile
@@ -45,7 +41,7 @@ euroBottle.unit = Liter // this either, even if the same unit
 ### Math operations
 UValue exposes its `value` property that you can set/modify in the usual fashion:
 ```typescript 
-let tempo = milesPerHour(90); tempo.value -= 20; tempo.value = 30 
+const tempo = milesPerHour(90); tempo.value -= 20; tempo.value = 30 
 ```
 
  When it takes more than one `UValue` this project offers the following syntax sugar:&nbsp;&nbsp;<sup>**_o**</sup>
@@ -62,6 +58,8 @@ const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 
 ### Presentation
 Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
+### Service
+Actions can be avaialble through the service.
 
 ## Predefined UValues
 [Read more](readme+/doc_predefined-uvalues.md)

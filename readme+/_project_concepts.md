@@ -1,6 +1,7 @@
 ## Glossary
-Measurable - instance of physical property, like mass, temperature, acceleration
-UValue (aka *uvalue*, *uval*, *UnitValue*) - instance of Measureable, i.e. physical value
++ [Unit](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html) - physical measure or scale (e.g. Fahrenheit)
++ Measureable - concept of a physical property, which has *value* and its *unit* 
++ UValue (aka *uvalue*, *uval*, *UnitValue*) - derivative of Measureable, i.e. physical value, like mass, temperature, acceleration
 
 ## How conversion works
 Conversion between differing units of the same nature (measure) is the heart of this framework.

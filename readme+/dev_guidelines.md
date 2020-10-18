@@ -7,7 +7,7 @@ A weigher can't compare different types of measurables
 
 ## Interfaces
 Surprise for Java/C# developers, that interfaces in TS aren't interfaces. They are rather a join of structs and interfaces. And this is a good part - you spare at least one declaration.
-Thus prefix interfaces with `I` if only it's a pure definition&nbsp;&nbsp;<sup>**_i**</sup>
+Thus prefix interfaces with `I` if only it's either a set of function or a pure definition&nbsp;&nbsp;<sup>**_i**</sup>
 
 <sup>**_i**</sup><sub>&nbsp;&nbsp;rule of thumb - only abstract classes or other interfaces could be ancestors and it's never used for object instantiation, but it shall be used as arguments or return value</sub>
 
@@ -48,12 +48,11 @@ Exceptions (errors) come at a price of performance. And shall be issued when the
 * avoid **`;`** when possible. It's a 'good part' of TS that a line break is enough to terminate statements
 * avoid one-after-one repetitions for even the best named things
     + use cycles of listed subjects
-    + when they are difficult to put together in a list, use *shortcut* abbreviations
+    + when listing is akward *shortcut* to abbreviation
 ```typescript
 const cool = ratherCoolButLongMethodName
-vcbl(a)
-vcbl(bbb)
-vcbl(c3)
+vcbl(a); vcbl(bbb); vcbl(c3)
 // ....
 ```    
 * limit line length - scrolling horizontally is much worse than vertically 
+* ~~code in English, comment in Latin, document en français~~
