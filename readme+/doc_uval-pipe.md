@@ -1,6 +1,6 @@
 # Custom Angular pipe for UValues
 
-The project library provides you with a ready to use pipe for Angular, which can convert and adjust presentation of *measurables*.
+The project library provides you with a ready to use pipe for Angular, which can convert and adjust presentation of *quantified*.
 
 For example of its application look into the markup of 
 [Aircrafts table](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html).
@@ -8,7 +8,7 @@ For example of its application look into the markup of
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ value_expression | `uval` [ : unit [ : labelFormat [ : digitsInfo [ : locale ] ]]] }}
 
 ## Input value
- **value**&nbsp;&nbsp;&nbsp;&nbsp;*UValue*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;measurable to be formatted, e.g. `temperature`, `mass`, `force`
+ **value**&nbsp;&nbsp;&nbsp;&nbsp;*UValue*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`quantified` to be formatted, e.g. `temperature`, `mass`, `force`
 
 ## Parameters
 

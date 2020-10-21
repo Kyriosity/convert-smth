@@ -71,5 +71,5 @@ Actions can be avaialble through the service.
 [Dev: concepts](readme+/_project_concepts.md)\
 [Dev: guidelines](readme+/dev_guidelines.md)\
 [Open points](readme+/doc_open-points.md)\
-[Dev: overall guidelines](readme+/dev_concepts.md)
+[Dev: overall guidelines](readme+/dev_concerns.md)
 

@@ -1,23 +1,29 @@
 # Development guidelines for this project
 
 ## Keep type safety 
-Albeit all *measureables* or their *weighers*, *presenters* share their respected parent definitions/implementations they must **not ever** intercept.
+Albeit all *quantified* or their *converters*, *presenters* share their respected parent definitions/implementations they must **not ever** intercept.
 E.g. *mass* can't be assigned to, or, compared with *acceleration*, as well *speed* - to/with *distance*
-A weigher can't compare different types of measurables
+A converter can't compare different types of *quantified*.
 
 ## Interfaces
 Surprise for Java/C# developers, that interfaces in TS aren't interfaces. They are rather a join of structs and interfaces. And this is a good part - you spare at least one declaration.
-Thus prefix interfaces with `I` if only it's either a set of function or a pure definition&nbsp;&nbsp;<sup>**_i**</sup>
+Thus prefix interfaces with `I` provided it's either a set of functions or a pure definition&nbsp;&nbsp;<sup>**_i**</sup>
 
-<sup>**_i**</sup><sub>&nbsp;&nbsp;rule of thumb - only abstract classes or other interfaces could be ancestors and it's never used for object instantiation, but it shall be used as arguments or return value</sub>
+<sup>**_i**</sup><sub>&nbsp;&nbsp;rule of thumb - only abstract classes or other interfaces could be ancestors or combiners, and it's not for object instantiation (but practical as an argument or return value type)</sub>
 
+## Barreling
+It's easy to get it out of focus, but evert think what's available and not in the API.
+Actual compliance is to use z_barrel.ts in each folder. And list them in public-api
 
 ## Prohibit unit casting
-`Measurable` is sealed by means of its readonly props. Otherwise it were a big open door for bugs (e.g. accidental cast/assign of kilogram to tonne).
+`Quantified` is sealed by means of its readonly *Unit*. Otherwise it were a big open door for bugs (e.g. accidental cast/assign of kilogram to tonne).
 // KD, ToDo: tests
 
+## Avoid any cross-measure ops
+
+
 ## Think of performance
-Everything, that doesn't return a *measurable* shall be external.
+Everything, that doesn't return or change a *quantified* shall be external.
 
 ## Tests
 There're not enough tests but any ultimate user is encouraged to cover the library with own. That would be safer and independent than in-built tests.

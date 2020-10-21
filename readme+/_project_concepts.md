@@ -1,7 +1,8 @@
 ## Entities (also Glossary)
 + [Unit](../projects/units-weigher/src/lib/core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-+ Measureable - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
-+ UValue (aka *uvalue*, *uval*, *UnitValue*) - internal derivative of Measureable, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
++ [Quantified](../projects/units-weigher/src/lib/core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
++ [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
++ Derivatives of UValue - certain `quantified` as mass or temperature
 
 ## Conversion
 Conversion between units of the same nature (measure) is a cornerstone of this framework.
