@@ -1,18 +1,19 @@
-## Glossary
-+ [Unit](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html) - physical measure or scale (e.g. Fahrenheit)
-+ Measureable - concept of a physical property, which has *value* and its *unit* 
-+ UValue (aka *uvalue*, *uval*, *UnitValue*) - derivative of Measureable, i.e. physical value, like mass, temperature, acceleration
+## Entities (also Glossary)
++ [Unit](../projects/units-weigher/src/lib/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
++ Measureable - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
++ UValue (aka *uvalue*, *uval*, *UnitValue*) - internal derivative of Measureable, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
 
-## How conversion works
-Conversion between differing units of the same nature (measure) is the heart of this framework.
-Basically there're too approaches 
-+ tabled (rational, reverse)
-+ functional (mostly reverse)
+## Conversion
+Conversion between units of the same nature (measure) is a cornerstone of this framework.
+Basically there're too ways 
++ tabled 
++ functional. Current release doesn't implement support of invertible functions, that looks quite disputable.
  
 ### Tabled
 
 ### Functional
 
+## Presentation
 
 ## Validation and ranges
 
