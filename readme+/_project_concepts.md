@@ -1,5 +1,5 @@
 ## Entities (also Glossary)
-+ [Unit](../projects/units-weigher/src/lib/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
++ [Unit](../projects/units-weigher/src/lib/core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
 + Measureable - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
 + UValue (aka *uvalue*, *uval*, *UnitValue*) - internal derivative of Measureable, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
 

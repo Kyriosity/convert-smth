@@ -1,18 +1,19 @@
-# Overall development concepts
+# Overall development concerns
 That's what i learned from numerous corporate and tailor-made projects, and would like to share.&nbsp;&nbsp;&nbsp;<sup>**_d**</sup>
 
-&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;Disclaimer:&nbsp;Do not treat this project as a pure sample. Due to the lack of time and hunge amount of coding/refactoring i couldn't follow all those practicies alone.</sub>
+&nbsp;&nbsp;<sup>**_d**</sup><sub>&nbsp;&nbsp;Disclaimer:&nbsp;Do not treat this project as a pure sample. Due to the lack of time and huge amount of coding/refactoring i couldn't follow all those practicies alone.</sub>
 
 ## Naming code entities
 Names of libraries, packages (assemblies), classes, methods, vars - it's the ultimate challenge: intricate and time consuming for the whole team.&nbsp;&nbsp;<sup>**_t**</sup>\
 However the benefits are
-+ collaboration, common comprehension of a domain that result in 'common tongue' throughout the team 
-+ sound architecture and self-descriptive APIs
++ collaboration, common comprehension of a domain that result in 'common tongue' throughout the team. which in that turns unite the team more than one expects
++ sound architecture and self-descriptive code
++ less code, and of better quality
 + inspiration for Test Driven Development
-+ escape from piles of requirements, specifications and other papers that are hard to follow but easy to misunderstood, forget, but mostly ignored
++ escape from piles of reqs, specs, other papers that are hard to follow but easy to misunderstood, forget, but mostly ignored
 + reduced time to get on a project for a newcomer 
 
-Well, under time pressure even the best expert will name logics classes as *services*, *helpers*, *utils* but would be barely proud of that.
+Well, under time pressure even the best expert will name logics classes as *services*, *helpers*, *utils*, *handlers* but would be barely proud of that.
 
 &nbsp;&nbsp;<sup>**_t**</sup><sub>&nbsp;&nbsp;The team aren't only developers but customers, testers, and, sure, end users</sub>
 

@@ -68,7 +68,8 @@ Actions can be avaialble through the service.
 [Read more](readme+/doc_uvalues-schemes.md)
 
 ## Further reading for project development
-[Project concepts](readme+/_project_concepts.md)\
-[Dev: overall guidelines](readme+/dev_concepts.md)\
-[Dev: project guidelines](readme+/dev_guidelines.md)\
-[Open points](readme+/doc_open-points.md)
+[Dev: concepts](readme+/_project_concepts.md)\
+[Dev: guidelines](readme+/dev_guidelines.md)\
+[Open points](readme+/doc_open-points.md)\
+[Dev: overall guidelines](readme+/dev_concepts.md)
+
