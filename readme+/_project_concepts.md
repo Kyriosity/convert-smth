@@ -1,16 +1,25 @@
-## Entities (also Glossary)
-+ [Unit](../projects/units-weigher/src/lib/core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-+ [Quantified](../projects/units-weigher/src/lib/core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
-+ [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
-+ Derivatives of UValue - certain `quantified` as mass or temperature
+## Glossary
+(Links here refer code entities)
++ Usual
+    + [Unit](../projects/units-weigher/src/lib/core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
+    + [Quantified](../projects/units-weigher/src/lib/core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
++ Library specific
+    + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
+    + Parametriesed UValue - certain `quantified` as mass or temperature
+    + instantiators
+    + Converters
+        + rational
+        + functional
+    + Presenter
 
 ## Conversion
 Conversion between units of the same nature (measure) is a cornerstone of this framework.
 Basically there're too ways 
 + tabled 
-+ functional. Current release doesn't implement support of invertible functions, that looks quite disputable.
++ functional
  
-### Tabled
+### Rational (tabled)
+*Rational* since based on a cross factor, a case of invertible function (works two-way)
 
 ### Functional
 

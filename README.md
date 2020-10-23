@@ -46,15 +46,15 @@ const tempo = milesPerHour(90); tempo.value -= 20; tempo.value = 30
 
  When it takes more than one `UValue` this project offers the following syntax sugar:&nbsp;&nbsp;<sup>**_o**</sup>
 ```typescript 
-const plane = tonne(45.5); const fuel = kilogram(15000); const unusedEquipment = kilogram(15 * 75)
-plane.add(fuel).subtract(unusedEquipment) // plane is still in tonnes
+const plane = ton(45.5); const fuel = kilogram(15000); const unusedEquipment = kilogram(15 * 75)
+plane.add(fuel).subtract(unusedEquipment) // plane is still in first set tons
 
 const pets = kilogram(186.5)
-const cargoTotal = tonne(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets)
+const cargoTotal = ton(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets) // also tons
 const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 // the crew rejected to transport pets cause the cargo bay isn't pressuresized
 ```
-&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /); all the same this could be a performance hit and too implicit with resulted in *unit*</sub>
+&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;Both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /). All the same this could be a performance hit and too implicit with resulted in *unit*</sub>
 
 ### Presentation
 Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
