@@ -1,9 +1,10 @@
 ## Glossary
 (Links here refer code entities)
-+ Usual
-    + [Unit](../projects/units-weigher/src/lib/core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-    + [Quantified](../projects/units-weigher/src/lib/core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
-+ Library specific
++ Well-known
+    + [Unit](../projects/units-weigher/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
+    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
+    + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular *Quantified* as speed, volume, temperature.
++ Applied
     + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
     + Parametriesed UValue - certain `quantified` as mass or temperature
     + instantiators

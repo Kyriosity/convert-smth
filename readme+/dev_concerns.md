@@ -19,8 +19,7 @@ Well, under time pressure even the best expert will name logics classes as *serv
 
 ## Comments
 Self-descriptive, clean codes need no comments. Otherwise this signalises poor naming.\
-Exclusions are third-party bugs (that required a bizzare workaround), courtesy of Q&A sites, worthy tricks that harm readability, or snippets in docu.
-
+However there're some exclusions: third-party bugs (that required a bizzare workaround), courtesy of Q&A sites, worthy tricks that harm readability, snippets in docu, and subjects-explaining quotes from wikis
 ## Code cleaning and refactoring
 Never change a running system. That's what would opponents of the refactoring tell.\
 `True` if this is a stable part, which can be treated as a black box.

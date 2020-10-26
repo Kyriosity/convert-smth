@@ -21,7 +21,7 @@ console.log(theChallengerDeep.unit === Meter) // true
 console.log(theChallengerDeep.unit == Foot) // false
 
 interface State {
-    hightestElevation: distance,
+    hightestElevation: len,
     recordHigh: temperature
 }
 const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(100) }
@@ -41,7 +41,7 @@ euroBottle.unit = Liter // this either, even if the same unit
 ### Math operations
 UValue exposes its `value` property that you can set/modify in the usual fashion:
 ```typescript 
-const tempo = milesPerHour(90); tempo.value -= 20; tempo.value = 30 
+const tempo = milesHour(90); tempo.value -= 20; tempo.value = 30 
 ```
 
  When it takes more than one `UValue` this project offers the following syntax sugar:&nbsp;&nbsp;<sup>**_o**</sup>
