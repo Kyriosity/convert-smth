@@ -1,13 +1,17 @@
 ## Glossary
 (Links here refer code entities)
-+ Well-known
++ Domain
     + [Unit](../projects/units-weigher/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit* is concept of a physical property, which has *value* and its *unit* 
-    + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular *Quantified* as speed, volume, temperature.
+    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which has *value* and its *unit* 
+    + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
+    + [Operations]
+        + Conversion
+        + Arihtmetic - good known `+`, `-`, `*`, `/`.\
+        Intentionally named so - see good justification on [MathMedia]: https://www.mathmedia.com/whatisdifbet.(html#:~:text=%E2%80%9CArithmetic%20is%20to%20mathematics%20as%20spelling%20is%20to%20writing.%E2%80%9D&text=(2)%20it%20uses%20signs%2C,mathematics%20is%20all%20about%20theory).
+
 + Applied
     + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
-    + Parametriesed UValue - certain `quantified` as mass or temperature
-    + instantiators
+    + Instances - of UValues' as `kilogram` or `Fahrenheit`
     + Converters
         + rational
         + functional
