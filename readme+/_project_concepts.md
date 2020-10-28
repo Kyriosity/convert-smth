@@ -6,9 +6,10 @@
     + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
     + [Operations]
         + Conversion
-        + Arihtmetic - good known `+`, `-`, `*`, `/`.\&nbsp;&nbsp;<sup>**_a**</sup>
+        + Arihtmetic - good known `+`, `-`, `*`, `/`.&nbsp;&nbsp;<sup>**_a**</sup>
         
-&nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally arithmetic, not mathematic - good justification on [MathMedia]: https://www.mathmedia.com/whatisdifbet.(html#:~:text=%E2%80%9CArithmetic%20is%20to%20mathematics%20as%20spelling%20is%20to%20writing.%E2%80%9D&text=(2)%20it%20uses%20signs%2C,mathematics%20is%20all%20about%20theory</sub>
+&nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
+
 + Applied
     + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
     + Instances - of UValues' as `kilogram` or `Fahrenheit`
