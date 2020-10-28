@@ -2,13 +2,13 @@
 (Links here refer code entities)
 + Domain
     + [Unit](../projects/units-weigher/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which has *value* and its *unit* 
+    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
     + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
     + [Operations]
         + Conversion
-        + Arihtmetic - good known `+`, `-`, `*`, `/`.\
-        Intentionally named so - see good justification on [MathMedia]: https://www.mathmedia.com/whatisdifbet.(html#:~:text=%E2%80%9CArithmetic%20is%20to%20mathematics%20as%20spelling%20is%20to%20writing.%E2%80%9D&text=(2)%20it%20uses%20signs%2C,mathematics%20is%20all%20about%20theory).
-
+        + Arihtmetic - good known `+`, `-`, `*`, `/`.\&nbsp;&nbsp;<sup>**_a**</sup>
+        
+&nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally arithmetic, not mathematic - good justification on [MathMedia]: https://www.mathmedia.com/whatisdifbet.(html#:~:text=%E2%80%9CArithmetic%20is%20to%20mathematics%20as%20spelling%20is%20to%20writing.%E2%80%9D&text=(2)%20it%20uses%20signs%2C,mathematics%20is%20all%20about%20theory</sub>
 + Applied
     + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
     + Instances - of UValues' as `kilogram` or `Fahrenheit`
