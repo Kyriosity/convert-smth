@@ -19,6 +19,13 @@ Well, under time pressure even the best experts name logics classes as *services
 ## Comments
 Self-descriptive, clean codes need no comments. Otherwise this signalises poor naming.\
 However comments are completely liable for third-party bugs (that required a bizzare workaround), courtesy of Q&A sites, worthy tricks that harm readability, snippets in docu, and domain-explaining quotes from wikis
+
+Sure, this statement was for renowned high-level languages.
+
+One more exclusion - *ToDo*s'. Though notably subject of jokes and memes, i'd consider them a good compromise between YAGNI&nbsp;<sup>**_y**</sup> and vision.\
+At least the team software can make work items of them.\
+&nbsp;&nbsp;<sup>**_y**</sup><sub>&nbsp;&nbsp;[You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)</sub>
+
 ## Code cleaning and refactoring
 Never change a running system. That's what would opponents of the refactoring tell.\
 `True` if this is a stable part, which can be treated as a black box.

@@ -1,19 +1,22 @@
-import { UValue } from '../uvalues/_uvalue';
 import { Quantified } from '../_core/quantified';
-import { Lengths, Unit } from "../_core/units";
-import { len } from '../../public-api';
-import { kilometer } from '../uvalues/instances';
+import { UValue } from '../uvalues/_uvalue'
+import { Lengths, Speeds, Unit } from "../_core/units"
+
+import { kilometer } from '../uvalues/instances'
+import { len } from '../_core/measures';
+import { speed } from 'dist/units-weigher/public-api';
 
 describe('playground', () => { 
       it('cast', () => {
-        const toMars: len = { unit: Lengths.kilometre, value: 68552 * 1000000 } 
-        const val2Mars = uCast(toMars)
-        val2Mars.add(kilometer(100))
-        expect(val2Mars.value).toBe(100 + 68552 * 1000000)
+        const toMars: len = { unit: Lengths.kilometre, value: 68552 * 1000000 }
+        const velo: speed = { unit: Speeds.Mach, value: 50} 
+        const uval = uCast(toMars)
+        uval.add(kilometer(100))
+        expect(uval.value).toBe(111 + 68552 * 1000000)
      });    
 })
 
-function uCast<U extends Unit>(normal: Quantified<U>): UValue<U> {
-    let uval = normal as UValue<typeof normal.unit>
+function uCast<U extends Unit>(quantified: Quantified<U>): UValue<U> {
+    let uval = new UValue<U>(quantified.unit, quantified.value)
     return uval
 }
