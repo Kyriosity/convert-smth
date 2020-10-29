@@ -2,7 +2,7 @@
 
 ## Keep type safety 
 Albeit all *quantified* or their *converters*, *presenters* share their respected parent definitions/implementations they must **not ever** intercept.
-E.g. *mass* can't be assigned to, or, compared with *acceleration*, as well *speed* - to/with *distance*
+E.g. *mass* can't be assigned to, or, compared with *acceleration*, as well *speed* - to/with *length*
 A converter can't compare different types of *quantified*.
 
 ## Interfaces
@@ -11,9 +11,8 @@ Thus prefix interfaces with `I` provided it's either a set of functions or a pur
 
 <sup>**_i**</sup><sub>&nbsp;&nbsp;rule of thumb - only abstract classes or other interfaces could be ancestors or combiners, and it's not for object instantiation (but practical as an argument or return value type)</sub>
 
-## Barreling
-It's easy to get it out of focus, but evert think what's available and not in the API.
-Actual compliance is to use z_barrel.ts in each folder. And list them in public-api
+## Public API
+The library don't expose `Quantified` and `UValue` to users, who shall use *Measures* and *Instances*.
 
 ## Prohibit unit casting
 `Quantified` is sealed by means of its readonly *Unit*. Otherwise it were a big open door for bugs (e.g. accidental cast/assign of kilogram to tonne).

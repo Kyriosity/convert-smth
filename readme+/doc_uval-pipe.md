@@ -15,7 +15,7 @@ For example of its application look into the markup of
 
 | Name        |    Type     | Function                                                                |
 | ------------------- |----|-------------------------------------------------------------------------|
-| unit | *string* | Physical unit, when conversion is required<br/>Example: 'meter' will convert a distance of 1.2km to 1200m&nbsp;&nbsp;<sup>**_c**</sup><br/>Supply empty string to prevent conversion.&nbsp;&nbsp;<sup>**_e**</sup> |
+| unit | *string* | Physical unit, when conversion is required<br/>Example: 'meter' will convert a length of 1.2km to 1200m&nbsp;&nbsp;<sup>**_c**</sup><br/>Supply empty string to prevent conversion.&nbsp;&nbsp;<sup>**_e**</sup> |
 | labelFormat      | *string* | Format of the label for the physical value<br>For details refer to labeling<br/>If this paramter isn't set or supplied as empty string then default label will be applied |
 | digitsInfo      | *string* | refer to built-in Angular [decimal pipe](https://angular.io/api/common/DecimalPipe)|
 | locale       | *string* | refer to built-in Angular [decimal pipe](https://angular.io/api/common/DecimalPipe)|
