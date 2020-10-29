@@ -1,9 +1,9 @@
 ## Glossary
 (Links here refer code entities)
 + Domain
-    + [Unit](../projects/units-weigher/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-    + [Quantified](../projects/units-weigher/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
-    + [Measures](../projects/units-weigher/src/lib/_core.quantified.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
+    + [Unit](../projects/united-values/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
+    + [Quantified](../projects/united-values/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
+    + [Measures](../projects/united-values/src/lib/_core.measures.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
     + [Operations]
         + Conversion
         + Arihtmetic - good known `+`, `-`, `*`, `/`.&nbsp;&nbsp;<sup>**_a**</sup>
@@ -11,8 +11,8 @@
 &nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
 
 + Applied
-    + [UnitValue](../projects/units-weigher/src/lib/uvalues/uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up [conversion and math operations](../src/app/components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component.html)
-    + Instances - of UValues' as `kilogram` or `Fahrenheit`
+    + [UnitValue](../projects/united-values/src/lib/uvalues/_uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up conversion and arithmetic operations
+    + [Instances](../projects/united-values/src/lib/uvalues/instances.ts) - of UValues' as `kilogram` or `Fahrenheit`
     + Converters
         + rational
         + functional

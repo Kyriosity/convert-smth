@@ -9,7 +9,7 @@ describe('playground', () => {
         const toMars: len = { unit: Lengths.kilometre, value: 68552 * 1000000 } 
         const val2Mars = uCast(toMars)
         val2Mars.add(kilometer(100))
-        expect(val2Mars.value).toBe(777)
+        expect(val2Mars.value).toBe(100 + 68552 * 1000000)
      });    
 })
 

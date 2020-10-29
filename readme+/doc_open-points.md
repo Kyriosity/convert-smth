@@ -15,8 +15,9 @@ However any application may suppose minus values (say, by subtract). So it must 
 
 ### Floating point
 
-### Preventing camel or zigzag calculation
-preventing "camel" calculation jumps, i.e. when a tiny is multiplicated with very big and then again wih a tiny one
+### Preventing camel or zigzag calculation by conversion
+Preventing "camel" calculation jumps, i.e. when a tiny is multiplicated with big and then again wih a tiny one. 
+But hopefully JS interpretator cares about or there's a lib for this.
 
 ### Caching of popular factors
 

@@ -15,7 +15,7 @@ Thus prefix interfaces with `I` provided it's either a set of functions or a pur
 The library don't expose `Quantified` and `UValue` to users, who shall use *Measures* and *Instances*.
 
 ## Prohibit unit casting
-`Quantified` is sealed by means of its readonly *Unit*. Otherwise it were a big open door for bugs (e.g. accidental cast/assign of kilogram to tonne).
+`Quantified` is sealed by means of its readonly *Unit*. Otherwise it were a big open door for bugs (e.g. accidental cast/assign of kilogram to ton).
 // KD, ToDo: tests
 
 ## Avoid any cross-measure ops
