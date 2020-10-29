@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "units-weigher": [
-        "dist/units-weigher/units-weigher",
-        "dist/units-weigher"
+      "united-values": [
+        "dist/united-values/united-values",
+        "dist/united-values"
       ]
     }
   },

@@ -26,7 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/lingua/welcome/welcome.component';
 import { AircraftsComponent } from './components/units/avia/aircrafts/aircrafts.component';
 import { AircraftsDescrTableComponent } from './components/units/avia/aircrafts/aircrafts-descr-table/aircrafts-descr-table.component';
-import { UValPipe } from 'projects/units-weigher/src/lib/uval.pipe';
+import { UValPipe } from 'projects/united-values/src/lib/uvalue.pipe';
 
 
 @NgModule({

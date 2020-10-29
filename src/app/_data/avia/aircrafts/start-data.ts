@@ -1,9 +1,10 @@
-import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers';
-import { LinerNfo as Liner, CargoAirplaneNfo as Freighter, AircraftNfo } from 'src/app/_entities/avia/aircrafts/entities';
-import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities';
-import { meter, kilogram, kilometer, kilometersHour, foot, pound, milesHour, mile, usGallon, Mach,
-     poundforce, imperialGallon, tonne, kilonewton, 
-     liter, cubicMeter, knot, nauticalMile, cubicFoot, inch, kilogramforce } from 'units-weigher';
+import { cubicFoot, cubicMeter, foot, imperialGallon, inch, kilogram, kilogramforce, kilometer, 
+    kilometersHour, kilonewton, knot, liter, Mach, meter, mile, milesHour, nauticalMile, pound, 
+    poundforce, ton, usGallon } from 'united-values'
+
+import { AircraftBuilders as builders } from 'src/app/_entities/avia/aircrafts/manufacturers'
+import { LinerNfo as Liner, CargoAirplaneNfo as Freighter, AircraftNfo } from 'src/app/_entities/avia/aircrafts/entities'
+import { CrewPerson, Engine } from 'src/app/_entities/avia/eintities'
 
 // ********************** Wright Flyer I ***********************
 const ship_ZeppelinNT: Liner = {
@@ -219,10 +220,10 @@ const plane_A380: Liner = {
     },
 
     weights: {
-        empty: tonne(275),
-        maxTakeoff: tonne(569),
-        maxLanding: tonne(91),
-        payload: tonne(84),
+        empty: ton(275),
+        maxTakeoff: ton(569),
+        maxLanding: ton(91),
+        payload: ton(84),
     },
 
     performance: {
@@ -676,10 +677,10 @@ const plane_A321neo: Liner = {
     },
 
     weights: {
-        empty: tonne(50.1),
-        maxTakeoff: tonne(97),
-        maxLanding: tonne(79.20),
-        payload: tonne(25.5),
+        empty: ton(50.1),
+        maxTakeoff: ton(97),
+        maxLanding: ton(79.20),
+        payload: ton(25.5),
     },
 
     performance: {
@@ -1456,10 +1457,10 @@ const plane_SpaceJet: Liner = {
     },
 
     weights: {
-        empty: tonne(26), // here OEW
-        maxTakeoff: tonne(42.8),
-        maxLanding: tonne(38),
-        payload: tonne(10),
+        empty: ton(26), // here OEW
+        maxTakeoff: ton(42.8),
+        maxLanding: ton(38),
+        payload: ton(10),
     },
 
     performance: {

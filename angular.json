@@ -126,38 +126,38 @@
         }
       }
     },
-    "units-weigher": {
+    "united-values": {
       "projectType": "library",
-      "root": "projects/units-weigher",
-      "sourceRoot": "projects/units-weigher/src",
+      "root": "projects/united-values",
+      "sourceRoot": "projects/united-values/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/units-weigher/tsconfig.lib.json",
-            "project": "projects/units-weigher/ng-package.json"
+            "tsConfig": "projects/united-values/tsconfig.lib.json",
+            "project": "projects/united-values/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/units-weigher/tsconfig.lib.prod.json"
+              "tsConfig": "projects/united-values/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/units-weigher/src/test.ts",
-            "tsConfig": "projects/units-weigher/tsconfig.spec.json",
-            "karmaConfig": "projects/units-weigher/karma.conf.js"
+            "main": "projects/united-values/src/test.ts",
+            "tsConfig": "projects/united-values/tsconfig.spec.json",
+            "karmaConfig": "projects/united-values/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/units-weigher/tsconfig.lib.json",
-              "projects/units-weigher/tsconfig.spec.json"
+              "projects/united-values/tsconfig.lib.json",
+              "projects/united-values/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

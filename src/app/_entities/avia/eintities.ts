@@ -1,5 +1,5 @@
-import { AircraftBuilders } from './aircrafts/manufacturers';
-import { distance, Dimensions, area, velocity, force, volume, mass } from 'units-weigher';
+import { area, Dimensions, force, len, mass, speed, volume } from 'united-values'
+import { AircraftBuilders } from './aircrafts/manufacturers'
 
 export interface CrewPerson {}
 
@@ -7,15 +7,15 @@ export interface Engine { }
 
 export interface FlyingMachineSize {
     airframe: Dimensions,
-    wingSpan: distance,
+    wingSpan: len,
     wingArea?: area,
 }
 
 export interface FlyingMachinePerformance {
-    range: distance,
-    cruiseSpeed: velocity,
-    maxSpeed?: velocity,
-    serviceCeiling: distance,
+    range: len,
+    cruiseSpeed: speed,
+    maxSpeed?: speed,
+    serviceCeiling: len,
     thrust?: force,
 
     fuelCapacity?: volume,
@@ -30,8 +30,8 @@ export interface FlyingMachineWeights {
 }
 
 export interface FlyingMachineTakeOff {
-    run: distance,
-    minSpeed?: velocity,
+    run: len,
+    minSpeed?: speed,
     thrust?: force,
 }
 

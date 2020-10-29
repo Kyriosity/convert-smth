@@ -1,4 +1,4 @@
-import { distance, velocity, mass, volume, UValErr } from 'units-weigher'
+import { speed, len, mass, volume, UValErr } from 'united-values'
 import { AircraftNfo } from 'src/app/_entities/avia/aircrafts/entities'
 import { MachineDesignation } from 'src/app/_entities/avia/eintities'
 import { shortName } from 'src/app/_entities/avia/aircrafts/manufacturers'
@@ -11,9 +11,9 @@ export interface AircraftDigestPlain {
     brand: string
     title: string
     
-    range: distance
-    cruiseSpeed: velocity
-    serviceCeiling: distance
+    range: len
+    cruiseSpeed: speed
+    serviceCeiling: len
     maxTakeoff: mass
     fuelCapacity: volume
 
