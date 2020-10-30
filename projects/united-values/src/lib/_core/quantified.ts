@@ -10,13 +10,13 @@ export interface IConvert<U extends Unit> {
 }
 
 export interface IArithmeticOutput<U extends Unit> {
-    plus(uval: Quantified<U>): Quantified<U>
-    minus(uval: Quantified<U>): Quantified<U>
+    plus(term: Quantified<U>): Quantified<U>
+    minus(term: Quantified<U>): Quantified<U>
 }
 
 export interface IArithmeticCumulate<U extends Unit>{
-    add(uval: Quantified<U>): void
-    subtract(uval: Quantified<U>): void
+    add(seized: Quantified<U>): void
+    subtract(seized: Quantified<U>): void
 }
 
 export interface IArithmetic<U extends Unit> extends IArithmeticOutput<U>, IArithmeticCumulate<U> {}

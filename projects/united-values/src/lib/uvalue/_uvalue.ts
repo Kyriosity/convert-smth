@@ -11,20 +11,21 @@ export class UValue<U extends Unit> implements Quantified<U>, IConvert<U>, IArit
     to(unit?: U): UValue<U> {
         if (!unit)
             unit = this.unit
-        const newVal = this.converter.eval(this, unit)
-        return new UValue(unit, newVal)
+        return new UValue(unit, this.converter.eval(this, unit))
     }
-    add(uval: Quantified<U>): void {
-        // ToDo: convert
-        this.value += uval.value
+
+    add(seized: Quantified<U>): void {
+        this.value += this.converter.eval(seized, this.unit)
     }
-    subtract(uval: Quantified<U>): void {
-        this.value -= uval.value
+    subtract(seized: Quantified<U>): void {
+        this.value -= this.converter.eval(seized, this.unit)
     }
-    plus(uval: Quantified<U>): Quantified<U> {
-        throw new Error('Method not implemented.');
+    plus(term: Quantified<U>): Quantified<U> {
+        return new UValue(this.unit, this.value + 
+            this.converter.eval(term, this.unit))
     }
-    minus(uval: Quantified<U>): Quantified<U> {
-        throw new Error('Method not implemented.');
+    minus(term: Quantified<U>): Quantified<U> {
+        return new UValue(this.unit, this.value - 
+            this.converter.eval(term, this.unit))
     }
 }
