@@ -11,9 +11,9 @@
 &nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
 
 + Applied
-    + [UnitValue](../projects/united-values/src/lib/uvalues/_uvalue.ts) (aka *UValue*, *uval*) - derivative of *Quantified*, which adds up operations
-    + [Instances](../projects/united-values/src/lib/uvalues/instances.ts) - of UValues' as `kilogram` or `Fahrenheit`
-    + [Conversion](../projects/united-values/src/lib/uvalues/instances.ts)
+    + [UnitValue](../projects/united-values/src/lib/uvalue/_uvalue.ts) (aka *UValue*, *uval*) - derivative of *Quantified*, which adds up operations
+    + [Instances](../projects/united-values/src/lib/uvalue/instances.ts) - of UValues' as `kilogram` or `Fahrenheit`
+    + [Conversion](../projects/united-values/src/lib/uvalue/instances.ts)
     + Presentation
 
 ## Conversion

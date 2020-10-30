@@ -4,4 +4,4 @@ export * from './lib/united-values.service'
 
 export * from './lib/app/errors'
 export * from './lib/_core/measures'
-export * from './lib/uvalues/instances'
+export * from './lib/uvalue/instances'

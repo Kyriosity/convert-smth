@@ -1,8 +1,8 @@
 import { Quantified } from '../_core/quantified';
-import { UValue } from '../uvalues/_uvalue'
+import { UValue } from '../uvalue/_uvalue'
 import { Lengths, Speeds, Unit } from "../_core/units"
 
-import { kilometer } from '../uvalues/instances'
+import { kilometer } from '../uvalue/instances'
 import { len } from '../_core/measures';
 import { speed } from 'dist/units-weigher/public-api';
 

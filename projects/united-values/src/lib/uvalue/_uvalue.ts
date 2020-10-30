@@ -1,15 +1,17 @@
 import { Unit } from '../_core/units'
 import { IArithmetic, IConvert, Quantified } from '../_core/quantified'
+import { Converter } from '../tools/_convert/_converter'
 
 export class UValue<U extends Unit> implements Quantified<U>, IConvert<U>, IArithmetic<U> {
     readonly unit: U
     constructor(unit: U, public value: number) { this.unit = unit }
 
+    protected readonly converter: Converter<U>
+
     to(unit?: U): UValue<U> {
         if (!unit)
             unit = this.unit
-        const newVal = unit === this.unit ? this.value :
-            NaN // KD, ToDo: convert
+        const newVal = this.converter.eval(this, unit)
         return new UValue(unit, newVal)
     }
     add(uval: Quantified<U>): void {
@@ -26,4 +28,3 @@ export class UValue<U extends Unit> implements Quantified<U>, IConvert<U>, IArit
         throw new Error('Method not implemented.');
     }
 }
-

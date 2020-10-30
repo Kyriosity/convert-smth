@@ -1,4 +1,4 @@
-import { mile } from "../../uvalues/instances";
+import { mile } from "../../uvalue/instances";
 
 describe('uvalue_math-ops', () => { 
       it('add', () => {

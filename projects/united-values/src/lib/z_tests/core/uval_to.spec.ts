@@ -1,4 +1,4 @@
-import { Kilogram, kilogram, kilonewton } from "../../uvalues/instances";
+import { Kilogram, kilogram, kilonewton } from "../../uvalue/instances";
 
 describe('uvalue_to', () => { 
     it('no arg', () => {

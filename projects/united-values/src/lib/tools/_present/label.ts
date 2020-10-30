@@ -8,7 +8,7 @@ export enum uLabelFormats {
     full = 3,
 }
 
-export interface uvLabel<Unit> {
+export interface uLabel<Unit> {
     unit: Unit,
     labels: string[]
 }

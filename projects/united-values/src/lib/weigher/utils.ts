@@ -1,4 +1,4 @@
-import { uLabelFormats } from '../tools/present/label';
+import { uLabelFormats } from '../tools/_present/label'
 
 export function parseUnitFormat(formatParam: string): uLabelFormats {
     const defaultFormat = uLabelFormats.short

@@ -19,11 +19,11 @@ Well, under time pressure even the best experts name logics classes as *services
 ## Comments
 Self-descriptive, clean codes need no comments. Otherwise this signalises poor naming.\
 However they're fully liable for 
-+ third-party bugs (requiring a bizzare workaround), 
-+ courtesy of Q&A sites, 
-+ worthy tricks that harm readability, 
-+ snippets in readme-s, 
-+ domain-explaining quotes from wikis.
++ third-party bugs (requiring a bizzare workaround)
++ courtesy of Q&A sites
++ worthy tricks that harm readability
++ snippets in readme-s
++ domain-explaining quotes from wikis
 
 This statement was for renowned high-level languages.
 
@@ -37,11 +37,10 @@ And really `true` if this is a stable part, which can be treated as a black box.
 
 Otherwise changes and enhancements w/out refactoring will sooner or later bring the code to the badly controllable chaos.\
 Thus, when possible, i'd use any change request to
-+ clean the codes, 
-+ update syntax in the favour of the last version, 
-+ refactor, 
-+ improve naming, 
-+ delete as much as possible.
++ clean and refactor
++ update syntax in the favour of the last version
++ improve naming
++ delete as much as possible
 
 ## Test driven development
 Broadly misunderstood as test coverage. It's more about concepts, when a good question is already an answer.

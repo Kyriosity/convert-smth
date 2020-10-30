@@ -1,8 +1,7 @@
 import { Unit } from '../_core/units'
 import { Quantified } from '../_core/quantified'
-
 import { parseUnitFormat, selectUnitLabel } from './utils'
-import { uLabelFormats, uvLabel } from '../tools/present/label'
+import { uLabelFormats, uLabel } from '../tools/_present/label'
 
 export interface IWeigher<M extends Quantified<Unit>> {
     convert(subj: M, to: Unit): M
@@ -14,7 +13,7 @@ export interface IWeigher<M extends Quantified<Unit>> {
 }
 
 export abstract class Weigher<M extends Quantified<Unit>> implements IWeigher<M> {
-    protected readonly unitLabels: uvLabel<Unit>[]
+    protected readonly unitLabels: uLabel<Unit>[]
 
     protected abstract recalc(subj: M, to: Unit): number
     abstract rawLabel(unit: Unit): string
