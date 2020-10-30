@@ -1,8 +1,9 @@
 # Overall development concerns
-That's what i learned from numerous corporate and tailor-made projects, what i try to follow and i'd like to share. And it's all IMHO.
+That's what i learned from numerous corporate and tailor-made projects, **cutting-edge colleagues**. What i try to follow and i'd like to share. And it's all IMHO.
 
-## Naming code entities
-Names of libraries, packages (assemblies), classes, methods, vars - it's the ultimate challenge: intricate and time consuming headache for the whole team.
+## Naming
+Names of libraries, packages (assemblies), classes, methods, vars - it's the ultimate challenge: intricate and time consuming headache for the best orchestrated team.
+
 However the great benefits are:
 + collaboration, common comprehension of a domain that establishes a kind of *lingua franca* throughout the really being bound team&nbsp;&nbsp;<sup>**_t**</sup>
 + sound architecture and self-descriptive code
@@ -10,7 +11,7 @@ However the great benefits are:
 + inspiration for Test/Behavior Driven Development
 + escape from piles of reqs, specs, other papers that are hard to follow but easy to misunderstood, forget, though mostly ignored
 + reduced time to get on a project for a newcomer 
-+ comfy navigation in the source code (both by IDE's explorer and CTRL+F)
++ comfy navigation within the source code (both by IDE's explorer and CTRL+F)
 
 Well, under time pressure even the best experts name logics classes as *services*, *helpers*, *utils*, *handlers* but would be barely proud of that.
 
@@ -50,7 +51,7 @@ If a method does `2+2` and a postfactum test checks it against `2+2`, is that re
 But Ok when tests are conceptual and written first.
 
 ## Interfaces
-It's not an enlightment of mine, but independent of prog. language interfaces shall be high-granuled, to be further combined in various higher-level domain interfaces.
+It's not an enlightment of mine, but independent of prog. language interfaces shall be fine-granuled, to be further combined in various higher-level domain definitions.
 With this done, one is safe with the first letter in **S**.O.L.I.D. As well a cast to a basic interface makes development cleaner and prevents much of bugs.
 
 ## Code review and pair programming
