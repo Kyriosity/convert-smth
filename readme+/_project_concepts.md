@@ -11,16 +11,14 @@
 &nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
 
 + Applied
-    + [UnitValue](../projects/united-values/src/lib/uvalues/_uvalue.ts) (aka *UnitValue*, *uvalue*, *uval*) - derivative of *Quantified*, which adds up conversion and arithmetic operations
+    + [UnitValue](../projects/united-values/src/lib/uvalues/_uvalue.ts) (aka *UValue*, *uval*) - derivative of *Quantified*, which adds up operations
     + [Instances](../projects/united-values/src/lib/uvalues/instances.ts) - of UValues' as `kilogram` or `Fahrenheit`
-    + Converters
-        + rational
-        + functional
-    + Presenter
+    + [Conversion](../projects/united-values/src/lib/uvalues/instances.ts)
+    + Presentation
 
 ## Conversion
-Conversion between units of the same nature (measure) is a cornerstone of this framework.
-Basically there're too ways 
+Conversion between units of the same nature (measure) is one of cornerstones of this lib.
+Basically there're two ways 
 + tabled 
 + functional
  
