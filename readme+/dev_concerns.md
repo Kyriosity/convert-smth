@@ -1,11 +1,17 @@
 # Overall development concerns
 That's what i learned from numerous corporate and tailor-made projects, **cutting-edge colleagues**. What i try to follow and i'd like to share. And it's all IMHO.
 
+A good developer may not known abbreviations like [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), "Keep it simple", but intuitevely follow these principles.\
+It's not the case of higher level priniciples like [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID). They require some learning.
+
+## Architecture
+Martin Fawler [Is Design Dead](https://martinfowler.com/articles/designDead.html#:~:text=Not%20just%20is%20much%20design,way%20than%20established%20software%20processes.)
+
 ## Naming
-Names of libraries, packages (assemblies), classes, methods, vars - it's the ultimate challenge: intricate and time consuming headache for the best orchestrated team.
+Names of libraries, packages (assemblies), classes, methods, vars - it's the ultimate challenge: intricate and time consuming headache even for best orchestrated teams.
 
 However the great benefits are:
-+ collaboration, common comprehension of a domain that establishes a kind of *lingua franca* throughout the really being bound team&nbsp;&nbsp;<sup>**_t**</sup>
++ collaboration, common comprehension of a domain that establishes a kind of *lingua franca* throughout the really being bound team&nbsp;&nbsp;<sup>**_team**</sup>
 + sound architecture and self-descriptive code
 + less code, and of better quality
 + inspiration for Test/Behavior Driven Development
@@ -28,7 +34,7 @@ However they're fully liable for
 
 This statement was for renowned high-level languages.
 
-One more exclusion - *ToDo*s. Though notably subject of jokes and memes, i'd consider them a good compromise between YAGNI&nbsp;<sup>**_y**</sup> and vision.\
+One more exclusion - *ToDo*s. Though notably subject of jokes and memes, could be considered as a trade-off between YAGNI&nbsp;<sup>**_y**</sup> and vision.\
 A good idea is to transform them to *work items* by release.\
 &nbsp;&nbsp;<sup>**_y**</sup><sub>&nbsp;&nbsp;[You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)</sub>
 
@@ -37,7 +43,7 @@ Never change a running system. That's what would opponents of the refactoring te
 And really `true` if this is a stable part, which can be treated as a black box.
 
 Otherwise changes and enhancements w/out refactoring will sooner or later bring the code to the badly controllable chaos.\
-Thus, when possible, i'd use any change request to
+Thus, when possible, try use any change request to
 + clean and refactor
 + update syntax in the favour of the last version
 + improve naming
@@ -51,7 +57,7 @@ If a method does `2+2` and a postfactum test checks it against `2+2`, is that re
 But Ok when tests are conceptual and written first.
 
 ## Interfaces
-It's not an enlightment of mine, but independent of prog. language interfaces shall be fine-granuled, to be further combined in various higher-level domain definitions.
+Not an enlightment of mine: interfaces are the language of decoupling. Must be fine-granuled, to be further combined in various higher-level domain definitions.
 With this done, one is safe with the first letter in **S**.O.L.I.D. As well a cast to a basic interface makes development cleaner and prevents much of bugs.
 
 ## Code review and pair programming

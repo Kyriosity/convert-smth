@@ -1,6 +1,5 @@
-import { rational } from '../../tools/convert/rational'
-import { Volumes } from '../../_core/units'
-
+import { Volumes } from '../../_core/units';
+import { rational } from '../_convert/rational';
 
 export class Volume extends rational<Volumes> {
     rawLabel = (unit: Volumes) => { return Volumes[unit]}
@@ -15,4 +14,3 @@ export class Volume extends rational<Volumes> {
         { unit: Volumes.cubicFoot, labels: ['ft3', 'cu ft', 'cubic foot'] },
     ];
 }
-

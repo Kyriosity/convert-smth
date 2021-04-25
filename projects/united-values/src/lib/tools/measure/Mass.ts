@@ -1,6 +1,6 @@
 import { Masses } from '../../_core/units'
-import { rational } from '../../tools/convert/rational'
-import { SiRatios } from '../../tools/convert/_ratio'
+import { rational } from '../_convert/rational'
+import { SiRatios } from '../_convert/_ratio'
 
 export class Mass extends rational<Masses> {
     rawLabel = (unit: Masses) => Masses[unit]

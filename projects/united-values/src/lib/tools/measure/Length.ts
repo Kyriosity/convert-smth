@@ -1,31 +1,16 @@
 import { Lengths } from '../../_core/units'
-import { rational } from '../../tools/convert/rational'
-import { SiRatios } from '../../tools/convert/_ratio'
+import { SiRatios } from '../_convert/_ratio'
+import { rational } from '../_convert/rational'
+import { Tools } from '../_tools'
+import { IConverter } from '../_convert/_converter'
+import { IPresenter } from '../_present/_presenter'
 
-export class Length extends rational<Lengths> {
-    rawLabel = (unit: Lengths) => Lengths[unit]
+export class Length implements Tools<Lengths> {
+    converter: IConverter<Lengths> = new Converter()
+    presenter: IPresenter<Lengths>
+}
 
-    protected readonly unitLabels = [
-        { unit: Lengths.picometre, labels: ['', 'pm', 'picometer'] },
-        { unit: Lengths.nanometre, labels: ['', 'nm', 'nanometer'] },
-        { unit: Lengths.micrometre, labels: ['', 'mcm', 'micrometer'] },
-        { unit: Lengths.millimetre, labels: ['', 'mm', 'millimeter'] },
-        { unit: Lengths.decimetre, labels: ['', 'dc', 'decimeter'] },
-        { unit: Lengths.centimetre, labels: ['', 'cm', 'centimeter'] },
-        { unit: Lengths.metre, labels: ['', 'm', 'meter'] },
-        { unit: Lengths.hectometre, labels: ['', 'hm', 'hectometer'] },
-        { unit: Lengths.kilometre, labels: ['', 'km', 'kilometer'] },
-        { unit: Lengths.megametre, labels: ['', 'mgm', 'megameter'] },
-        { unit: Lengths.gigametre, labels: ['', 'gm', 'gigameter'] },
-        { unit: Lengths.terametre, labels: ['', 'tm', 'teraometer'] },
-
-        { unit: Lengths.foot, labels: ['ft.', 'foot'] },
-        { unit: Lengths.inch, labels: ['in', 'inch'] },
-
-        { unit: Lengths.nauticalMile, labels: ['', 'nmi', 'nautical mile'] },
-        { unit: Lengths.mile, labels: ['', 'mi', 'mile'] },
-    ]
-
+class Converter extends rational<Lengths> {
     protected readonly unitSystems = [metricAndExactRelated, feetBased]
     protected readonly crossRatios = [toMeter]
 }

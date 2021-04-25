@@ -1,5 +1,5 @@
-import { rational } from '../../tools/convert/rational'
-import { Speeds } from '../../_core/units'
+import { Speeds } from '../../_core/units';
+import { rational } from '../_convert/rational';
 
 export class Speed extends rational<Speeds> {
     rawLabel = (unit: Speeds) => Speeds[unit]

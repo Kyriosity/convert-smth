@@ -1,22 +1,14 @@
-import { Temperatures } from '../../_core/units'
-import { functional, IConvertFunc } from '../../tools/convert/functional'
+import { Temperatures } from '../../_core/units';
+import { IConvertFunc } from '../_convert/functional';
+import { rational } from '../_convert/rational';
 
-export class Temperature extends functional<Temperatures> {
-    rawLabel = (unit: Temperatures) => Temperatures[unit]
-
+export class Temperature extends rational<Temperatures> {
     protected readonly funcs = [
         C2F, C2K,
         F2C, F2K, F2R,
         K2C, K2F,
         R2F, 
     ]
-
-    protected readonly unitLabels = [
-        { unit: Temperatures.Celsius, labels: ['°C', 'C', 'Celcius'] },
-        { unit: Temperatures.Fahrenheit, labels: ['°F', 'F', 'Fahrenheit'] },
-        { unit: Temperatures.Kelvin, labels: ['K', 'K', 'Kelvin'] },
-        { unit: Temperatures.Rankine, labels: ['°R', 'R', 'Rankine'] },
-    ];
 }
 
 //** Celsius to ... **//

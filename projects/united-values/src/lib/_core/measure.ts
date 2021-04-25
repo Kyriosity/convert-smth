@@ -1,7 +1,7 @@
 import { Lengths, ElectricalCurrents, Luminosities, Masses, Speeds, Volumes, Forces, Temperatures } from './units'
 import { Quantified } from './quantified';
 
-export interface len extends Quantified<Lengths> {} // "length" would be better but intercept with the TS keyword
+export interface len extends Quantified<Lengths> {} // 'length' would be better but intercept with the TS keyword
 export interface mass extends Quantified<Masses> {}
 export interface volume extends Quantified<Volumes> {}
 export interface force extends Quantified<Forces> {}

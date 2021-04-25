@@ -4,14 +4,13 @@ import { Converter } from '../tools/_convert/_converter'
 
 export class UValue<U extends Unit> implements Quantified<U>, IConvert<U>, IArithmetic<U> {
     readonly unit: U
-    constructor(unit: U, public value: number) { this.unit = unit }
-
-    protected readonly converter: Converter<U>
+    constructor(unit: U, public value: number, protected readonly converter?: Converter<U>) { this.unit = unit }
+    
 
     to(unit?: U): UValue<U> {
         if (!unit)
             unit = this.unit
-        return new UValue(unit, this.converter.eval(this, unit))
+        return new UValue(unit, this.converter.eval(this, unit), this.converter)
     }
 
     add(seized: Quantified<U>): void {

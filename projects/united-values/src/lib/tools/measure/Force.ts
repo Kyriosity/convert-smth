@@ -1,5 +1,5 @@
-import { rational } from '../../tools/convert/rational'
 import { Forces } from '../../_core/units'
+import { rational } from '../_convert/rational'
 
 export class Force extends rational<Forces> {
     rawLabel = (unit: Forces) => Forces[unit]
