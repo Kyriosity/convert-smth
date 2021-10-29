@@ -55,7 +55,7 @@ Exceptions (errors) come at a price of performance. And shall be issued when the
     + use cycles of listed subjects
     + when listing is akward *shortcut* to abbreviation
 ```typescript
-const cool = ratherCoolButLongMethodName
+const vcbl = ratherCoolButLongMethodName
 vcbl(a); vcbl(bbb); vcbl(c3)
 // ....
 ```    
