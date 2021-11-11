@@ -1,8 +1,8 @@
 # Overall development concerns
-That's what i learned from numerous corporate and tailor-made projects, **cutting-edge colleagues**. What i try to follow and i'd like to share. And it's all IMHO.
+That's what i learned from numerous corporate and tailor-made projects, and cutting-edge colleagues. What i try to follow and i'd like to share. And it's all IMHO.
 
-A good developer may not known abbreviations like [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), "Keep it simple", but intuitevely follow these principles.\
-It's not the case of higher level priniciples like [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID). They require some learning.
+Even a good developer may be unaware of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), "Keep it simple", but intuitevely follow these principles.\
+It's not the case of higher level priniciples like [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID), which require some learning.
 
 ## Architecture
 Martin Fawler [Is Design Dead](https://martinfowler.com/articles/designDead.html#:~:text=Not%20just%20is%20much%20design,way%20than%20established%20software%20processes.)
