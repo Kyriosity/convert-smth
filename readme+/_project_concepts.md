@@ -8,7 +8,7 @@
         + Conversion
         + Arihtmetic - good known `+`, `-`, `*`, `/`.&nbsp;&nbsp;<sup>**_a**</sup>
         
-&nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;Intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
+&nbsp;&nbsp;<sup>**_a**</sup><sub>&nbsp;&nbsp;intentionally *arithmetic*, not mathematic - [Quora](https://www.quora.com/What-is-difference-between-arithmetic-and-mathematics "What is the difference between Arithmetic and Mathematics?")</sub>
 
 + Applied
     + [UnitValue](../projects/united-values/src/lib/uvalue/_uvalue.ts) (aka *UValue*, *uval*) - derivative of *Quantified*, which adds up operations
@@ -18,15 +18,15 @@
 
 ## Conversion
 Conversion between units of the same nature (measure) is one of cornerstones of this lib.
-Basically there're two ways 
+Primarily there're two methods: 
 + tabled 
 + functional
  
 ### Rational (tabled)
-*Rational* since based on a cross factor, a case of invertible function (works two-way)
+*Rational* since based on a cross factor, a case of linear invertible function (always works two-way). Example: foots to meters and vice versa.
 
 ### Functional
-Functional is usually a non-linear function. Quite much of them are one-way (a good example in the mathematics is hashing).
+Functions are usually non-linear relations, desribed by formalae. Quite many of them are one-way (a good example in mathematics is hashing).
 
 ## Presentation
 
@@ -34,7 +34,7 @@ Functional is usually a non-linear function. Quite much of them are one-way (a g
 
 
 ## Universal values
-Physics is our life and even the worst schooler is aware of dozens of event-related, universal, notable or named physical properties (but not exactly their values): 
+Physics is our existence and even the worst schooler is aware of dozens of event-related, universal, notable or named physical properties (but not exactly their values): 
 + water freezing/boiling, speed of sound/light 
 + mt. Everest height, length of equator, distance to Mars
 + normal human body temperature, home/auto voltage
