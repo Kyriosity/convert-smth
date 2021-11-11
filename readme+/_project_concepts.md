@@ -2,8 +2,8 @@
 (Links here refer code entities)
 + Domain
     + [Unit](../projects/united-values/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
-    + [Quantified](../projects/united-values/src/lib/_core.quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
-    + [Measures](../projects/united-values/src/lib/_core.measures.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
+    + [Quantified](../projects/united-values/src/lib/_core/quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
+    + [Measures](../projects/united-values/src/lib/_core/measure.ts/) - particular `Quantified` as *speed*, *volume*, *temperature*.
     + [Operations]
         + Conversion
         + Arihtmetic - good known `+`, `-`, `*`, `/`.&nbsp;&nbsp;<sup>**_a**</sup>
@@ -26,6 +26,7 @@ Basically there're two ways
 *Rational* since based on a cross factor, a case of invertible function (works two-way)
 
 ### Functional
+Functional is usually a non-linear function. Quite much of them are one-way (a good example in the mathematics is hashing).
 
 ## Presentation
 
