@@ -1,5 +1,5 @@
 # U(nit)Values, or physical values, for Typescript
-This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript.&nbsp;&nbsp;<sup>**_i**
+This Angular project began in 2020 as a hobby dive of mine into Angular/Typescript.&nbsp;<sup>**_i**</sup>
 
 It's all about making physical values (like temperature, mass) integrated in development and decently looking in UI.
 
