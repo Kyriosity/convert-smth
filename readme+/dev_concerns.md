@@ -1,3 +1,4 @@
+
 # Overall development concerns
 That's what i learned from numerous corporate and tailor-made projects, and cutting-edge colleagues. What i try to follow and i'd like to share. And it's all IMHO.
 
@@ -56,9 +57,17 @@ On the other side i'm not an advocate of unit tests for everything.\
 If a method does `2+2` and a postfactum test checks it against `2+2`, is that really of great value?\
 But Ok when tests are conceptual and written first.
 
+However, TDD is not gold section. 
+
 ## Interfaces
 Not an enlightment of mine: interfaces are the language of decoupling. Must be fine-granuled, to be further combined in various higher-level domain definitions.
 With this done, one is safe with the first letter in **S**.O.L.I.D. As well a cast to a basic interface makes development cleaner and prevents much of bugs.
 
 ## Code review and pair programming
 No comment - it's the best part of team work.
+
+## Code layout
+* limit line length down to 14'' - scrolling horizontally is much worse than vertically 
+
+### Epilogue
+* ~~code in English, comment in Latin, document en français~~
