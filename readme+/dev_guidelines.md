@@ -59,5 +59,4 @@ const vcbl = ratherCoolButLongMethodName
 vcbl(a); vcbl(bbb); vcbl(c3)
 // ....
 ```    
-* limit line length - scrolling horizontally is much worse than vertically 
-* ~~code in English, comment in Latin, document en français~~
+
