@@ -28,7 +28,7 @@ const Alaska: State = { hightestElevation: foot(20310), recordHigh: fahrenheit(1
 const Bavaria: State = { hightestElevation: meter(2962), recordHigh: celsius(40.3) }
 ```
 ### Conversion of units
-Easier than ABC but still type safe.&nbsp;&nbsp;<sup>**_u**</sup>
+Easier than ABC but still "type safe".&nbsp;&nbsp;<sup>**_u**</sup>
 ```typescript
 let bottle = liter(0.5)
 const inUkWouldBe = bottle.to(ImperialPint)
@@ -36,7 +36,7 @@ const bottle2 = bottle.to() // use to clone
 euroBottle.to(Meter) // this won't compile
 euroBottle.unit = Liter // this either, even if the same unit
 ```
-&nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;*unit* is immutable, since it wouldn't be intuitive if conversion runs on it's setter</sub>
+&nbsp;&nbsp;<sup>**_u**</sup><sub>&nbsp;&nbsp;*unit* is immutable, since running conversion on it's setter won't be intuitive</sub>
 
 ### Math operations
 UValue exposes its `value` property that you can set/modify in the usual fashion:
@@ -54,7 +54,7 @@ const cargoTotal = ton(11.5).plus(kilogram(280)).plus(pound(9570)).plus(pets) //
 const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 // the crew rejected to transport pets cause the cargo bay isn't pressuresized
 ```
-&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;Both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /). All the same this could be a performance hit and too implicit with resulted in *unit*</sub>
+&nbsp;&nbsp;<sup>**_o**</sup><sub>&nbsp;&nbsp;Both TS and JS do NOT facilitate overload of arithmetic ops (+, -, *, /). Nevertheless this must be a performance hit and a resulted in *unit* would be non-obvious</sub>
 
 ### Presentation
 Includes formatting, labeling, parsing, ng-pipe and is worth of a [separate report](readme+/doc_uval-presentation.md).
@@ -70,6 +70,4 @@ Actions can be avaialble through the service.
 ## Further reading for project development
 [Dev: concepts](readme+/_project_concepts.md)\
 [Dev: guidelines](readme+/dev_guidelines.md)\
-[Open points](readme+/doc_open-points.md)\
-[Dev: overall guidelines](readme+/dev_concerns.md)
-
+[Open points](readme+/doc_open-points.md)
