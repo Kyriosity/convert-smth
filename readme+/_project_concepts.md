@@ -1,5 +1,6 @@
 ## Glossary
-(Links here refer code entities)
+
+(Links here refer to code entities)
 + Domain
     + [Unit](../projects/united-values/src/lib/_core/units.ts) - physical grade of measure (e.g. meter) or scale (e.g. Fahrenheit)
     + [Quantified](../projects/united-values/src/lib/_core/quantified.ts/) - based on *Unit*, is a concept of a physical property, which owns *value* and its *unit* 
@@ -17,16 +18,19 @@
     + Presentation
 
 ## Conversion
-Conversion between units of the same nature (measure) is one of cornerstones of this lib.
-Primarily there're two methods: 
+
+Conversion between units of the same nature (measure) is one of the cornerstones of this lib.
+Primarily there are two methods: 
 + tabled 
 + functional
  
 ### Rational (tabled)
-*Rational* since based on a cross factor, a case of linear invertible function (always works two-way). Example: foots to meters and vice versa.
+
+*Rational* since based on a cross factor, a case of linear invertible function (always works two-way). Example: feet to meters and vice versa.
 
 ### Functional
-Functions are usually non-linear relations, desribed by formalae. Quite many of them are one-way (a good example in mathematics is hashing).
+
+Functions are usually non-linear relations, described by formalae. Quite many of them are one-way (a good example in mathematics is hashing).
 
 ## Presentation
 
@@ -34,6 +38,7 @@ Functions are usually non-linear relations, desribed by formalae. Quite many of 
 
 
 ## Universal values
+
 Physics is our existence and even the worst schooler is aware of dozens of event-related, universal, notable or named physical properties (but not exactly their values): 
 + water freezing/boiling, speed of sound/light 
 + mt. Everest height, length of equator, distance to Mars
@@ -41,6 +46,7 @@ Physics is our existence and even the worst schooler is aware of dozens of event
 + Newtonian constant of gravitation, Boltzmann constant
 
 ### Solution
+
 Library of such values
 
 ## Arithmetics
