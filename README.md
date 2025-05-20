@@ -12,7 +12,7 @@ It's all about making physical values (like temperature, mass) integrated in dev
 ## How it looks for user
 
 Just `ng build` is the only library in this project, and `ng serve` is the app. Navigate to **Units**.\
-Or/**and** look at [commented snapshot of that demo](readme+/img_aircrafts-commented.jpg)
+Or/**and** look at [commented snapshot of that demo](README+/img_aircrafts-commented.jpg)
 
 ## How it works for developer
 
@@ -64,7 +64,7 @@ const takeoffWeight = plane.plus(cargoTotal).minus(pets)
 
 ### Presentation
 
-Includes formatting, labeling, parsing, ng-pipe, and is worth a [separate report](readme+/doc_uval-presentation.md).
+Includes formatting, labeling, parsing, ng-pipe, and is worth a [separate report](README+/doc_uval-presentation.md).
 
 ### Service
 
@@ -72,14 +72,14 @@ Actions can be available through the service.
 
 ## Predefined UValues
 
-[Read more](readme+/doc_predefined-uvalues.md)
+[Read more](README+/doc_predefined-uvalues.md)
 
 ## Units schemes
 
-[Read more](readme+/doc_uvalues-schemes.md)
+[Read more](README+/doc_uvalues-schemes.md)
 
 ## Further reading for project development
 
-[Dev: concepts](readme+/_project_concepts.md)\
-[Dev: guidelines](readme+/dev_guidelines.md)\
-[Open points](readme+/doc_open-points.md)
+[Dev: concepts](README+/_project_concepts.md)\
+[Dev: guidelines](README+/dev_guidelines.md)\
+[Open points](README+/doc_open-points.md)
